@@ -1,3 +1,7 @@
+call plug#begin('~/.vim/plugged')
+:Plug 'neovim/nvim-lspconfig'
+call plug#end()
+
 " My configuration
 set number
 set mouse=a
@@ -15,3 +19,8 @@ set redrawtime=2000
 syntax on
 let g:tex_flavor = 'latex'
 let mapleader=" "
+
+" LSP Config
+lua << EOF 
+require'lspconfig'.pyright.setup{}
+EOF 
