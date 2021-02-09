@@ -1,0 +1,7 @@
+version: '3.2'
+
+services:
+  nvim-test:
+    build: .
+    volumes:
+      - './inti.vim:/home/build/.config/nvim/init.vim'
