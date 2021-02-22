@@ -33,6 +33,8 @@ Plug 'lervag/vimtex'
 Plug 'bling/vim-bufferline'
 " React
 Plug 'othree/vim-jsx'
+" Prettier
+Plug 'prettier/vim-prettier'
 call plug#end()
 
 " My configuration
@@ -49,6 +51,9 @@ set sw=2
 set relativenumber
 set laststatus=2
 set redrawtime=2000
+set shiftwidth=2
+set tabstop=2
+set expandtab
 syntax on
 let mapleader=" "
 
@@ -95,6 +100,94 @@ lua require'lspconfig'.bashls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.texlab.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.yamlls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vimls.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.dockerls.setup{ on_attach=require'completion'.on_attach }
+
+lua << EOF
+local function on_attach(client)
+    print('Attached to ' .. client.name)
+end
+
+local eslint = {
+    sourceName = 'eslint',
+    command = 'eslint', -- or "./node_modules/.bin/eslint" to use from project install
+    debounce = 100,
+    args = {
+        '--stdin',
+        '--stdin-filename',
+        '%filepath',
+        '--format',
+        'json',
+    },
+    parseJson = {
+        errorsRoot = '[0].messages',
+        line = 'line',
+        column = 'column',
+        endLine = 'endLine',
+        endColumn = 'endColumn',
+        message = '${message} [${ruleId}]',
+        security = 'severity',
+    },
+    securities = {
+        [2] = 'error',
+        [1] = 'warning'
+    },
+    rootPatterns = {
+        '.eslintrc.js',
+        '.eslintrc.cjs',
+        '.eslintrc.yaml',
+        '.eslintrc.yml',
+        '.eslintrc.json',
+        '.eslintrc',
+        'package.json',
+    },
+}
+
+local prettier = {
+    command = 'prettier', -- or "./node_nodules/.bin/prettier" to use from project install
+    args = { '--stdin-filepath', '%filepath' },
+    rootPatterns = {
+        '.prettierrc',
+        '.prettierrc.json',
+        '.prettierrc.toml',
+        '.prettierrc.json',
+        '.prettierrc.yml',
+        '.prettierrc.yaml',
+        '.prettierrc.json5',
+        '.prettierrc.js',
+        '.prettierrc.cjs',
+        'prettier.config.js',
+        'prettier.config.cjs',
+    },
+}
+
+require'lspconfig'.diagnosticls.setup {
+    on_attach = on_attach,
+    filetypes = {
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact'
+    },
+    init_options = {
+        filetypes = {
+            javascript = 'eslint',
+            javascriptreact = 'eslint'
+        },
+        formatFiletypes = {
+            javascript = 'prettier',
+            javascriptreact = 'prettier',
+            typescript = 'prettier',
+            typescriptreact = 'prettier'
+        },
+        linters = {
+            eslint = eslint
+        },
+        formatters = {
+            prettier = prettier
+        }
+    }
+}
+EOF
 
 " Treesitter
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
