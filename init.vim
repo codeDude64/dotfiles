@@ -88,7 +88,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.jsonls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.cssls.setup{ on_attach=require'completion'.on_attach }
@@ -101,6 +100,37 @@ lua require'lspconfig'.texlab.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.yamlls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vimls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.dockerls.setup{ on_attach=require'completion'.on_attach }
+
+lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
+
+lua << EOF
+require'lspconfig'.vuels.setup { 
+  on_attach = require'completion'.on_attach,
+  init_options = {
+    config = {
+      vetur = {
+        completion = {
+          autoImport = true,
+          tagCasing = 'kebab',
+          useScaffoldSnippets = true
+        },
+        format = {
+          defaultFormatter = {
+            js = {'prettier-eslint', 'prettier', 'vscode-typescript', 'none'},
+            ts = {'prettier-tslint', 'prettier', 'vscode-typescript', 'none'},
+            html = { 'prettier', 'prettyhtml', 'js-beautify-html', 'none' },
+            css = {'prettier', 'none'},
+            scss = {'prettier', 'none'}
+          },
+          enable = true
+        }
+      }
+    }
+
+  }
+
+}
+EOF
 
 lua << EOF
 local function on_attach(client)
@@ -161,7 +191,7 @@ local prettier = {
 }
 
 require'lspconfig'.diagnosticls.setup {
-    on_attach = on_attach,
+    on_attach = require'completion'.on_attach,
     filetypes = {
         'javascript',
         'javascriptreact',
