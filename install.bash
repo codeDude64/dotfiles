@@ -14,6 +14,6 @@ mkdir -p $NVM_DIR
 
 
 ln -s $DOTFILES_DIR/init.vim $NVIM_DIR/init.vim
-ln -s $DOTFILES_DIR/zshrc ~/.zshrc
-ln -s $DOTFILES_DIR/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES_DIR/.zshrc $HOME/.zshrc
+ln -s $DOTFILES_DIR/.tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES_DIR/default-packages $NVM_DIR/default-packages
