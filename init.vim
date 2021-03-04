@@ -211,10 +211,10 @@ require('telescope').setup {
 }
 EOF
 
-nnoremap <C-s> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <C-s> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+nnoremap <S-s> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 nnoremap <S-p> :lua require('telescope.builtin').find_files()<CR>
-nnoremap <S-s> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 
 
 nnoremap <leader>gl :lua require('telescope.builtin').git_commits()<CR>
