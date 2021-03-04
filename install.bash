@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$NVM_DIR = ~/.nvim
+$NVM_DIR = ~/.nvm
 $NVIM_DIR = ~/.config/nvim
 
 rm -rf $NVIM_DIR/init.vim
