@@ -101,8 +101,6 @@ lua require'lspconfig'.yamlls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.vimls.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.dockerls.setup{ on_attach=require'completion'.on_attach }
 
-lua require'lspconfig'.vuels.setup{ on_attach=require'completion'.on_attach }
-
 lua << EOF
 require'lspconfig'.vuels.setup { 
   on_attach = require'completion'.on_attach,
