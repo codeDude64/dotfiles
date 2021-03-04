@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/bash +x
 
-$NVM_DIR = ~/.nvm
-$NVIM_DIR = ~/.config/nvim
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+export NVIM_DIR=/home/$USER/.config/nvim
+export DOTFILES_DIR=/home/$USER/dotfiles
 
 rm -rf $NVIM_DIR/init.vim
 rm -rf ~/.zshrc
@@ -12,7 +13,7 @@ mkdir -p $NVIM_DIR
 mkdir -p $NVM_DIR
 
 
-ln -s ./init.vim $NVIM_DIR/.
-ln -s ./.zshrc ~/.
-ln -s ./.tmux.conf ~/.
-ln -s ./default-packages $NVM_DIR/.
+ln -s $DOTFILES_DIR/init.vim $NVIM_DIR/init.vim
+ln -s $DOTFILES_DIR/zshrc ~/.zshrc
+ln -s $DOTFILES_DIR/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES_DIR/default-packages $NVM_DIR/default-packages
