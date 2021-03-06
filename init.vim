@@ -171,7 +171,7 @@ local eslint = {
 }
 
 local prettier = {
-    command = 'prettier', -- or "./node_nodules/.bin/prettier" to use from project install
+    command = 'prettier', -- or "./node_modules/.bin/prettier" to use from project install
     args = { '--stdin-filepath', '%filepath' },
     rootPatterns = {
         '.prettierrc',
@@ -188,6 +188,31 @@ local prettier = {
     },
 }
 
+local prettierEslint = {
+  command = 'prettier-eslint',
+  args = { '--stdin-filepath', '%filepath' },
+  rootPatterns = {
+       '.prettierrc',
+       '.prettierrc.json',
+       '.prettierrc.toml',
+       '.prettierrc.json',
+       '.prettierrc.yml',
+       '.prettierrc.yaml',
+       '.prettierrc.json5',
+       '.prettierrc.js',
+       '.prettierrc.cjs',
+       'prettier.config.js',
+       'prettier.config.cjs',
+       '.eslintrc.js',
+       '.eslintrc.cjs',
+       '.eslintrc.yaml',
+       '.eslintrc.yml',
+       '.eslintrc.json',
+       '.eslintrc',
+       'package.json',
+  }
+}
+
 require'lspconfig'.diagnosticls.setup {
     on_attach = require'completion'.on_attach,
     filetypes = {
@@ -202,15 +227,16 @@ require'lspconfig'.diagnosticls.setup {
             javascriptreact = 'eslint'
         },
         formatFiletypes = {
-            javascript = 'prettier',
-            javascriptreact = 'prettier',
-            typescript = 'prettier',
-            typescriptreact = 'prettier'
+            javascript = { 'prettier-eslint', 'prettier' },
+            javascriptreact = { 'prettier-eslint', 'prettier' },
+            typescript = { 'prettier-eslint', 'prettier' },
+            typescriptreact = {'prettier-eslint', 'prettier' }
         },
         linters = {
             eslint = eslint
         },
         formatters = {
+            prettierEslint = prettierEslint,
             prettier = prettier
         }
     }

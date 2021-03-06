@@ -12,4 +12,5 @@ dockerfile-language-server-nodejs
 eslint
 prettier
 prettier-standard
+prettier-eslint-cli
 bash-language-server
