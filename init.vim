@@ -219,18 +219,22 @@ require'lspconfig'.diagnosticls.setup {
         'javascript',
         'javascriptreact',
         'typescript',
-        'typescriptreact'
+        'typescriptreact',
+        'vue'
     },
     init_options = {
         filetypes = {
             javascript = 'eslint',
-            javascriptreact = 'eslint'
+            javascriptreact = 'eslint',
+            typescript = 'eslint',
+            typesriptreact = 'eslint',
+            vue = 'eslint'
         },
         formatFiletypes = {
-            javascript = { 'prettier-eslint', 'prettier' },
-            javascriptreact = { 'prettier-eslint', 'prettier' },
-            typescript = { 'prettier-eslint', 'prettier' },
-            typescriptreact = {'prettier-eslint', 'prettier' }
+            javascript = { 'prettierEslint', 'prettier' },
+            javascriptreact = { 'prettierEslint', 'prettier' },
+            typescript = { 'prettierEslint', 'prettier' },
+            typescriptreact = {'prettierEslint', 'prettier' }
         },
         linters = {
             eslint = eslint
