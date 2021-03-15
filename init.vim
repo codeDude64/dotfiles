@@ -35,6 +35,9 @@ Plug 'bling/vim-bufferline'
 Plug 'othree/vim-jsx'
 " Prettier
 Plug 'prettier/vim-prettier'
+" Snippers
+Plug 'SirVer/ultisnips'
+Plug 'epilande/vim-react-snippets'
 call plug#end()
 
 " My configuration
@@ -83,9 +86,14 @@ nnoremap <leader>ac :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>sd :lua vim.lsp.util.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
 nnoremap <silent><C-f> :lua vim.lsp.buf.formatting()<CR>
 
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+let g:completion_enable_snippet = 'UltiSnips'
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
