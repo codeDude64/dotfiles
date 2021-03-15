@@ -14,6 +14,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " NerdTree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -310,6 +311,18 @@ require('telescope').setup {
     }
   }
 }
+EOF
+
+lua << EOF
+require('telescope').setup {
+    extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        }
+    }
+}
+require('telescope').load_extension('fzy_native')
 EOF
 
 nnoremap <C-s> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
