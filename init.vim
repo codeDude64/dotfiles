@@ -37,8 +37,8 @@ Plug 'othree/vim-jsx'
 " Prettier
 Plug 'prettier/vim-prettier'
 " Snippers
-Plug 'SirVer/ultisnips'
-Plug 'epilande/vim-react-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'epilande/vim-react-snippets'
 call plug#end()
 
 " My configuration
