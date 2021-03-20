@@ -386,6 +386,8 @@ nmap ++ <plug>NERDCommenterToggle
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
+" VimText 
+g:vimtex_compiler_progname = 'nvr'
 " lightline
 if !has('gui_running')
   set t_Co=256
