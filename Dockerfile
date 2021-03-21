@@ -2,8 +2,8 @@ FROM archlinux
 
 RUN echo yes | pacman -Syu
 RUN echo yes | pacman -S git sudo 
-RUN echo -e '\n' | pacman -S base-devel nodejs npm python
-RUN useradd -m build
+RUN echo -e '\n' | pacman -S base-devel python zsh
+RUN useradd -m build -s /bin/zsh
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN echo "root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER build
@@ -16,4 +16,8 @@ RUN cd
 RUN git clone https://aur.archlinux.org/nvm.git
 RUN cd nvm && makepkg --noconfirm -rsi --install 
 RUN cd
+RUN git clone https://aur.archlinux.org/oh-my-zsh-git.git
+RUN cd oh-my-zsh-git && makepkg --noconfirm -rsi --install && cd
 COPY . /home/build/dotfiles
+RUN sudo chown build dotfiles/install.bash
+RUN cd dotfiles && ./install.bash && cd
