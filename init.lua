@@ -11,7 +11,7 @@ local windowOptions = vim.wo
 -- General configuration
 globalOptions.clipboard = 'unnamed'
 globalOptions.mouse = 'a'
-globalOptions.syntax = true
+globalOptions.syntax = 'on'
 globalOptions.ruler = true
 globalOptions.showcmd = true
 globalOptions.encoding = 'utf-8'
