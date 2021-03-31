@@ -31,7 +31,7 @@ return packer.startup(function()
   use 'tjdevries/lsp_extensions.nvim'
   -- Treesitter
   use {'nvim-treesitter/nvim-treesitter',
-        cmd : ':TSUpdate'
+        cmd : 'TSUpdate'
       }
   use 'nvim-treesitter/playground'
   -- Telescope
