@@ -1,6 +1,7 @@
 local lspconfig = require'lspconfig'
 local completion = require'completion'
 local lsp_status = require'lsp-status'
+local cache_path = vim.fn.stdpath('cache')
 
 
 -- Gruvbox and lsp
@@ -55,10 +56,10 @@ else
   print("Unsupported system for sumneko")
 end
 
-local sumneko_root_path = vim.fn.stdpath('cache')..'/lua-language-server'
+local sumneko_root_path = cache_path ..'/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
-require'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {
@@ -77,4 +78,33 @@ require'lspconfig'.sumneko_lua.setup {
       },
     },
   },
+}
+
+
+-- Vue Lsp
+
+lspconfig.vuels.setup {
+  on_attach = require'completion'.on_attach,
+  init_options = {
+    config = {
+      vetur = {
+        completion = {
+          autoImport = true,
+          tagCasing = 'kebab',
+          useScaffoldSnippets = true
+        },
+        format = {
+          defaultFormatter = {
+            js = {'prettier-eslint', 'prettier', 'vscode-typescript', 'none'},
+            ts = {'prettier-tslint', 'prettier', 'vscode-typescript', 'none'},
+            html = { 'prettier', 'prettyhtml', 'js-beautify-html', 'none' },
+            css = {'prettier', 'none'},
+            scss = {'prettier', 'none'}
+          },
+          enable = true
+        }
+      }
+    }
+
+  }
 }
