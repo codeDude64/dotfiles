@@ -60,6 +60,7 @@ local sumneko_root_path = cache_path ..'/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
 lspconfig.sumneko_lua.setup {
+  default_config,
   cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {
@@ -84,7 +85,7 @@ lspconfig.sumneko_lua.setup {
 -- Vue Lsp
 
 lspconfig.vuels.setup {
-  on_attach = require'completion'.on_attach,
+  default_config,
   init_options = {
     config = {
       vetur = {
@@ -107,4 +108,117 @@ lspconfig.vuels.setup {
     }
 
   }
+}
+
+
+-- Diagnostic LSP
+local eslint = {
+    sourceName = 'eslint',
+    command = 'eslint', -- or "./node_modules/.bin/eslint" to use from project install
+    debounce = 100,
+    args = {
+        '--stdin',
+        '--stdin-filename',
+        '%filepath',
+        '--format',
+        'json',
+    },
+    parseJson = {
+        errorsRoot = '[0].messages',
+        line = 'line',
+        column = 'column',
+        endLine = 'endLine',
+        endColumn = 'endColumn',
+        message = '${message} [${ruleId}]',
+        security = 'severity',
+    },
+    securities = {
+        [2] = 'error',
+        [1] = 'warning'
+    },
+    rootPatterns = {
+        '.eslintrc.js',
+        '.eslintrc.cjs',
+        '.eslintrc.yaml',
+        '.eslintrc.yml',
+        '.eslintrc.json',
+        '.eslintrc',
+        'package.json',
+    },
+}
+
+local prettier = {
+    command = 'prettier', -- or "./node_modules/.bin/prettier" to use from project install
+    args = { '--stdin-filepath', '%filepath' },
+    rootPatterns = {
+        '.prettierrc',
+        '.prettierrc.json',
+        '.prettierrc.toml',
+        '.prettierrc.json',
+        '.prettierrc.yml',
+        '.prettierrc.yaml',
+        '.prettierrc.json5',
+        '.prettierrc.js',
+        '.prettierrc.cjs',
+        'prettier.config.js',
+        'prettier.config.cjs',
+    },
+}
+
+local prettierEslint = {
+  command = 'prettier-eslint',
+  args = { '--stdin-filepath', '%filepath' },
+  rootPatterns = {
+       '.prettierrc',
+       '.prettierrc.json',
+       '.prettierrc.toml',
+       '.prettierrc.json',
+       '.prettierrc.yml',
+       '.prettierrc.yaml',
+       '.prettierrc.json5',
+       '.prettierrc.js',
+       '.prettierrc.cjs',
+       'prettier.config.js',
+       'prettier.config.cjs',
+       '.eslintrc.js',
+       '.eslintrc.cjs',
+       '.eslintrc.yaml',
+       '.eslintrc.yml',
+       '.eslintrc.json',
+       '.eslintrc',
+       'package.json',
+  }
+}
+
+require'lspconfig'.diagnosticls.setup {
+    default_config,
+    filetypes = {
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'vue'
+    },
+    init_options = {
+        filetypes = {
+            javascript = 'eslint',
+            javascriptreact = 'eslint',
+            typescript = 'eslint',
+            typesriptreact = 'eslint',
+            vue = 'eslint'
+        },
+        formatFiletypes = {
+            javascript = { 'prettierEslint', 'prettier' },
+            javascriptreact = { 'prettierEslint', 'prettier' },
+            typescript = { 'prettierEslint', 'prettier' },
+            typescriptreact = {'prettierEslint', 'prettier' }
+        },
+        linters = {
+            eslint = eslint
+        },
+        formatters = {
+            prettierEslint = prettierEslint,
+            prettier = prettier
+        }
+    }
 }
