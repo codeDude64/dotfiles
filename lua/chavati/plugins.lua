@@ -24,24 +24,41 @@ return packer.startup(function()
   local use = use
   -- Style
   use 'morhetz/gruvbox'
+  use {
+  'glepnir/galaxyline.nvim',
+    branch = 'main',
+    config = function() require'my_statusline' end,
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
   use 'tjdevries/nlua.nvim'
   use 'tjdevries/lsp_extensions.nvim'
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter',
-        cmd : 'TSUpdate'
-      }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+     cmd = 'TSUpdate'
+  }
   use 'nvim-treesitter/playground'
   -- Telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
-  -- NerdTree
+  -- Tree
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
   -- Git
   use 'tpope/vim-fugitive'
+  use {
+  'lewis6991/gitsigns.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+   }
+  }
+  -- Tabs
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   -- Surround
   use 'tpope/vim-surround'
   -- Auto Pairs
