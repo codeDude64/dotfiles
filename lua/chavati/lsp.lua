@@ -6,5 +6,4 @@ if vim.fn.exists('+termguicolors') then
 end
 
 vim.g.gruvbox_invert_selection = '0'
-vim.g.colors_name = 'gruvbox'
-vim.g.background = 'dark'
+vim.cmd 'colorscheme gruvbox'
