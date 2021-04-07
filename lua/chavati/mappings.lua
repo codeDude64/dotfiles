@@ -13,6 +13,13 @@ local setup_mappings = function()
   utils.key_mapper('n', '<leader>ac', ':lua vim.lsp.buf.code_action()<CR>')
   utils.key_mapper('n', '<leader>sd', ':lua vim.lsp.util.show_line_diagnostics()<CR>')
   utils.key_mapper('n', '<c-f>', ':lua vim.lsp.buf.formatting()<CR>')
+  -- Completion
+  vim.cmd[[inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"]]
+  vim.cmd[[inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"]]
+  vim.cmd[[inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"]]
+  vim.cmd[[imap <tab> <Plug>(completion_smart_tab)]]
+  vim.cmd[[imap <s-tab> <Plug>(completion_smart_s_tab)]]
+
 
 end
 
