@@ -19,7 +19,13 @@ local setup_mappings = function()
   vim.cmd[[inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"]]
   vim.cmd[[imap <tab> <Plug>(completion_smart_tab)]]
   vim.cmd[[imap <s-tab> <Plug>(completion_smart_s_tab)]]
-
+  -- Telescope
+  vim.cmd[[nnoremap <C-s> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>]]
+  vim.cmd[[nnoremap <S-s> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>]]
+  vim.cmd[[nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>]]
+  vim.cmd[[nnoremap <S-p> :lua require('telescope.builtin').find_files()<CR>]]
+  vim.cmd[[nnoremap <leader>gl :lua require('telescope.builtin').git_commits()<CR>]]
+  vim.cmd[[nnoremap <leader>gb :lua require('telescope.builtin').git_branches()<CR>]]
 
 end
 
