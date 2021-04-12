@@ -26,6 +26,10 @@ local setup_mappings = function()
   vim.cmd[[nnoremap <S-p> :lua require('telescope.builtin').find_files()<CR>]]
   vim.cmd[[nnoremap <leader>gl :lua require('telescope.builtin').git_commits()<CR>]]
   vim.cmd[[nnoremap <leader>gb :lua require('telescope.builtin').git_branches()<CR>]]
+  -- Tree
+  vim.cmd[[nnoremap <C-n> :NvimTreeToggle<CR>]]
+  vim.cmd[[nnoremap <leader>r :NvimTreeRefresh<CR>]]
+  vim.cmd[[nnoremap <leader>n :NvimTreeFindFile<CR>]]
 
 end
 
