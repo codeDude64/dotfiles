@@ -14,6 +14,7 @@ if [ $# -eq 0 ]
    export NVIM_CACHE_DIR=$HOME/.cache/nvim
    
    rm -rf $NVIM_DIR/init.vim
+   rm -rf $NVIM_DIR/init.lua
    rm -rf ~/.zshrc
    rm -rf ~/.tmux.conf
    rm -rf $NVM_DIR/default-packages

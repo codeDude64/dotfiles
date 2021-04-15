@@ -20,7 +20,7 @@ RUN cd oh-my-zsh-git && makepkg --noconfirm -rsi --install && cd
 # run dotfile script
 COPY . /home/build/dotfiles
 RUN sudo chown build dotfiles/install.bash
-RUN cd dotfiles && ./install.bash && cd
+RUN cd dotfiles && ./install.bash 1 && cd
 # install nvim
 RUN git clone https://aur.archlinux.org/nvm.git
 RUN cd nvm && makepkg --noconfirm -rsi --install && cd
