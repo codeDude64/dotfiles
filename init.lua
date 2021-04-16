@@ -16,7 +16,6 @@ globalOptions.ruler = true
 globalOptions.showcmd = true
 globalOptions.encoding = 'utf-8'
 globalOptions.showmatch = true
-globalOptions.swapname = 2
 globalOptions.laststatus = 2
 globalOptions.redrawtime = 2000
 globalOptions.termguicolors = true
@@ -30,3 +29,4 @@ windowOptions.number = true
 windowOptions.relativenumber = true
 windowOptions.numberwidth = 1
 
+require'chavati'

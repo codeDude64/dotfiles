@@ -28,7 +28,6 @@ return packer.startup(function()
   'glepnir/galaxyline.nvim',
     branch = 'main',
     config = function() require'my_statusline' end,
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
@@ -57,8 +56,6 @@ return packer.startup(function()
     'nvim-lua/plenary.nvim'
    }
   }
-  -- Tabs
-  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   -- Surround
   use 'tpope/vim-surround'
   -- Auto Pairs
@@ -68,6 +65,7 @@ return packer.startup(function()
   -- Latex
   use 'lervag/vimtex'
   -- Bufferline
+  use 'akinsho/nvim-bufferline.lua'
   -- React
   use 'othree/vim-jsx'
   --Prettier

@@ -31,6 +31,7 @@ if [ $# -eq 0 ]
    if [ $1 -eq 1 ]
    then
     ln -s $DOTFILES_DIR/init.lua $NVIM_DIR/init.lua
+    ln -s $DOTFILES_DIR/lua $NVIM_DIR/lua
    else
     ln -s $DOTFILES_DIR/init.vim $NVIM_DIR/init.vim
    fi
