@@ -23,6 +23,8 @@ you can run the docker image with the following commands.
 `docker build -t nvim-imagen .` \
 `docker run -it  nvim-imagen /bin/zsh` 
 
+## Install neovim packages
+I've used packer.nvim so you need to run the command `:PackerSync` inside neovim to install the packages.
 
 ## Acknowledgment
 
