@@ -26,8 +26,7 @@ return packer.startup(function()
   use 'morhetz/gruvbox'
   use {
   'glepnir/galaxyline.nvim',
-    branch = 'main',
-    config = function() require'my_statusline' end,
+    branch = 'main'
   }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
