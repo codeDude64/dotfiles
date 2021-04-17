@@ -1,7 +1,7 @@
-local treesitter = require'nvim-treesitter.configs'
 local parsers = require'nvim-treesitter.parsers'
+local configs = require'nvim-treesitter.configs'
 
-treesitter.configs.setup {
+configs.setup {
   highlight = {
     enable = true,
     custom_captures = {

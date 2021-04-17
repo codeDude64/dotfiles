@@ -34,11 +34,9 @@ return packer.startup(function()
   use 'nvim-lua/completion-nvim'
   use 'tjdevries/nlua.nvim'
   use 'tjdevries/lsp_extensions.nvim'
+  use 'nvim-lua/lsp-status.nvim'
   -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-     cmd = 'TSUpdate'
-  }
+  use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/playground'
   -- Telescope
   use 'nvim-lua/popup.nvim'
@@ -50,12 +48,8 @@ return packer.startup(function()
   use 'kyazdani42/nvim-tree.lua'
   -- Git
   use 'tpope/vim-fugitive'
-  use {
-  'lewis6991/gitsigns.nvim',
-  requires = {
-    'nvim-lua/plenary.nvim'
-   }
-  }
+  use 'lewis6991/gitsigns.nvim'
+
   -- Surround
   use 'tpope/vim-surround'
   -- Auto Pairs
