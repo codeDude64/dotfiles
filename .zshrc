@@ -84,7 +84,7 @@ plugins=(git git-extras git-flow archlinux docker docker-compose node npm)
 # else
 #   export EDITOR='mvim'
 # fi
-
+export EDITOR='nvim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 

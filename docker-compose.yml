@@ -2,6 +2,10 @@ version: '3.2'
 
 services:
   nvim-test:
+    container_name: 'nvim-test'
     build: .
     volumes:
-      - './inti.vim:/home/build/.config/nvim/init.vim'
+      - '.:/home/build/'
+    stdin_open: true
+    tty: true
+    command: /bin/zsh
