@@ -21,9 +21,9 @@ globalOptions.redrawtime = 2000
 globalOptions.termguicolors = true
 globalOptions.background = 'dark'
 
-bufferOptions.shiftwidth = 2
-bufferOptions.tabstop = 2
-bufferOptions.expandtab = true
+bufferOptions[0].shiftwidth = 2
+bufferOptions[0].tabstop = 2
+bufferOptions[0].expandtab = true
 
 windowOptions.number = true
 windowOptions.relativenumber = true
