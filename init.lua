@@ -25,6 +25,10 @@ bufferOptions[0].shiftwidth = 2
 bufferOptions[0].tabstop = 2
 bufferOptions[0].expandtab = true
 
+globalOptions.shiftwidth = 2
+globalOptions.tabstop = 2
+globalOptions.expandtab = true
+
 windowOptions.number = true
 windowOptions.relativenumber = true
 windowOptions.numberwidth = 1
