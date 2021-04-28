@@ -5,9 +5,6 @@ local lsp_status = require'lsp-status'
 local cache_path = vim.fn.stdpath('cache')
 
 
--- Gruvbox and lsp
-
--- LSP config
 lsp_status.register_progress()
 
 local function default_on_attach(client)
