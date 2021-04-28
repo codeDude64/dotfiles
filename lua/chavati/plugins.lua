@@ -23,7 +23,7 @@ packer.init({
 return packer.startup(function()
   local use = use
   -- Style
-  use 'morhetz/gruvbox'
+  use 'marko-cerovac/material.nvim'
   use {
   'glepnir/galaxyline.nvim',
     branch = 'main'
