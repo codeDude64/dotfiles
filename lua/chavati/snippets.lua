@@ -53,12 +53,9 @@ const ${1:MyComponent} = () => {
 
 export default ${1:MyComponent};]];
     usf = [[
-const [${1:MyComponent}, set${1:MyComponent}] = useState();
+const [${1:State}, set${1:State}] = useState();
 ]];
-    uef = [[
-useEffect(() => {
-  $0
-}, []);]];
+    uef = [[useEffect(() => {$0}, []);]];
     cdm = [[
 componentDidMount() {
   $0
