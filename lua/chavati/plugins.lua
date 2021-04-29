@@ -34,6 +34,7 @@ return packer.startup(function()
   use 'tjdevries/nlua.nvim'
   use 'tjdevries/lsp_extensions.nvim'
   use 'nvim-lua/lsp-status.nvim'
+  use 'norcalli/snippets.nvim'
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/playground'

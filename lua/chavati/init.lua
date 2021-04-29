@@ -1,6 +1,7 @@
 require'chavati.plugins'
 require'chavati.lsp'
 require'chavati.completion'
+require'chavati.snippets'
 require'chavati.mappings'
 require'chavati.telescope'
 require'chavati.treesitter'
