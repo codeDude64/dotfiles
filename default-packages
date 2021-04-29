@@ -10,6 +10,7 @@ vim-language-server
 diagnostic-languageserver
 dockerfile-language-server-nodejs
 eslint
+eslint_d
 prettier
 prettier-standard
 prettier-eslint-cli

@@ -18,18 +18,18 @@ local default_config = {
   capabilities = lsp_status.capabilities
 }
 
-lspconfig.tsserver.setup{ default_config }
-lspconfig.jsonls.setup{ default_config }
-lspconfig.cssls.setup{ default_config }
-lspconfig.html.setup{ default_config }
-lspconfig.omnisharp.setup{ default_config }
-lspconfig.intelephense.setup{ default_config }
-lspconfig.pyright.setup{ default_config }
-lspconfig.bashls.setup{ default_config }
-lspconfig.texlab.setup{ default_config }
-lspconfig.yamlls.setup{ default_config }
-lspconfig.vimls.setup{ default_config }
-lspconfig.dockerls.setup{ default_config }
+lspconfig.tsserver.setup( default_config )
+lspconfig.jsonls.setup( default_config )
+lspconfig.cssls.setup( default_config )
+lspconfig.html.setup( default_config )
+lspconfig.omnisharp.setup( default_config )
+lspconfig.intelephense.setup( default_config )
+lspconfig.pyright.setup( default_config )
+lspconfig.bashls.setup( default_config )
+lspconfig.texlab.setup( default_config )
+lspconfig.yamlls.setup( default_config )
+lspconfig.vimls.setup( default_config )
+lspconfig.dockerls.setup( default_config )
 
 
 -- Lua lsp
