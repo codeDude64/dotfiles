@@ -21,7 +21,8 @@ There is a docker image to test the dotfiles in an archlinux image.
 you can run the docker image with the following commands.
 \
 `docker build -t nvim-imagen .` \
-`docker run -it  nvim-imagen /bin/zsh` 
+`docker run -it  nvim-imagen /bin/zsh` \
+When you are in, you should to install node, npm and the default packages (languages servers) using `nvm install stable`
 
 ## Install neovim packages
 I've used packer.nvim so you need to run the command `:PackerSync` inside neovim to install the packages.
