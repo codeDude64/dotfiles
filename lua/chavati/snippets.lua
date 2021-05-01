@@ -53,7 +53,7 @@ const ${1:MyComponent} = () => {
 
 export default ${1:MyComponent};]];
     usf = [[
-const [${1:State}, set${1:State}] = useState();
+const [${1:State}, set${1:State}] = useState($0);
 ]];
     uef = [[useEffect(() => {$0}, []);]];
     cdm = [[

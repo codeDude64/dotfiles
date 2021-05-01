@@ -19,6 +19,11 @@ local setup_mappings = function()
   vim.cmd[[inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"]]
   vim.cmd[[imap <tab> <Plug>(completion_smart_tab)]]
   vim.cmd[[imap <s-tab> <Plug>(completion_smart_s_tab)]]
+  -- Snippets
+  utils.key_mapper('i', '<c-k>', ":lua require'snippets'.expand_or_advance(1)<CR>")
+  utils.key_mapper('i', '<c-j>', ":lua require'snippets'.advance_snippet(-1)<CR>")
+  vim.cmd[[imap <c-j> <Plug>(completion_next_source)]]
+  vim.cmd[[imap <c-k> <Plug>(completion_prev_source)]]
   -- Telescope
   vim.cmd[[nnoremap <c-s> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>]]
   vim.cmd[[nnoremap <s-s> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>]]
