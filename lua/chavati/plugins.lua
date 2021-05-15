@@ -53,7 +53,7 @@ return packer.startup(function()
   -- Surround
   use 'tpope/vim-surround'
   -- Auto Pairs
-  use 'jiangmiao/auto-pairs'
+  use 'windwp/nvim-autopairs'
   -- Tmux navigator
   use 'christoomey/vim-tmux-navigator'
   -- Latex
