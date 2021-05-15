@@ -46,7 +46,7 @@ class ${1:MyComponent} extends Component {
 }
 
 export default ${1:MyComponent};]];
-    sfc = [[
+    rfc = [[
 const ${1:MyComponent} = () => {
   return ( $0 );
 };
