@@ -40,15 +40,17 @@ class ${1:MyComponent} extends Component {
     super(props);
     this.state = {  };
   }
-  render() {
-    return ( $0 );
-  }
+  return (
+    <div> $0 </div>
+  );
 }
 
 export default ${1:MyComponent};]];
     rfc = [[
 const ${1:MyComponent} = () => {
-  return ( $0 );
+  return (
+    <div> $0 </div>
+  );
 };
 
 export default ${1:MyComponent};]];
