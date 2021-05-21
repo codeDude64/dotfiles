@@ -30,6 +30,7 @@ lspconfig.texlab.setup( default_config )
 lspconfig.yamlls.setup( default_config )
 lspconfig.vimls.setup( default_config )
 lspconfig.dockerls.setup( default_config )
+lspconfig.jdtls.setup( default_config )
 
 
 -- Lua lsp
@@ -154,32 +155,7 @@ local prettier = {
     },
 }
 
-local prettierEslint = {
-  command = 'prettier-eslint',
-  args = { '--stdin-filepath', '%filepath' },
-  rootPatterns = {
-       '.prettierrc',
-       '.prettierrc.json',
-       '.prettierrc.toml',
-       '.prettierrc.json',
-       '.prettierrc.yml',
-       '.prettierrc.yaml',
-       '.prettierrc.json5',
-       '.prettierrc.js',
-       '.prettierrc.cjs',
-       'prettier.config.js',
-       'prettier.config.cjs',
-       '.eslintrc.js',
-       '.eslintrc.cjs',
-       '.eslintrc.yaml',
-       '.eslintrc.yml',
-       '.eslintrc.json',
-       '.eslintrc',
-       'package.json',
-  }
-}
-
-require'lspconfig'.diagnosticls.setup {
+lspconfig.diagnosticls.setup {
     default_config,
     filetypes = {
         'javascript',
@@ -205,9 +181,5 @@ require'lspconfig'.diagnosticls.setup {
         linters = {
             eslint = eslint
         },
-        formatters = {
-            prettierEslint = prettierEslint,
-            prettier = prettier
-        }
     }
 }

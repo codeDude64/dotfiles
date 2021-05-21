@@ -13,7 +13,6 @@ eslint
 eslint_d
 prettier
 prettier-standard
-prettier-eslint-cli
 bash-language-server
 neovim
 pyright
