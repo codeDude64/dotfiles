@@ -1,21 +1,17 @@
 local vim = vim
 local lspconfig = require'lspconfig'
 local completion = require'completion'
-local lsp_status = require'lsp-status'
 local cache_path = vim.fn.stdpath('cache')
 
 
-lsp_status.register_progress()
 
 local function default_on_attach(client)
   print('Attaching to ' .. client.name)
   completion.on_attach(client)
-  lsp_status.on_attach(client)
 end
 
 local default_config = {
   on_attach = default_on_attach,
-  capabilities = lsp_status.capabilities
 }
 
 lspconfig.tsserver.setup( default_config )

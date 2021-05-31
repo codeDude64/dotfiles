@@ -32,8 +32,6 @@ return packer.startup(function()
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
   use 'tjdevries/nlua.nvim'
-  use 'tjdevries/lsp_extensions.nvim'
-  use 'nvim-lua/lsp-status.nvim'
   use 'norcalli/snippets.nvim'
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
