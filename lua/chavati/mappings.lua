@@ -4,28 +4,28 @@ local utils = require 'chavati.utils'
 
 local setup_mappings = function()
   -- LSP
-  utils.key_mapper("n","<silent>gh",":lua require'lspsaga.provider'.lsp_finder()<CR>")
+  utils.key_mapper("n","gh",":lua require'lspsaga.provider'.lsp_finder()<CR>")
 
   utils.key_mapper("n","<leader>ca",":lua require('lspsaga.codeaction').code_action()<CR>")
   utils.key_mapper("v","<leader>ca",":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>")
 
-  utils.key_mapper("n","<silent>K",":lua require('lspsaga.hover').render_hover_doc()<CR>")
-  utils.key_mapper("n","<silent><C-f>",":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
-  utils.key_mapper("n","<silent><C-b>",":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
+  utils.key_mapper("n","K",":lua require('lspsaga.hover').render_hover_doc()<CR>")
+  utils.key_mapper("n","<C-f>",":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
+  utils.key_mapper("n","<C-b>",":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
 
-  utils.key_mapper("n","<leader>gs",":lua require('lspsaga.signaturehelp').signature_help()<CR>")
+  utils.key_mapper("n","gs",":lua require('lspsaga.signaturehelp').signature_help()<CR>")
 
-  utils.key_mapper("n","<leader>rn",":lua require('lspsaga.rename').rename()<CR>")
+  utils.key_mapper("n","rn",":lua require('lspsaga.rename').rename()<CR>")
 
-  utils.key_mapper("n","<leader>gd",":lua require'lspsaga.provider'.preview_definition()<CR>")
+  utils.key_mapper("n","gd",":lua require'lspsaga.provider'.preview_definition()<CR>")
 
-  utils.key_mapper("n","<silent><leader>cd",":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
-  utils.key_mapper("n","<silent><leader>cc",":lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
-  utils.key_mapper("n","<silent>[e",":lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>")
-  utils.key_mapper("n","<silent>]e",":lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>")
+  utils.key_mapper("n","<leader>cd",":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
+  utils.key_mapper("n","<leader>cc",":lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
+  utils.key_mapper("n","[e",":lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>")
+  utils.key_mapper("n","]e",":lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>")
 
-  utils.key_mapper("n","<silent><A-d>",":lua require('lspsaga.floaterm').open_float_terminal()<CR>")
-  utils.key_mapper("t","<silent><A-d> ",":<C-\\><C-n>lua require('lspsaga.floaterm').close_float_terminal()<CR>")
+  utils.key_mapper("n","<A-d>",":lua require('lspsaga.floaterm').open_float_terminal()<CR>")
+  utils.key_mapper("t","<A-d> ",":<C-\\><C-n>lua require('lspsaga.floaterm').close_float_terminal()<CR>")
   -- Completion
   vim.cmd[[inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"]]
   vim.cmd[[inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"]]
