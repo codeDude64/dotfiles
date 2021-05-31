@@ -2,6 +2,8 @@ local vim = vim
 local lspconfig = require'lspconfig'
 local completion = require'completion'
 local cache_path = vim.fn.stdpath('cache')
+local saga = require 'lspsaga'
+
 
 
 
@@ -179,3 +181,4 @@ lspconfig.diagnosticls.setup {
         },
     }
 }
+saga.init_lsp_saga()

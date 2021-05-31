@@ -30,6 +30,7 @@ return packer.startup(function()
   }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
   use 'nvim-lua/completion-nvim'
   use 'tjdevries/nlua.nvim'
   use 'norcalli/snippets.nvim'
