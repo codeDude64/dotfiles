@@ -29,6 +29,7 @@ lspconfig.yamlls.setup( default_config )
 lspconfig.vimls.setup( default_config )
 lspconfig.dockerls.setup( default_config )
 lspconfig.jdtls.setup( default_config )
+lspconfig.solargraph.setup( default_config )
 
 
 -- Lua lsp
