@@ -63,5 +63,7 @@ return packer.startup(function()
   use 'othree/vim-jsx'
   --Prettier
   use 'prettier/vim-prettier'
+  --Sillicon
+  use 'segeljakt/vim-silicon'
   end
 )
