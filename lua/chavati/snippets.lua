@@ -62,5 +62,50 @@ const [${1:State}, set${1:State}] = useState($0);
 componentDidMount() {
   $0
 }]];
+  },
+  javascript = {
+    imr = [[import React from 'react';]];
+    imrc = [[import React, { Component } from 'react';]];
+    imrs = [[import React, { useState } from 'react';]];
+    imrse = [[import React, { useState, useEffect } from 'react';]];
+    impt = [[import PropTypes from 'prop-types';]];
+    impc = [[import React, { PureComponent } from 'react';]];
+    cc = [[
+class ${1:MyComponent} extends Component {
+  state = {  },
+    render() {
+      return ( $0 );
+    }
+}
+
+export default ${1:MyComponent};]];
+    ccc = [[
+class ${1:MyComponent} extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {  };
+  }
+  return (
+    <div> $0 </div>
+  );
+}
+
+export default ${1:MyComponent};]];
+    rfc = [[
+const ${1:MyComponent} = () => {
+  return (
+    <div> $0 </div>
+  );
+};
+
+export default ${1:MyComponent};]];
+    usf = [[
+const [${1:State}, set${1:State}] = useState($0);
+]];
+    uef = [[useEffect(() => {$0}, []);]];
+    cdm = [[
+componentDidMount() {
+  $0
+}]];
   }
 }
