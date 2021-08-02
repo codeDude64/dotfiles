@@ -37,6 +37,7 @@ return packer.startup(function()
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/completion-treesitter'
   -- Telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
