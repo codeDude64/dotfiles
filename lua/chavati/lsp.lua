@@ -108,87 +108,26 @@ lspconfig.vuels.setup {
   }
 }
 
-
--- Diagnostic LSP
-local eslint = {
-    sourceName = 'eslint',
-    command = 'eslint', -- or "./node_modules/.bin/eslint" to use from project install
-    debounce = 100,
-    args = {
-        '--stdin',
-        '--stdin-filename',
-        '%filepath',
-        '--format',
-        'json',
-    },
-    parseJson = {
-        errorsRoot = '[0].messages',
-        line = 'line',
-        column = 'column',
-        endLine = 'endLine',
-        endColumn = 'endColumn',
-        message = '${message} [${ruleId}]',
-        security = 'severity',
-    },
-    securities = {
-        [2] = 'error',
-        [1] = 'warning'
-    },
-    rootPatterns = {
-        '.eslintrc.js',
-        '.eslintrc.cjs',
-        '.eslintrc.yaml',
-        '.eslintrc.yml',
-        '.eslintrc.json',
-        '.eslintrc',
-        'package.json',
-    },
-}
-
-local prettier = {
-    command = 'prettier', -- or "./node_modules/.bin/prettier" to use from project install
-    args = { '--stdin-filepath', '%filepath' },
-    rootPatterns = {
-        '.prettierrc',
-        '.prettierrc.json',
-        '.prettierrc.toml',
-        '.prettierrc.json',
-        '.prettierrc.yml',
-        '.prettierrc.yaml',
-        '.prettierrc.json5',
-        '.prettierrc.js',
-        '.prettierrc.cjs',
-        'prettier.config.js',
-        'prettier.config.cjs',
-    },
-}
-
-lspconfig.diagnosticls.setup {
+lspconfig.efm.setup {
     default_config,
-    filetypes = {
-        'javascript',
-        'javascriptreact',
-        'typescript',
-        'typescriptreact',
-        'vue'
-    },
-    init_options = {
-        filetypes = {
-            javascript = 'eslint',
-            javascriptreact = 'eslint',
-            typescript = 'eslint',
-            typesriptreact = 'eslint',
-            vue = 'eslint'
+    init_options = {documentFormatting = true},
+    settings = {
+      rootMarkers = {".git/"},
+      languages = {
+        lua = {
+          {formatCommand = "lua-format -i", formatStdin = true}
         },
-        formatFiletypes = {
-            javascript = { 'eslint', 'prettier' },
-            javascriptreact = { 'eslint', 'prettier' },
-            typescript = { 'eslint', 'prettier' },
-            typescriptreact = {'eslint', 'prettier' }
-        },
-        linters = {
-            eslint = eslint
-        },
+        javascript = {
+          {
+            lintCommand = "eslint -f visualstudio --stdin --stdin-filename ${INPUT}",
+            lintIgnoreExitCode = true,
+            lintStdin = true,
+            lintFormats = {"%f(%l,%c): %tarning %m","%f(%l,%c): %rror %m"},
+            formatCommand = "",
+            formatStdin = true,
+          }
+        }
+      }
     }
 }
 saga.init_lsp_saga()
