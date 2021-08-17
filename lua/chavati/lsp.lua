@@ -172,10 +172,10 @@ lspconfig.diagnosticls.setup {
             vue = 'eslint'
         },
         formatFiletypes = {
-            javascript = { 'prettierEslint', 'prettier' },
-            javascriptreact = { 'prettierEslint', 'prettier' },
-            typescript = { 'prettierEslint', 'prettier' },
-            typescriptreact = {'prettierEslint', 'prettier' }
+            javascript = { 'eslint', 'prettier' },
+            javascriptreact = { 'eslint', 'prettier' },
+            typescript = { 'eslint', 'prettier' },
+            typescriptreact = {'eslint', 'prettier' }
         },
         linters = {
             eslint = eslint
