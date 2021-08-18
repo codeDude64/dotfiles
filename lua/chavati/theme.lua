@@ -8,4 +8,5 @@ vim.g.material_italic_variables = false
 vim.g.material_contrast = true
 vim.g.material_borders = false
 vim.g.material_disable_background = false
+require("bufferline").setup{}
 require('material').set()
