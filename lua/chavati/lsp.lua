@@ -107,6 +107,7 @@ lspconfig.vuels.setup {
 
 lspconfig.efm.setup {
     default_config,
+    filetypes = {"javascript", "javascriptreact", "lua"},
     init_options = {
       documentFormatting = true,
       hover = true,
