@@ -1,6 +1,5 @@
 local vim = vim
 local lspconfig = require'lspconfig'
-local compe = require'compe'
 local cache_path = vim.fn.stdpath('cache')
 local saga = require 'lspsaga'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -70,10 +69,8 @@ lspconfig.sumneko_lua.setup {
         globals = {'vim'},
       },
       workspace = {
-        library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-        },
+        maxPreload = 10000,
+        library = vim.api.nvim_get_runtime_file("", true),
       },
     },
   },
@@ -110,7 +107,12 @@ lspconfig.vuels.setup {
 
 lspconfig.efm.setup {
     default_config,
-    init_options = {documentFormatting = true},
+    init_options = {
+      documentFormatting = true,
+      hover = true,
+      documentSymbol = true,
+      codeAction = true,
+    },
     settings = {
       rootMarkers = {".git/"},
       languages = {
@@ -120,6 +122,7 @@ lspconfig.efm.setup {
         javascript = {
           {
             lintCommand = "eslint -f visualstudio --stdin --stdin-filename ${INPUT}",
+            filetypes = {"javascript", "javascriptreact"},
             lintIgnoreExitCode = true,
             lintStdin = true,
             lintFormats = {"%f(%l,%c): %tarning %m","%f(%l,%c): %rror %m"},

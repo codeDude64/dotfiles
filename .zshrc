@@ -138,3 +138,5 @@ source /usr/share/nvm/init-nvm.sh
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+
+alias luamake=/home/salvador/dotfiles/lua-language-server/3rd/luamake/luamake
