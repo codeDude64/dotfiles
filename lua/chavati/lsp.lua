@@ -25,7 +25,6 @@ local default_config = {
 }
 
 lspconfig.tsserver.setup( default_config )
-lspconfig.jsonls.setup( default_config )
 lspconfig.cssls.setup( default_config )
 lspconfig.html.setup( default_config )
 lspconfig.omnisharp.setup( default_config )
@@ -39,6 +38,16 @@ lspconfig.dockerls.setup( default_config )
 lspconfig.jdtls.setup( default_config )
 lspconfig.solargraph.setup( default_config )
 
+lspconfig.jsonls.setup {
+  default_config,
+  commands = {
+      Format = {
+        function()
+          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+        end
+      }
+    }
+}
 
 -- Lua lsp
 
@@ -110,9 +119,6 @@ lspconfig.efm.setup {
     filetypes = {"javascript", "javascriptreact", "lua"},
     init_options = {
       documentFormatting = true,
-      hover = true,
-      documentSymbol = true,
-      codeAction = true,
     },
     settings = {
       rootMarkers = {".git/"},
@@ -123,11 +129,10 @@ lspconfig.efm.setup {
         javascript = {
           {
             lintCommand = "eslint -f visualstudio --stdin --stdin-filename ${INPUT}",
-            filetypes = {"javascript", "javascriptreact"},
             lintIgnoreExitCode = true,
             lintStdin = true,
             lintFormats = {"%f(%l,%c): %tarning %m","%f(%l,%c): %rror %m"},
-            formatCommand = "",
+            formatCommand = "eslint --fix-dry-run --stdin --stdin-filename=${INPUT}",
             formatStdin = true,
           }
         }
