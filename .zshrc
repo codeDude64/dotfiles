@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 export TERM=xterm-256color
 
 # Alias to docker
+alias docker-compose="docker compose"
 alias dcd="docker-compose down"
 alias dcdr="docker-compose down -v --remove-orphans"
 alias dcu="docker-compose up"
