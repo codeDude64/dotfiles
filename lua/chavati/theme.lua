@@ -1,11 +1,12 @@
 local vim = vim
+local material = require "material"
 
 vim.o.termguicolors = true
 vim.g.material_style = 'deep ocean'
 require("bufferline").setup{}
 vim.cmd[[colorscheme material]]
 
-require('material').setup({
+material.setup({
 		contrast = true,
 		borders = false,
 		italics = {
