@@ -1,12 +1,34 @@
 local vim = vim
+
 vim.o.termguicolors = true
 vim.g.material_style = 'deep ocean'
-vim.g.material_italic_comments = true
-vim.g.material_italic_keywords = true
-vim.g.material_italic_functions = true
-vim.g.material_italic_variables = false
-vim.g.material_contrast = true
-vim.g.material_borders = false
-vim.g.material_disable_background = false
 require("bufferline").setup{}
-require('material').set()
+vim.cmd[[colorscheme material]]
+
+require('material').setup({
+		contrast = true,
+		borders = false,
+		italics = {
+			comments = true,
+			strings = false,
+			keywords = true,
+			functions = true,
+			variables = false
+		},
+		contrast_windows = {
+			"terminal",
+			"packer",
+			"qf"
+		},
+		text_contrast = {
+			lighter = false,
+			darker = false
+		},
+		disable = {
+			background = true,
+			term_colors = false,
+			eob_lines = false
+		},
+		custom_highlights = {}
+	})
+
