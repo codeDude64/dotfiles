@@ -2,17 +2,8 @@ local vim = vim
 local lspconfig = require'lspconfig'
 local cache_path = vim.fn.stdpath('cache')
 local saga = require 'lspsaga'
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
+local cmp_nvim_lsp = require 'cmp_nvim_lsp'
+local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 
 local function default_on_attach(client)

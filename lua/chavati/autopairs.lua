@@ -1,5 +1,5 @@
-local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
+local npairs_cmp = require('nvim-autopairs.completion.cmp')
 
 npairs.setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
@@ -11,8 +11,8 @@ npairs.setup({
     }
 })
 
-require("nvim-autopairs.completion.compe").setup({
-  map_cr = true, --  map <CR> on insert mode
-  map_complete = true, -- it will auto insert `(` after select function or method item
-  auto_select = false,  -- auto select first item
+npairs_cmp.setup({
+    map_cr = true,
+    map_complete = true,
+    auto_select = false,
 })
