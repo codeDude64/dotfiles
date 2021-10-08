@@ -70,7 +70,7 @@ tree.setup {
   ignore_ft_on_setup  = {},
   auto_close          = true,
   open_on_tab         = false,
-  update_to_buf_dir   = true,
+  update_to_buf_dir   = {enable= true, auto_open = true},
   hijack_cursor       = true,
   update_cwd          = true,
   lsp_diagnostics     = true,
