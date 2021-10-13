@@ -1,6 +1,5 @@
 require'chavati.plugins'
 require'chavati.cmp'
-require'chavati.snippets'
 require'chavati.nvim_tree'
 require'chavati.lsp'
 require'chavati.mappings'
