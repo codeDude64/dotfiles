@@ -73,7 +73,7 @@ tree.setup {
   update_to_buf_dir   = {enable= true, auto_open = true},
   hijack_cursor       = true,
   update_cwd          = true,
-  lsp_diagnostics     = true,
+  diagnostics         = {enable = true},
   update_focused_file = {
     enable      = true,
     update_cwd  = true,
