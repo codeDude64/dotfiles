@@ -7,6 +7,17 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
+  sorting = {
+    comparators = {
+      cmp.config.compare.sort_text,
+      cmp.config.compare.score,
+      cmp.config.compare.order,
+      cmp.config.compare.offset,
+      cmp.config.compare.kind,
+      cmp.config.compare.length,
+      cmp.config.compare.exact,
+    },
+  },
   snippet = {
     expand = function (args)
     	vim.fn["vsnip#anonymous"](args.body)
