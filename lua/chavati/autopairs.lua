@@ -1,5 +1,4 @@
 local npairs = require('nvim-autopairs')
-local npairs_cmp = require('nvim-autopairs.completion.cmp')
 
 npairs.setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
@@ -9,10 +8,4 @@ npairs.setup({
         javascript = {'template_string'},
         java = false,-- don't check treesitter on java
     }
-})
-
-npairs_cmp.setup({
-    map_cr = true,
-    map_complete = true,
-    auto_select = false,
 })

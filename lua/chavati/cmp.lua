@@ -50,5 +50,8 @@ cmp.setup({
       nvim_lua = "[Lua]",
       latex_symbols = "[Latex]",
     }})
-  }
+  },
+  map_cr = true,
+  map_complete = true,
+  auto_select = false,
 })
