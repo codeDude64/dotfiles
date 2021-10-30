@@ -130,6 +130,7 @@ alias branch='git checkout -b'
 alias friday='pull && git commit -a -m "Last changes from Friday" && push'
 alias changes='git diff --'
 alias nomerge='git merge --abort'
+alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
 # scripts to run nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
