@@ -31,6 +31,41 @@ lspconfig.solargraph.setup( default_config )
 
 lspconfig.jsonls.setup {
   default_config,
+  settings = {
+    schemas = {
+      {
+        fileMatch = {'package.json'},
+        url = 'https://json.schemastore.org/package.json'
+      },
+      {
+        fileMatch = {'tsconfig*.json'},
+        url = 'https://json.schemastore.org/tsconfig.json'
+      },
+      {
+        fileMatch = {
+          '.prettierrc',
+          '.prettierrc.json',
+          'prettierrc.config.json',
+        },
+        url = 'https://json.schemastore.org/prettierrc.json'
+      },
+      {
+        fileMatch = {
+          '.eslintrc',
+          '.eslintrc.json',
+        },
+        url = 'https://json.schemastore.org/eslintrc.json'
+      },
+      {
+        fileMatch = {
+          '.babelrc',
+          '.babelrc.json',
+          'babel.config.json',
+        },
+        url = 'https://json.schemastore.org/babelrc.json'
+      },
+    },
+  },
   commands = {
       Format = {
         function()
@@ -55,6 +90,7 @@ end
 
 local sumneko_root_path = cache_path ..'/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+local runtime_path = vim.split(package.path, ';')
 
 lspconfig.sumneko_lua.setup {
   default_config,
@@ -63,7 +99,7 @@ lspconfig.sumneko_lua.setup {
     Lua = {
       runtime = {
         version = 'LuaJIT',
-        path = vim.split(package.path, ';'),
+        path = runtime_path,
       },
       diagnostics = {
         globals = {'vim'},
@@ -71,6 +107,9 @@ lspconfig.sumneko_lua.setup {
       workspace = {
         maxPreload = 10000,
         library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
       },
     },
   },
