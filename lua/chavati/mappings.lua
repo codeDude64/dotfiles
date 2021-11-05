@@ -43,7 +43,7 @@ local setup_mappings = function()
   vim.cmd[[nnoremap <leader>r :NvimTreeRefresh<CR>]]
   vim.cmd[[nnoremap <leader>n :NvimTreeFindFile<CR>]]
   -- Git
-  vim.cmd[[nnoremap <leader>gs :lua require('neogit').open()<CR>]]
+  vim.cmd[[nnoremap <leader>gs :lua require('neogit').open({kind = 'split'})<CR>]]
   vim.cmd[[nnoremap <leader>gj :diffget //3<CR>]]
   vim.cmd[[nnoremap <leader>gf :diffget //2<CR>]]
 
