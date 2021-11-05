@@ -2,6 +2,8 @@ local parsers = require'nvim-treesitter.parsers'
 local configs = require'nvim-treesitter.configs'
 
 configs.setup {
+  context_commentstring = {enable = true},
+  ensure_installed = 'all',
   highlight = {
     enable = true,
     custom_captures = {
