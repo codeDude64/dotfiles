@@ -44,8 +44,10 @@ local setup_mappings = function()
   vim.cmd[[nnoremap <leader>n :NvimTreeFindFile<CR>]]
   -- Git
   vim.cmd[[nnoremap <leader>gs :lua require('neogit').open()<CR>]]
-  vim.cmd[[nnoremap <leader>gj :diffget //3<CR>]]
-  vim.cmd[[nnoremap <leader>gf :diffget //2<CR>]]
+  --Harpoon
+  vim.cmd[[nnoremap hM :lua require("harpoon.mark").add_file()<CR>]]
+  vim.cmd[[nnoremap hm :lua require("harpoon.ui").toggle_quick_menu()<CR>]]
+  vim.cmd[[nnoremap ht :lua require("harpoon.term").gotoTerminal(1)<CR>]]
 
 end
 

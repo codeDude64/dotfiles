@@ -71,5 +71,7 @@ return packer.startup(function()
   use 'prettier/vim-prettier'
   --Sillicon
   use 'segeljakt/vim-silicon'
+  --Harpoon
+  use 'ThePrimeagen/harpoon'
   end
 )
