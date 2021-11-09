@@ -46,6 +46,8 @@ local setup_mappings = function()
   vim.cmd[[nnoremap <leader>gs :lua require('neogit').open()<CR>]]
   --Harpoon
   vim.cmd[[nnoremap hM :lua require("harpoon.mark").add_file()<CR>]]
+  vim.cmd[[nnoremap ho :lua require("harpoon.ui").nav_next()<CR>]]
+  vim.cmd[[nnoremap hi :lua require("harpoon.ui").nav_prev()<CR>]]
   vim.cmd[[nnoremap hm :lua require("harpoon.ui").toggle_quick_menu()<CR>]]
   vim.cmd[[nnoremap ht :lua require("harpoon.term").gotoTerminal(1)<CR>]]
 
