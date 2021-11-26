@@ -30,7 +30,7 @@ return packer.startup(function()
   }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  use 'tami5/lspsaga.nvim'
   use 'tjdevries/nlua.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
