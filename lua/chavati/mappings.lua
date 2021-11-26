@@ -13,8 +13,6 @@ local setup_mappings = function()
   utils.key_mapper("n","<C-q>",":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
   utils.key_mapper("n","<C-a>",":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
 
-  utils.key_mapper("n","gs",":lua require('lspsaga.signaturehelp').signature_help()<CR>")
-
   utils.key_mapper("n","<space>rn",":lua require('lspsaga.rename').rename()<CR>")
 
   utils.key_mapper("n","vd",":lua require'lspsaga.provider'.preview_definition()<CR>")
