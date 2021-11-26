@@ -50,6 +50,7 @@ local setup_mappings = function()
   vim.cmd[[nnoremap <leader>ho :lua require("harpoon.ui").nav_prev()<CR>]]
   vim.cmd[[nnoremap <leader>hm :lua require("harpoon.ui").toggle_quick_menu()<CR>]]
   vim.cmd[[nnoremap <leader>ht :lua require("harpoon.term").gotoTerminal(1)<CR>]]
+  vim.cmd[[nnoremap <leader>hT :lua require("harpoon.term").gotoTerminal(2)<CR>]]
 
 end
 
