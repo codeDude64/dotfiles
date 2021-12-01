@@ -1,6 +1,7 @@
 vls
 typescript
 typescript-language-server
+vscode-langservers-extracted
 vscode-json-languageserver
 vscode-css-languageserver-bin
 vscode-html-languageserver-bin
