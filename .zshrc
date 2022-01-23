@@ -138,7 +138,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 source /usr/share/nvm/init-nvm.sh
 
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$PATH:$GEM_HOME/bin:$HOME/.local/bin/"
 
 
 alias luamake=/home/salvador/dotfiles/lua-language-server/3rd/luamake/luamake

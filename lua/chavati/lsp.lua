@@ -28,6 +28,7 @@ lspconfig.dockerls.setup( default_config )
 lspconfig.jdtls.setup( default_config )
 lspconfig.solargraph.setup( default_config )
 lspconfig.ccls.setup( default_config )
+lspconfig.cmake.setup( default_config )
 
 lspconfig.jsonls.setup {
   default_config,
