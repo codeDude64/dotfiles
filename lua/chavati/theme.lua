@@ -2,7 +2,7 @@ local vim = vim
 local material = require "material"
 
 vim.o.termguicolors = true
-vim.g.material_style = 'deep ocean'
+vim.g.material_style = 'darker'
 require("bufferline").setup{}
 vim.cmd[[colorscheme material]]
 
