@@ -40,7 +40,8 @@ cmp.setup({
     {name = 'nvim_lsp'},
     {name = 'vsnip'},
     {name = 'path'},
-    {name = 'buffer'}
+    {name = 'buffer'},
+    {name = 'cmd_line'}
   },
   formatting = {
     format = lspkind.cmp_format({with_text = true, maxwidth = 50, menu = {
