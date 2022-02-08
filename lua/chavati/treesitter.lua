@@ -39,6 +39,3 @@ configs.setup {
 
 vim.cmd [[set foldmethod=expr]]
 vim.cmd[[set foldexpr=nvim_treesitter#foldexpr()]]
-
-local parser_configs = parsers.get_parser_configs()
-parser_configs.html.used_by = 'svelte'
