@@ -39,7 +39,7 @@ return packer.startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'onsails/lspkind-nvim'
   -- Treesitter
-  use 'nvim-treesitter/nvim-treesitter'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/completion-treesitter'
   -- Telescope

@@ -17,7 +17,7 @@ local setup_mappings = function()
 
   utils.key_mapper("n","vd",":lua require'lspsaga.provider'.preview_definition()<CR>")
   utils.key_mapper("n","gd",":lua vim.lsp.buf.definition()<CR>")
-  utils.key_mapper("n","gr",":lua vim.lsp.buf.references()<CR>")
+  utils.key_mapper("n","<leader>gr",":lua vim.lsp.buf.references()<CR>")
 
   utils.key_mapper("n","<leader>cd",":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
   utils.key_mapper("n","<leader>cc",":lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
