@@ -44,6 +44,7 @@ return packer.startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/completion-treesitter'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   -- Telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
