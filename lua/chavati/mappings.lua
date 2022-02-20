@@ -50,6 +50,17 @@ local setup_mappings = function()
   vim.cmd[[nnoremap <leader>ht :lua require("harpoon.term").gotoTerminal(1)<CR>]]
   vim.cmd[[nnoremap <leader>hT :lua require("harpoon.term").gotoTerminal(2)<CR>]]
 
+  --Dap
+  utils.key_mapper("n","<F5>",":lua require'dap'.continue()<CR>")
+  utils.key_mapper("n","<F10>",":lua require'dap'.step_over()<CR>")
+  utils.key_mapper("n","<F11>",":lua require'dap'.step_into()<CR>")
+  utils.key_mapper("n","<F12>",":lua require'dap'.step_out()<CR>")
+  utils.key_mapper("n","<leader>b",":lua require'dap'.toggle_breakpoint()<CR>")
+  utils.key_mapper("n","<leader>B",":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+  utils.key_mapper("n","<leader>lp",":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+  utils.key_mapper("n","<leader>dr",":lua require'dap'.repl.open()<CR>")
+  utils.key_mapper("n","<leader>dl",":lua require'dap'.run_last()<CR>")
+
 end
 
 setup_mappings();

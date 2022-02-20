@@ -76,5 +76,9 @@ return packer.startup(function()
   use 'segeljakt/vim-silicon'
   --Harpoon
   use 'ThePrimeagen/harpoon'
+  --Debugger
+  use 'mfussenegger/nvim-dap'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
   end
 )
