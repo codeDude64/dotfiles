@@ -20,7 +20,7 @@ cmp.setup({
   },
   snippet = {
     expand = function (args)
-    	vim.fn["vsnip#anonymous"](args.body)
+    	vim.fn['vsnip#anonymous'](args.body)
     end
   },
   mapping = {
@@ -45,11 +45,11 @@ cmp.setup({
   },
   formatting = {
     format = lspkind.cmp_format({with_text = true, maxwidth = 50, menu = {
-      buffer = "[Buffer]",
-      nvim_lsp = "[LSP]",
-      luasnip = "[LuaSnip]",
-      nvim_lua = "[Lua]",
-      latex_symbols = "[Latex]",
+      buffer = '[Buffer]',
+      nvim_lsp = '[LSP]',
+      luasnip = '[LuaSnip]',
+      nvim_lua = '[Lua]',
+      latex_symbols = '[Latex]',
     }})
   },
   map_cr = true,

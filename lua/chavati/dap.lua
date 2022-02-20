@@ -28,4 +28,4 @@ dap.configurations.typescript = {
 
 
 require('dap.ext.vscode').load_launchjs()
-require("nvim-dap-virtual-text").setup()
+require('nvim-dap-virtual-text').setup()

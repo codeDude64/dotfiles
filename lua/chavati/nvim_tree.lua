@@ -1,4 +1,4 @@
-local tree = require "nvim-tree"
+local tree = require 'nvim-tree'
 
 -- init.lua
 
@@ -21,10 +21,10 @@ tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = '',
+      info = '',
+      warning = '',
+      error = '',
     }
   },
   update_focused_file = {
@@ -57,10 +57,10 @@ tree.setup {
     },
     number = false,
     relativenumber = false,
-    signcolumn = "yes"
+    signcolumn = 'yes'
   },
   trash = {
-    cmd = "trash",
+    cmd = 'trash',
     require_confirm = true
   },
   actions = {

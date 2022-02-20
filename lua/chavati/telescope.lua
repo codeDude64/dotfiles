@@ -10,9 +10,9 @@ telescope.setup {
 
     mappings = {
       i = {
-        ["<C-x>"] = false,
-        ["<C-s>"] = actions.file_split,
-        ["<C-q>"] = actions.send_to_qflist,
+        ['<C-x>'] = false,
+        ['<C-s>'] = actions.file_split,
+        ['<C-q>'] = actions.send_to_qflist,
       },
     }
   },

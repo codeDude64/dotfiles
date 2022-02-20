@@ -7,10 +7,10 @@ local harpoon_config = {
     enter_on_sendcmd = false,
   },
   projects = {
-    ["$HOME/Projects/jibjab-api"] = {
+    ['$HOME/Projects/jibjab-api'] = {
       term = {
         cmds = {
-          "make up"
+          'make up'
         }
       }
     }

@@ -1,5 +1,5 @@
 local vim = vim
-local material = require "material"
+local material = require 'material'
 
 vim.o.termguicolors = true
 vim.g.material_style = 'darker'

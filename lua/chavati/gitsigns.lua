@@ -1,4 +1,4 @@
-local gitsigns = require "gitsigns"
+local gitsigns = require 'gitsigns'
 
 require('gitsigns').setup {
   signs = {

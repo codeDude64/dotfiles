@@ -70,7 +70,7 @@ lspconfig.jsonls.setup {
   commands = {
       Format = {
         function()
-          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line('$'),0})
         end
       }
     }
@@ -79,23 +79,23 @@ lspconfig.jsonls.setup {
 -- Lua lsp
 
 local system_name
-if vim.fn.has("mac") == 1 then
-  system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-  system_name = "Linux"
+if vim.fn.has('mac') == 1 then
+  system_name = 'macOS'
+elseif vim.fn.has('unix') == 1 then
+  system_name = 'Linux'
 elseif vim.fn.has('win32') == 1 then
-  system_name = "Windows"
+  system_name = 'Windows'
 else
-  print("Unsupported system for sumneko")
+  print('Unsupported system for sumneko')
 end
 
 local sumneko_root_path = cache_path ..'/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+local sumneko_binary = sumneko_root_path..'/bin/'..system_name..'/lua-language-server'
 local runtime_path = vim.split(package.path, ';')
 
 lspconfig.sumneko_lua.setup {
   default_config,
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'};
   settings = {
     Lua = {
       runtime = {
@@ -107,7 +107,7 @@ lspconfig.sumneko_lua.setup {
       },
       workspace = {
         maxPreload = 10000,
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = vim.api.nvim_get_runtime_file('', true),
       },
       telemetry = {
         enable = false,
@@ -147,23 +147,23 @@ lspconfig.vuels.setup {
 
 lspconfig.efm.setup {
     default_config,
-    filetypes = {"javascript", "javascriptreact", "lua"},
+    filetypes = {'javascript', 'javascriptreact', 'lua'},
     init_options = {
       documentFormatting = true,
     },
     settings = {
-      rootMarkers = {".git/"},
+      rootMarkers = {'.git/'},
       languages = {
         lua = {
-          {formatCommand = "lua-format -i", formatStdin = true}
+          {formatCommand = 'lua-format -i', formatStdin = true}
         },
         javascript = {
           {
-            lintCommand = "eslint -f visualstudio --stdin --stdin-filename ${INPUT}",
+            lintCommand = 'eslint -f visualstudio --stdin --stdin-filename ${INPUT}',
             lintIgnoreExitCode = true,
             lintStdin = true,
-            lintFormats = {"%f(%l,%c): %tarning %m","%f(%l,%c): %rror %m"},
-            formatCommand = "eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}",
+            lintFormats = {'%f(%l,%c): %tarning %m','%f(%l,%c): %rror %m'},
+            formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}',
             formatStdin = true,
           }
         }
