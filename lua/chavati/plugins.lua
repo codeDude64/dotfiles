@@ -20,8 +20,7 @@ packer.init({
 
 
 
-return packer.startup(function()
-  local use = use
+return packer.startup(function(use)
   -- Style
   use 'marko-cerovac/material.nvim'
   use {
