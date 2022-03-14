@@ -7,5 +7,4 @@ neogit.setup {
   integrations = {
     diffview = true
   },
-  kind = 'floating'
 }
