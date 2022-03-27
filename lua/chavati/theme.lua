@@ -3,7 +3,6 @@ local material = require 'material'
 
 vim.o.termguicolors = true
 vim.g.material_style = 'darker'
-vim.cmd[[colorscheme material]]
 
 material.setup({
 		contrast = {
@@ -36,3 +35,4 @@ material.setup({
 		custom_highlights = {}
 	})
 
+vim.cmd 'colorscheme material'
