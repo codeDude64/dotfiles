@@ -51,6 +51,12 @@ local setup_mappings = function()
   utils.key_mapper('n','<leader>ht',":lua require('harpoon.term').gotoTerminal(1)<CR>")
   utils.key_mapper('n','<leader>hT',":lua require('harpoon.term').gotoTerminal(2)<CR>")
 
+  --resize
+  utils.key_mapper('n','<A-l>',":vertical resize +5<CR>")
+  utils.key_mapper('n','<A-h>',":vertical resize -5<CR>")
+  utils.key_mapper('n','<A-k>',":resize -5<CR>")
+  utils.key_mapper('n','<A-j>',":resize +5<CR>")
+
   --Dap
   utils.key_mapper('n','<F5>',"'lua require'dap'.continue()<CR>")
   utils.key_mapper('n','<F10>',":lua require'dap'.step_over()<CR>")
