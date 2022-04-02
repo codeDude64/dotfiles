@@ -1,4 +1,4 @@
-local vim = vim
+local vim= vim
 local utils = require'chavati.utils'
 
 
@@ -10,8 +10,8 @@ local setup_mappings = function()
   utils.key_mapper('v','<leader>ca',":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>")
 
   utils.key_mapper('n','K',":lua require('lspsaga.hover').render_hover_doc()<CR>")
-  utils.key_mapper('n','<C-q>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
-  utils.key_mapper('n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
+  utils.key_mapper('n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
+  utils.key_mapper('n','<C-q>',":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
 
   utils.key_mapper('n','<space>rn',":lua require('lspsaga.rename').rename()<CR>")
 
@@ -36,6 +36,8 @@ local setup_mappings = function()
   utils.key_mapper('n','<s-p>',":lua require('telescope.builtin').find_files()<CR>")
   utils.key_mapper('n','<leader>gl',":lua require('telescope.builtin').git_commits()<CR>")
   utils.key_mapper('n','<leader>gb',":lua require('telescope.builtin').git_branches()<CR>")
+  utils.key_mapper('n','<leader>ts',":lua require('telescope.builtin').treesitter()<CR>")
+  utils.key_mapper('n','<leader>to',":lua require('telescope.builtin').builtin()<CR>")
   -- Tree
   utils.key_mapper('n','<c-n>',':NvimTreeToggle<CR>')
   utils.key_mapper('n','<leader>r',':NvimTreeRefresh<CR>')
