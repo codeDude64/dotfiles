@@ -1,8 +1,18 @@
-function Reload_config()
-  print('Reloading config')
-  require'plenary.reload'.reload_module('chavati')
+RELOAD = function (...)
+  require'plenary.reload'.reload_module(...)
 end
 
-function Print_table(table)
+R = function (name)
+  print('Reloading config...')
+  RELOAD(name)
+  print('Done :)')
+  return require(name)
+end
+
+RCONFIG = function ()
+  R('chavati')
+end
+
+P = function (table)
   print(vim.inspect(table))
 end
