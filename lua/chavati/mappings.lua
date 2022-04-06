@@ -8,6 +8,8 @@ local setup_mappings = function()
 
   utils.key_mapper('n','<leader>ca',":lua require('lspsaga.codeaction').code_action()<CR>")
   utils.key_mapper('v','<leader>ca',":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>")
+  utils.key_mapper('n','sd',':lua vim.diagnostic.open_float()<CR>')
+  utils.key_mapper('n','dl',':lua vim.diagnostic.setloclist()<CR>')
 
   utils.key_mapper('n','K',":lua require('lspsaga.hover').render_hover_doc()<CR>")
   utils.key_mapper('n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
@@ -17,7 +19,7 @@ local setup_mappings = function()
 
   utils.key_mapper('n','vd',":lua require'lspsaga.provider'.preview_definition()<CR>")
   utils.key_mapper('n','gd',":lua vim.lsp.buf.definition()<CR>")
-  utils.key_mapper('n','<leader>gr',":lua vim.lsp.buf.references()<CR>")
+  utils.key_mapper('n','<leader>gr',":lua require('telescope.builtin').lsp_references()<CR>")
 
   utils.key_mapper('n','<leader>cd',":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
   utils.key_mapper('n','<leader>cc',":lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
