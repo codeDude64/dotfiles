@@ -145,11 +145,25 @@ lspconfig.vuels.setup {
   }
 }
 
+
+local eslint_configuration = {
+  lintCommand = 'eslint_d -f visualstudio --stdin --stdin-filename ${INPUT}',
+  lintIgnoreExitCode = true,
+  lintStdin = true,
+  lintFormats = {'%f(%l,%c): %tarning %m','%f(%l,%c): %rror %m'},
+  formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}',
+  formatStdin = true,
+}
+
 lspconfig.efm.setup {
+    single_file_support = false,
     default_config,
-    filetypes = {'javascript', 'javascriptreact', 'lua'},
+    filetypes = {'javascript', 'javascriptreact', 'lua', 'typescript'},
     init_options = {
       documentFormatting = true,
+      hover = true,
+      codeaction = true,
+      completion = true
     },
     settings = {
       rootMarkers = {'.git/'},
@@ -158,14 +172,10 @@ lspconfig.efm.setup {
           {formatCommand = 'lua-format -i', formatStdin = true}
         },
         javascript = {
-          {
-            lintCommand = 'eslint -f visualstudio --stdin --stdin-filename ${INPUT}',
-            lintIgnoreExitCode = true,
-            lintStdin = true,
-            lintFormats = {'%f(%l,%c): %tarning %m','%f(%l,%c): %rror %m'},
-            formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}',
-            formatStdin = true,
-          }
+          eslint_configuration
+        },
+        typescript = {
+          eslint_configuration
         }
       }
     }
