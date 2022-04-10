@@ -169,7 +169,7 @@ lspconfig.efm.setup {
       rootMarkers = {'.git/'},
       languages = {
         lua = {
-          {formatCommand = 'lua-format -i', formatStdin = true}
+          {formatCommand = 'lua-format -i --config=$HOME/.config/lua-format.yml', formatStdin = true}
         },
         javascript = {
           eslint_configuration
