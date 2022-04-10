@@ -15,6 +15,7 @@ local default_config = {
 lspconfig.tsserver.setup(default_config)
 lspconfig.cssls.setup(default_config)
 lspconfig.html.setup(default_config)
+lspconfig.vuels.setup(default_config)
 lspconfig.omnisharp.setup(default_config)
 lspconfig.intelephense.setup(default_config)
 lspconfig.pyright.setup(default_config)
@@ -95,34 +96,6 @@ lspconfig.sumneko_lua.setup {
   }
 }
 
--- Vue Lsp
-
-lspconfig.vuels.setup {
-  default_config,
-  init_options = {
-    config = {
-      vetur = {
-        completion = {
-          autoImport = true,
-          tagCasing = 'kebab',
-          useScaffoldSnippets = true
-        },
-        format = {
-          defaultFormatter = {
-            js = {'prettier-eslint', 'prettier', 'vscode-typescript', 'none'},
-            ts = {'prettier-tslint', 'prettier', 'vscode-typescript', 'none'},
-            html = {'prettier', 'prettyhtml', 'js-beautify-html', 'none'},
-            css = {'prettier', 'none'},
-            scss = {'prettier', 'none'}
-          },
-          enable = true
-        }
-      }
-    }
-
-  }
-}
-
 local eslint_configuration = {
   lintCommand = 'eslint_d -f visualstudio --stdin --stdin-filename ${INPUT}',
   lintIgnoreExitCode = true,
@@ -135,7 +108,7 @@ local eslint_configuration = {
 lspconfig.efm.setup {
   single_file_support = false,
   default_config,
-  filetypes = {'javascript', 'javascriptreact', 'lua', 'typescript'},
+  filetypes = {'javascript', 'javascriptreact', 'lua', 'typescript', 'vue'},
   init_options = {
     documentFormatting = true,
     hover = true,
@@ -152,7 +125,8 @@ lspconfig.efm.setup {
         }
       },
       javascript = {eslint_configuration},
-      typescript = {eslint_configuration}
+      typescript = {eslint_configuration},
+      vuels = {eslint_configuration}
     }
   }
 }
