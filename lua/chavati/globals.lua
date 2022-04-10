@@ -1,18 +1,12 @@
-RELOAD = function (...)
-  require'plenary.reload'.reload_module(...)
-end
+RELOAD = function(...) require'plenary.reload'.reload_module(...) end
 
-R = function (name)
+R = function(name)
   print('Reloading config...')
   RELOAD(name)
   print('Done :)')
   return require(name)
 end
 
-RCONFIG = function ()
-  R('chavati')
-end
+RCONFIG = function() R('chavati') end
 
-P = function (table)
-  print(vim.inspect(table))
-end
+P = function(table) print(vim.inspect(table)) end

@@ -1,22 +1,22 @@
 local vim = vim
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 local packer_bootstrap = nil
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({
+    'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path
+  })
 end
 
 vim.cmd('packadd packer.nvim')
-local packer = require'packer'
+local packer = require 'packer'
 
 return packer.startup(function(use)
   -- Style
   use 'marko-cerovac/material.nvim'
-  use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main'
-  }
+  use {'glepnir/galaxyline.nvim', branch = 'main'}
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
   use 'tami5/lspsaga.nvim'
@@ -30,7 +30,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind-nvim'
   -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/completion-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -59,18 +59,16 @@ return packer.startup(function(use)
   use 'akinsho/nvim-bufferline.lua'
   -- React
   use 'othree/vim-jsx'
-  --Prettier
+  -- Prettier
   use 'prettier/vim-prettier'
-  --Sillicon
+  -- Sillicon
   use 'segeljakt/vim-silicon'
-  --Harpoon
+  -- Harpoon
   use 'ThePrimeagen/harpoon'
-  --Debugger
+  -- Debugger
   use 'mfussenegger/nvim-dap'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
 
-   if packer_bootstrap then
-     require('packer').sync()
-   end
+  if packer_bootstrap then require('packer').sync() end
 end)

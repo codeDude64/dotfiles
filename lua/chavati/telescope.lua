@@ -12,15 +12,12 @@ telescope.setup {
       i = {
         ['<C-x>'] = false,
         ['<C-s>'] = actions.file_split,
-        ['<C-q>'] = actions.send_to_qflist,
-      },
+        ['<C-q>'] = actions.send_to_qflist
+      }
     }
   },
   extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
-    }
+    fzy_native = {override_generic_sorter = false, override_file_sorter = true}
   }
 }
 telescope.load_extension('fzy_native')
