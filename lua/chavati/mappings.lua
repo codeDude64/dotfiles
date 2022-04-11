@@ -1,6 +1,4 @@
-local vim= vim
 local utils = require'chavati.utils'
-
 
 local setup_mappings = function()
   -- LSP
