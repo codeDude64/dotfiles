@@ -15,7 +15,7 @@ local setup_mappings = function()
   utils.key_mapper('n','<space>rn',":lua require('lspsaga.rename').rename()<CR>")
 
   utils.key_mapper('n','vd',":lua require'lspsaga.provider'.preview_definition()<CR>")
-  utils.key_mapper('n','gd',":lua vim.lsp.buf.definition()<CR>")
+  utils.key_mapper('n','gd',":lua require('telescope.builtin').lsp_definitions()<CR>")
   utils.key_mapper('n','<leader>gr',":lua require('telescope.builtin').lsp_references()<CR>")
 
   utils.key_mapper('n','sd',":lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
