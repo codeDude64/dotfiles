@@ -1,24 +1,22 @@
-local vim = vim
 local material = require 'material'
 
-vim.o.termguicolors = true
-vim.g.material_style = 'darker'
+vim.g.material_style = 'palenight'
 
 material.setup({
   contrast = {
     sidebars = false,
     floating_windows = false,
-    line_numbers = false,
+    line_numbers = true,
     sign_column = false,
     cursor_line = false,
     non_current_windows = false,
     popup_menu = false
   },
   italics = {
-    comments = false,
+    comments = true,
     strings = false,
-    keywords = false,
-    functions = false,
+    keywords = true,
+    functions = true,
     variables = false
   },
   contrast_filetypes = {},
