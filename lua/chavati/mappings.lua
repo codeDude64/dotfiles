@@ -37,6 +37,8 @@ local setup_mappings = function()
   utils.key_mapper('n','<leader>gb',":lua require('telescope.builtin').git_branches()<CR>")
   utils.key_mapper('n','<leader>ts',":lua require('telescope.builtin').treesitter()<CR>")
   utils.key_mapper('n','<leader>to',":lua require('telescope.builtin').builtin()<CR>")
+  utils.key_mapper('n','<leader><c-p>',":lua require'telescope'.extensions.repo.list{}<CR>")
+  utils.key_mapper('n','<leader><c-n>',":lua require'telescope'.extensions.node_modules.list{}<CR>")
   -- Tree
   utils.key_mapper('n','<c-n>',':NvimTreeToggle<CR>')
   utils.key_mapper('n','<leader>r',':NvimTreeRefresh<CR>')

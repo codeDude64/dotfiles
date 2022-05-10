@@ -39,6 +39,9 @@ return packer.startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
+  use 'cljoly/telescope-repo.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
+  use 'nvim-telescope/telescope-node-modules.nvim'
   -- Tree
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
