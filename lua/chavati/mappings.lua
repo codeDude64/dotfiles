@@ -27,7 +27,7 @@ local setup_mappings = function()
   utils.key_mapper('t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>")
 
 
-  utils.key_mapper('n','<C-f>',":lua vim.lsp.buf.formatting()<CR>")
+  utils.key_mapper('n','<C-f>',":lua vim.lsp.buf.format{ async = true }<CR>")
   -- Telescope
   utils.key_mapper('n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') }<CR>")
   utils.key_mapper('n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>")
