@@ -1,7 +1,6 @@
 local vim = vim
 
 vim.g.mapleader = ' '
-vim.g.colors_name = 'gruvbox'
 
 local globalOptions = vim.o
 local bufferOptions = vim.bo

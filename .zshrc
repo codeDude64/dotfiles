@@ -104,10 +104,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-
-# script to lightline.vim plugin works
-export TERM=xterm-256color
-
 alias jj-contentful='bin/contentful'
 # Alias to docker
 alias docker-compose="docker compose"
