@@ -26,7 +26,6 @@ lspconfig.vimls.setup(default_config)
 lspconfig.dockerls.setup(default_config)
 lspconfig.jdtls.setup(default_config)
 lspconfig.solargraph.setup(default_config)
-lspconfig.ccls.setup(default_config)
 lspconfig.cmake.setup(default_config)
 
 lspconfig.jsonls.setup {
@@ -128,5 +127,14 @@ lspconfig.efm.setup {
       typescript = {eslint_configuration},
       vuels = {eslint_configuration}
     }
+  }
+}
+
+lspconfig.ccls.setup {
+  default_config,
+  init_options = {
+    compilationDatabaseDirectory = "build",
+    index = {threads = 0},
+    clang = {excludeArgs = {"-frounding-math"}}
   }
 }
