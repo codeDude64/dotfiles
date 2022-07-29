@@ -2,7 +2,7 @@ local utils = require'chavati.utils'
 
 local setup_mappings = function()
   -- LSP
-  utils.key_mapper('n','gh',":lua require'lspsaga.provider'.lsp_finder()<CR>")
+  utils.key_mapper('n','gh',":lua require'lspsaga.finder'.lsp_finder()<CR>")
 
   utils.key_mapper('n','<leader>ca',":lua require('lspsaga.codeaction').code_action()<CR>")
   utils.key_mapper('v','<leader>ca',":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>")
@@ -12,16 +12,18 @@ local setup_mappings = function()
   utils.key_mapper('n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
   utils.key_mapper('n','<C-q>',":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
 
-  utils.key_mapper('n','<space>rn',":lua require('lspsaga.rename').rename()<CR>")
+  utils.key_mapper('n','<space>rn',":lua require('lspsaga.rename').lsp_rename()<CR>")
 
-  utils.key_mapper('n','vd',":lua require'lspsaga.provider'.preview_definition()<CR>")
+  utils.key_mapper('n','vd',":lua require'lspsaga.definition'.preview_definition()<CR>")
   utils.key_mapper('n','gd',":lua require('telescope.builtin').lsp_definitions()<CR>")
   utils.key_mapper('n','<leader>gr',":lua require('telescope.builtin').lsp_references()<CR>")
 
-  utils.key_mapper('n','sd',":lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>")
-  utils.key_mapper('n','<leader>sd',":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
-  utils.key_mapper('n','[e',":lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>")
-  utils.key_mapper('n',']e',":lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>")
+  utils.key_mapper('n','sd',":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
+  utils.key_mapper('n','[e',":lua require'lspsaga.diagnostic'.goto_prev()<CR>")
+  utils.key_mapper('n',']e',":lua require'lspsaga.diagnostic'.goto_next()<CR>")
+
+  utils.key_mapper('n','[E',":lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>")
+  utils.key_mapper('n',']E',":lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>")
 
   utils.key_mapper('n','<A-d>',":lua require('lspsaga.floaterm').open_float_terminal()<CR>")
   utils.key_mapper('t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>")

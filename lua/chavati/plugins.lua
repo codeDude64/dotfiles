@@ -19,7 +19,7 @@ return packer.startup(function(use)
   use {'glepnir/galaxyline.nvim', branch = 'main'}
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
-  use 'tami5/lspsaga.nvim'
+  use 'glepnir/lspsaga.nvim'
   use 'tjdevries/nlua.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
