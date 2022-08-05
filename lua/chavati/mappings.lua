@@ -75,15 +75,15 @@ local mappings = {
 
 }
 
-local setup_mappings = function()
-  for  _, mapping in ipairs(mappings) do
-    local mode = tostring(mapping[1])
-    local key = tostring(mapping[1])
-    local result = tostring(mapping[1])
+local function setup_mappings(maps )
+  for  _ , map in ipairs(maps) do
+    local mode = tostring(map[1])
+    local key = tostring(map[2])
+    local result = tostring(map[3])
 
     utils.key_mapper(mode, key, result)
   end
 
 end
 
-setup_mappings();
+setup_mappings(mappings);
