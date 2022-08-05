@@ -1,77 +1,88 @@
 local utils = require'chavati.utils'
 
-local setup_mappings = function()
+local mappings = {
   -- LSP
-  utils.key_mapper('n','gh',":lua require'lspsaga.finder'.lsp_finder()<CR>")
+  {'n','gh',":lua require'lspsaga.finder'.lsp_finder()<CR>"},
 
-  utils.key_mapper('n','<leader>ca',":lua require('lspsaga.codeaction').code_action()<CR>")
-  utils.key_mapper('v','<leader>ca',":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>")
-  utils.key_mapper('n','gs',":lua require('lspsaga.signaturehelp').signature_help()<CR>")
+  {'n','<leader>ca',":lua require('lspsaga.codeaction').code_action()<CR>"},
+  {'v','<leader>ca',":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>"},
+  {'n','gs',":lua require('lspsaga.signaturehelp').signature_help()<CR>"},
 
-  utils.key_mapper('n','K',":lua require('lspsaga.hover').render_hover_doc()<CR>")
-  utils.key_mapper('n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
-  utils.key_mapper('n','<C-q>',":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
+  {'n','K',":lua require('lspsaga.hover').render_hover_doc()<CR>"},
+  {'n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"},
+  {'n','<C-q>',":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"},
 
-  utils.key_mapper('n','<space>rn',":lua require('lspsaga.rename').lsp_rename()<CR>")
+  {'n','<space>rn',":lua require('lspsaga.rename').lsp_rename()<CR>"},
 
-  utils.key_mapper('n','vd',":lua require'lspsaga.definition'.preview_definition()<CR>")
-  utils.key_mapper('n','gd',":lua require('telescope.builtin').lsp_definitions()<CR>")
-  utils.key_mapper('n','<leader>gr',":lua require('telescope.builtin').lsp_references()<CR>")
+  {'n','vd',":lua require'lspsaga.definition'.preview_definition()<CR>"},
+  {'n','gd',":lua require('telescope.builtin').lsp_definitions()<CR>"},
+  {'n','<leader>gr',":lua require('telescope.builtin').lsp_references()<CR>"},
 
-  utils.key_mapper('n','sd',":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>")
-  utils.key_mapper('n','[e',":lua require'lspsaga.diagnostic'.goto_prev()<CR>")
-  utils.key_mapper('n',']e',":lua require'lspsaga.diagnostic'.goto_next()<CR>")
+  {'n','sd',":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>"},
+  {'n','[e',":lua require'lspsaga.diagnostic'.goto_prev()<CR>"},
+  {'n',']e',":lua require'lspsaga.diagnostic'.goto_next()<CR>"},
 
-  utils.key_mapper('n','[E',":lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>")
-  utils.key_mapper('n',']E',":lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>")
+  {'n','[E',":lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR },)<CR>"},
+  {'n',']E',":lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR },)<CR>"},
 
-  utils.key_mapper('n','<A-d>',":lua require('lspsaga.floaterm').open_float_terminal()<CR>")
-  utils.key_mapper('t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>")
+  {'n','<A-d>',":lua require('lspsaga.floaterm').open_float_terminal()<CR>"},
+  {'t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>"},
 
 
-  utils.key_mapper('n','<C-f>',":lua vim.lsp.buf.format{ async = true }<CR>")
+  {'n','<C-f>',":lua vim.lsp.buf.format{ async = true },<CR>"},
   -- Telescope
-  utils.key_mapper('n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') }<CR>")
-  utils.key_mapper('n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>")
-  utils.key_mapper('n','<c-p>',":lua require('telescope.builtin').git_files()<CR>")
-  utils.key_mapper('n','<s-p>',":lua require('telescope.builtin').find_files({ no_ignore = true })<CR>")
-  utils.key_mapper('n','<leader>gl',":lua require('telescope.builtin').git_commits()<CR>")
-  utils.key_mapper('n','<leader>gb',":lua require('telescope.builtin').git_branches()<CR>")
-  utils.key_mapper('n','<leader>ts',":lua require('telescope.builtin').treesitter()<CR>")
-  utils.key_mapper('n','<leader>to',":lua require('telescope.builtin').builtin()<CR>")
-  utils.key_mapper('n','<leader><c-p>',":lua require'telescope'.extensions.repo.list{}<CR>")
-  utils.key_mapper('n','<leader><c-n>',":lua require'telescope'.extensions.node_modules.list{}<CR>")
+  {'n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') },<CR>"},
+  {'n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')},)<CR>"},
+  {'n','<c-p>',":lua require('telescope.builtin').git_files()<CR>"},
+  {'n','<s-p>',":lua require('telescope.builtin').find_files({ no_ignore = true },)<CR>"},
+  {'n','<leader>gl',":lua require('telescope.builtin').git_commits()<CR>"},
+  {'n','<leader>gb',":lua require('telescope.builtin').git_branches()<CR>"},
+  {'n','<leader>ts',":lua require('telescope.builtin').treesitter()<CR>"},
+  {'n','<leader>to',":lua require('telescope.builtin').builtin()<CR>"},
+  {'n','<leader><c-p>',":lua require'telescope'.extensions.repo.list{},<CR>"},
+  {'n','<leader><c-n>',":lua require'telescope'.extensions.node_modules.list{},<CR>"},
   -- Tree
-  utils.key_mapper('n','<c-n>',':NvimTreeToggle<CR>')
-  utils.key_mapper('n','<leader>r',':NvimTreeRefresh<CR>')
-  utils.key_mapper('n','<leader>n',':NvimTreeFindFile<CR>')
+  {'n','<c-n>',':NvimTreeToggle<CR>'},
+  {'n','<leader>r',':NvimTreeRefresh<CR>'},
+  {'n','<leader>n',':NvimTreeFindFile<CR>'},
 
   -- Git
-  utils.key_mapper('n','<leader>gs',":lua require('neogit').open()<CR>")
+  {'n','<leader>gs',":lua require('neogit').open()<CR>"},
   --Harpoon
-  utils.key_mapper('n','<leader>hM',":lua require('harpoon.mark').add_file()<CR>")
-  utils.key_mapper('n','<leader>hi',":lua require('harpoon.ui').nav_next()<CR>")
-  utils.key_mapper('n','<leader>ho',":lua require('harpoon.ui').nav_prev()<CR>")
-  utils.key_mapper('n','<leader>hm',":lua require('harpoon.ui').toggle_quick_menu()<CR>")
-  utils.key_mapper('n','<leader>ht',":lua require('harpoon.term').gotoTerminal(1)<CR>")
-  utils.key_mapper('n','<leader>hT',":lua require('harpoon.term').gotoTerminal(2)<CR>")
+  {'n','<leader>hM',":lua require('harpoon.mark').add_file()<CR>"},
+  {'n','<leader>hi',":lua require('harpoon.ui').nav_next()<CR>"},
+  {'n','<leader>ho',":lua require('harpoon.ui').nav_prev()<CR>"},
+  {'n','<leader>hm',":lua require('harpoon.ui').toggle_quick_menu()<CR>"},
+  {'n','<leader>ht',":lua require('harpoon.term').gotoTerminal(1)<CR>"},
+  {'n','<leader>hT',":lua require('harpoon.term').gotoTerminal(2)<CR>"},
 
   --resize
-  utils.key_mapper('n','<A-l>',":vertical resize +5<CR>")
-  utils.key_mapper('n','<A-h>',":vertical resize -5<CR>")
-  utils.key_mapper('n','<A-k>',":resize -5<CR>")
-  utils.key_mapper('n','<A-j>',":resize +5<CR>")
+  {'n','<A-l>',":vertical resize +5<CR>"},
+  {'n','<A-h>',":vertical resize -5<CR>"},
+  {'n','<A-k>',":resize -5<CR>"},
+  {'n','<A-j>',":resize +5<CR>"},
 
   --Dap
-  utils.key_mapper('n','<F5>',"'lua require'dap'.continue()<CR>")
-  utils.key_mapper('n','<F10>',":lua require'dap'.step_over()<CR>")
-  utils.key_mapper('n','<F11>',":lua require'dap'.step_into()<CR>")
-  utils.key_mapper('n','<F12>',":lua require'dap'.step_out()<CR>")
-  utils.key_mapper('n','<leader>b',":lua require'dap'.toggle_breakpoint()<CR>")
-  utils.key_mapper('n','<leader>B',":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<CR>")
-  utils.key_mapper('n','<leader>lp',":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>")
-  utils.key_mapper('n','<leader>dr',":lua require'dap'.repl.open()<CR>")
-  utils.key_mapper('n','<leader>dl',":lua require'dap'.run_last()<CR>")
+  {'n','<F5>',"'lua require'dap'.continue()<CR>"},
+  {'n','<F10>',":lua require'dap'.step_over()<CR>"},
+  {'n','<F11>',":lua require'dap'.step_into()<CR>"},
+  {'n','<F12>',":lua require'dap'.step_out()<CR>"},
+  {'n','<leader>b',":lua require'dap'.toggle_breakpoint()<CR>"},
+  {'n','<leader>B',":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition:'))<CR>"},
+  {'n','<leader>lp',":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message:'))<CR>"},
+  {'n','<leader>dr',":lua require'dap'.repl.open()<CR>"},
+  {'n','<leader>dl',":lua require'dap'.run_last()<CR>"},
+
+}
+
+local setup_mappings = function()
+  for  _, mapping in ipairs(mappings) do
+    local mode = tostring(mapping[1])
+    local key = tostring(mapping[1])
+    local result = tostring(mapping[1])
+
+    utils.key_mapper(mode, key, result)
+  end
 
 end
 
