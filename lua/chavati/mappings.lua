@@ -29,7 +29,7 @@ local mappings = {
   {'t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>"},
 
 
-  {'n','<C-f>',":lua vim.lsp.buf.format{ async = true },<CR>"},
+  {'n','<C-f>',":lua vim.lsp.buf.format{ async = true }<CR>"},
   -- Telescope
   {'n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') },<CR>"},
   {'n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')},)<CR>"},
