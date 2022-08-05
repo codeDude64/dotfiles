@@ -22,8 +22,8 @@ local mappings = {
   {'n','[e',":lua require'lspsaga.diagnostic'.goto_prev()<CR>"},
   {'n',']e',":lua require'lspsaga.diagnostic'.goto_next()<CR>"},
 
-  {'n','[E',":lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR },)<CR>"},
-  {'n',']E',":lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR },)<CR>"},
+  {'n','[E',":lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>"},
+  {'n',']E',":lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>"},
 
   {'n','<A-d>',":lua require('lspsaga.floaterm').open_float_terminal()<CR>"},
   {'t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>"},
@@ -31,16 +31,16 @@ local mappings = {
 
   {'n','<C-f>',":lua vim.lsp.buf.format{ async = true }<CR>"},
   -- Telescope
-  {'n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') },<CR>"},
-  {'n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')},)<CR>"},
+  {'n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') }<CR>"},
+  {'n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>"},
   {'n','<c-p>',":lua require('telescope.builtin').git_files()<CR>"},
-  {'n','<s-p>',":lua require('telescope.builtin').find_files({ no_ignore = true },)<CR>"},
+  {'n','<s-p>',":lua require('telescope.builtin').find_files({ no_ignore = true })<CR>"},
   {'n','<leader>gl',":lua require('telescope.builtin').git_commits()<CR>"},
   {'n','<leader>gb',":lua require('telescope.builtin').git_branches()<CR>"},
   {'n','<leader>ts',":lua require('telescope.builtin').treesitter()<CR>"},
   {'n','<leader>to',":lua require('telescope.builtin').builtin()<CR>"},
-  {'n','<leader><c-p>',":lua require'telescope'.extensions.repo.list{},<CR>"},
-  {'n','<leader><c-n>',":lua require'telescope'.extensions.node_modules.list{},<CR>"},
+  {'n','<leader><c-p>',":lua require'telescope'.extensions.repo.list{}<CR>"},
+  {'n','<leader><c-n>',":lua require'telescope'.extensions.node_modules.list{}<CR>"},
   -- Tree
   {'n','<c-n>',':NvimTreeToggle<CR>'},
   {'n','<leader>r',':NvimTreeRefresh<CR>'},
