@@ -2,32 +2,21 @@ local utils = require'chavati.utils'
 
 local mappings = {
   -- LSP
-  {'n','gh',":lua require'lspsaga.finder'.lsp_finder()<CR>"},
+  {'n','<leader>ca',":lua vim.lsp.buf.code_action()<CR>"},
+  {'n','<space>rn',":lua vim.lsp.buf.rename()<CR>"},
 
-  {'n','<leader>ca',":lua require('lspsaga.codeaction').code_action()<CR>"},
-  {'v','<leader>ca',":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>"},
-  {'n','gs',":lua require('lspsaga.signaturehelp').signature_help()<CR>"},
-
-  {'n','K',":lua require('lspsaga.hover').render_hover_doc()<CR>"},
-  {'n','<C-a>',":lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>"},
-  {'n','<C-q>',":lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"},
-
-  {'n','<space>rn',":lua require('lspsaga.rename').lsp_rename()<CR>"},
-
-  {'n','vd',":lua require'lspsaga.definition'.preview_definition()<CR>"},
+  {'n','gs',":lua vim.lsp.buf.signature_help()<CR>"},
+  {'n','K',":lua vim.lsp.buf.hover()<CR>"},
+  {'n','vd',":lua vim.lsp.buf.preview_definition()<CR>"},
   {'n','gd',":lua require('telescope.builtin').lsp_definitions()<CR>"},
   {'n','<leader>gr',":lua require('telescope.builtin').lsp_references()<CR>"},
+  {'n','sd',":lua vim.diagnostic.open_float(0, {scope = 'line'})<CR>"},
+  {'n','<leader>sd',":lua vim.diagnostic.open_float(0, {scope = 'cursor'})<CR>"},
 
-  {'n','sd',":lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>"},
-  {'n','[e',":lua require'lspsaga.diagnostic'.goto_prev()<CR>"},
-  {'n',']e',":lua require'lspsaga.diagnostic'.goto_next()<CR>"},
-
-  {'n','[E',":lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>"},
-  {'n',']E',":lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>"},
-
-  {'n','<A-d>',":lua require('lspsaga.floaterm').open_float_terminal()<CR>"},
-  {'t','<A-d>',":<C-\\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>"},
-
+  {'n','[e',":lua vim.diagnostic.goto_prev()<CR>"},
+  {'n',']e',":lua vim.diagnostic.goto_next()<CR>"},
+  {'n','[E',":lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>"},
+  {'n',']E',":lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>"},
 
   {'n','<C-f>',":lua vim.lsp.buf.format{ async = true }<CR>"},
   -- Telescope
