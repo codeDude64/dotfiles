@@ -59,12 +59,6 @@ return packer.startup(function(use)
   use 'lervag/vimtex'
   -- Bufferline
   use 'akinsho/nvim-bufferline.lua'
-  -- React
-  use 'othree/vim-jsx'
-  -- Prettier
-  use 'prettier/vim-prettier'
-  -- Sillicon
-  use 'segeljakt/vim-silicon'
   -- Harpoon
   use 'ThePrimeagen/harpoon'
   -- Debugger
