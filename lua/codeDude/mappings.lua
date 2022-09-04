@@ -1,4 +1,4 @@
-local utils = require'chavati.utils'
+local utils = require'codeDude.utils'
 
 local mappings = {
   -- LSP
