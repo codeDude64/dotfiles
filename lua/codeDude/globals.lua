@@ -7,6 +7,6 @@ R = function(name)
   return require(name)
 end
 
-RCONFIG = function() R('chavati') end
+RCONFIG = function() R('codeDude') end
 
 P = function(table) print(vim.inspect(table)) end
