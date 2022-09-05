@@ -68,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow archlinux docker docker-compose tmux node npm nvm aws ssh-agent pip postgres laravel)
+plugins=(git git-extras git-flow archlinux docker docker-compose tmux node npm nvm aws pip postgres laravel)
 
 
 # User configuration
