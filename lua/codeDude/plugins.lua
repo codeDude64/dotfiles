@@ -19,6 +19,7 @@ local packer_bootstrap = ensure_packer()
 local packer = require 'packer'
 
 return packer.startup(function(use)
+  use 'wbthomason/packer.nvim'
   -- Style
   use 'marko-cerovac/material.nvim'
   use {'glepnir/galaxyline.nvim', branch = 'main'}
