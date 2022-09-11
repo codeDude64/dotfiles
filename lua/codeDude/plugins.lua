@@ -64,7 +64,7 @@ return packer.startup(function(use)
   -- Latex
   use 'lervag/vimtex'
   -- Bufferline
-  use 'akinsho/nvim-bufferline.lua'
+  use 'akinsho/bufferline.nvim'
   -- Harpoon
   use 'ThePrimeagen/harpoon'
   -- Debugger
