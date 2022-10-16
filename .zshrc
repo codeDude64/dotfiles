@@ -139,3 +139,5 @@ export PATH="$PATH:$GEM_HOME/bin:$HOME/.local/bin/"
 
 
 alias luamake=/home/salvador/dotfiles/lua-language-server/3rd/luamake/luamake
+
+eval "$(starship init zsh)"
