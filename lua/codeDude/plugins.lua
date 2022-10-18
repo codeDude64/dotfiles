@@ -3,7 +3,7 @@ local vim = vim
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data') ..
-                         '/site/pack/packer/start/packer.nvim'
+      '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
     fn.system({
       'git', 'clone', '--depth', '1',
@@ -22,7 +22,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Style
   use 'marko-cerovac/material.nvim'
-  use {'glepnir/galaxyline.nvim', branch = 'main'}
+  use { 'glepnir/galaxyline.nvim', branch = 'main' }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
   use 'tjdevries/nlua.nvim'
@@ -35,7 +35,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind-nvim'
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/completion-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'

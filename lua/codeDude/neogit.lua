@@ -3,4 +3,4 @@ local diffview = require('diffview')
 
 diffview.setup()
 
-neogit.setup {integrations = {diffview = true}}
+neogit.setup { integrations = { diffview = true } }

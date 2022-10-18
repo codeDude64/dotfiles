@@ -19,8 +19,8 @@ cmp.setup({
     },
   },
   snippet = {
-    expand = function (args)
-    	vim.fn['vsnip#anonymous'](args.body)
+    expand = function(args)
+      vim.fn['vsnip#anonymous'](args.body)
     end
   },
   mapping = {
@@ -37,20 +37,20 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
   },
   sources = {
-    {name = 'nvim_lsp'},
-    {name = 'vsnip'},
-    {name = 'path'},
-    {name = 'buffer'},
-    {name = 'cmd_line'}
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+    { name = 'path' },
+    { name = 'buffer' },
+    { name = 'cmd_line' }
   },
   formatting = {
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50, menu = {
+    format = lspkind.cmp_format({ with_text = true, maxwidth = 50, menu = {
       buffer = '[Buffer]',
       nvim_lsp = '[LSP]',
       luasnip = '[LuaSnip]',
       nvim_lua = '[Lua]',
       latex_symbols = '[Latex]',
-    }})
+    } })
   },
   map_cr = true,
   map_complete = true,

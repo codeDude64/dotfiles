@@ -1,4 +1,4 @@
-RELOAD = function(...) require'plenary.reload'.reload_module(...) end
+RELOAD = function(...) require 'plenary.reload'.reload_module(...) end
 
 R = function(name)
   print('Reloading config...')

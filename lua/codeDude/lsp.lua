@@ -2,7 +2,7 @@ local vim = vim
 local lspconfig = require 'lspconfig'
 local cmp_nvim_lsp = require 'cmp_nvim_lsp'
 local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol
-                                                        .make_client_capabilities())
+  .make_client_capabilities())
 
 local function default_on_attach(client) print('Attaching to ' .. client.name) end
 
@@ -32,10 +32,10 @@ lspconfig.jsonls.setup {
   settings = {
     schemas = {
       {
-        fileMatch = {'package.json'},
+        fileMatch = { 'package.json' },
         url = 'https://json.schemastore.org/package.json'
       }, {
-        fileMatch = {'tsconfig*.json'},
+        fileMatch = { 'tsconfig*.json' },
         url = 'https://json.schemastore.org/tsconfig.json'
       }, {
         fileMatch = {
@@ -43,10 +43,10 @@ lspconfig.jsonls.setup {
         },
         url = 'https://json.schemastore.org/prettierrc.json'
       }, {
-        fileMatch = {'.eslintrc', '.eslintrc.json'},
+        fileMatch = { '.eslintrc', '.eslintrc.json' },
         url = 'https://json.schemastore.org/eslintrc.json'
       }, {
-        fileMatch = {'.babelrc', '.babelrc.json', 'babel.config.json'},
+        fileMatch = { '.babelrc', '.babelrc.json', 'babel.config.json' },
         url = 'https://json.schemastore.org/babelrc.json'
       }
     }
@@ -54,7 +54,7 @@ lspconfig.jsonls.setup {
   commands = {
     Format = {
       function()
-        vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line('$'), 0})
+        vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line('$'), 0 })
       end
     }
   }
@@ -79,13 +79,13 @@ lspconfig.sumneko_lua.setup {
   default_config,
   settings = {
     Lua = {
-      runtime = {version = 'LuaJIT', path = runtime_path},
-      diagnostics = {globals = {'vim'}},
+      runtime = { version = 'LuaJIT', path = runtime_path },
+      diagnostics = { globals = { 'vim' } },
       workspace = {
         maxPreload = 10000,
         library = vim.api.nvim_get_runtime_file('', true)
       },
-      telemetry = {enable = false}
+      telemetry = { enable = false }
     }
   }
 }
@@ -94,7 +94,7 @@ local eslint_configuration = {
   lintCommand = 'eslint_d -f visualstudio --stdin --stdin-filename ${INPUT}',
   lintIgnoreExitCode = true,
   lintStdin = true,
-  lintFormats = {'%f(%l,%c): %tarning %m', '%f(%l,%c): %rror %m'},
+  lintFormats = { '%f(%l,%c): %tarning %m', '%f(%l,%c): %rror %m' },
   formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}',
   formatStdin = true
 }
@@ -102,7 +102,7 @@ local eslint_configuration = {
 lspconfig.efm.setup {
   single_file_support = false,
   default_config,
-  filetypes = {'javascript', 'javascriptreact', 'lua', 'typescript', 'vue'},
+  filetypes = { 'javascript', 'javascriptreact', 'lua', 'typescript', 'vue' },
   init_options = {
     documentFormatting = true,
     hover = true,
@@ -110,17 +110,11 @@ lspconfig.efm.setup {
     completion = true
   },
   settings = {
-    rootMarkers = {'.git/'},
+    rootMarkers = { '.git/' },
     languages = {
-      lua = {
-        {
-          formatCommand = 'lua-format -i --config=$HOME/.config/lua-format.yml',
-          formatStdin = true
-        }
-      },
-      javascript = {eslint_configuration},
-      typescript = {eslint_configuration},
-      vuels = {eslint_configuration}
+      javascript = { eslint_configuration },
+      typescript = { eslint_configuration },
+      vuels = { eslint_configuration }
     }
   }
 }
@@ -129,7 +123,7 @@ lspconfig.ccls.setup {
   default_config,
   init_options = {
     compilationDatabaseDirectory = "build",
-    index = {threads = 0},
-    clang = {excludeArgs = {"-frounding-math"}}
+    index = { threads = 0 },
+    clang = { excludeArgs = { "-frounding-math" } }
   }
 }

@@ -6,7 +6,7 @@ local harpoon_config = {
     save_on_change = true,
     enter_on_sendcmd = false
   },
-  projects = {['$HOME/Projects/jibjab-api'] = {term = {cmds = {'make up'}}}}
+  projects = { ['$HOME/Projects/jibjab-api'] = { term = { cmds = { 'make up' } } } }
 }
 
 harpoon.setup(harpoon_config)

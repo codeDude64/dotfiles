@@ -3,7 +3,7 @@ local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
-  args = {os.getenv('HOME') .. '/vscode-node-debug2/out/src/nodeDebug.js'}
+  args = { os.getenv('HOME') .. '/vscode-node-debug2/out/src/nodeDebug.js' }
 }
 dap.configurations.typescript = {
   {
@@ -20,7 +20,7 @@ dap.configurations.typescript = {
     name = 'Attach to process',
     type = 'node2',
     request = 'attach',
-    processId = require'dap.utils'.pick_process
+    processId = require 'dap.utils'.pick_process
   }
 }
 
