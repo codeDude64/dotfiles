@@ -187,32 +187,37 @@ font:
 #draw_bold_text_with_bright_colors: false
 # Colors (Tomorrow Night)
 colors:
-  name: Material
-  author: ""
-  primary:
-    background: "#263238"
-    foreground: "#eceff1"
   cursor:
-    text: "#263238"
-    cursor: "#eceff1"
+    text: '#fefff2'
+    cursor: '#f0cc09'
+
+  selection:
+    text: '#b5b5b5'
+    background: '#18354f'
+
+  primary:
+    background: '#132738'
+    foreground: '#ffffff'
+
   normal:
-    black: "#263238"
-    red: "#ff9800"
-    green: "#8bc34a"
-    yellow: "#ffc107"
-    blue: "#03a9f4"
-    magenta: "#e91e63"
-    cyan: "#009688"
-    white: "#cfd8dc"
+    black: '#000000'
+    red: '#ff0000'
+    green: '#38de21'
+    yellow: '#ffe50a'
+    blue: '#1460d2'
+    magenta: '#ff005d'
+    cyan: '#00bbbb'
+    white: '#bbbbbb'
+
   bright:
-    black: "#37474f"
-    red: "#ffa74d"
-    green: "#9ccc65"
-    yellow: "#ffa000"
-    blue: "#81d4fa"
-    magenta: "#ad1457"
-    cyan: "#26a69a"
-    white: "#eceff1"
+    black: '#555555'
+    red: '#f40e17'
+    green: '#3bd01d'
+    yellow: '#edc809'
+    blue: '#5555ff'
+    magenta: '#ff55ff'
+    cyan: '#6ae3fa'
+    white: '#ffffff'
 
 # Bell
 #
@@ -744,4 +749,4 @@ mouse:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
-theme: Material
+theme: Cobalt-2
