@@ -32,4 +32,4 @@ windowOptions.number = true
 windowOptions.relativenumber = true
 windowOptions.numberwidth = 1
 
-require'codeDude'
+require 'codeDude'

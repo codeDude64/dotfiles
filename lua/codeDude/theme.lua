@@ -20,7 +20,7 @@ material.setup({
     variables = false
   },
   contrast_filetypes = {},
-  high_visibility = {lighter = false, darker = false},
+  high_visibility = { lighter = false, darker = false },
   disable = {
     borders = false,
     background = true,
