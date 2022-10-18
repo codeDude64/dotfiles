@@ -74,14 +74,10 @@ else
   print('Unsupported system for sumneko')
 end
 
-local sumneko_root_path = cache_path .. '/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/' .. system_name ..
-                         '/lua-language-server'
 local runtime_path = vim.split(package.path, ';')
 
 lspconfig.sumneko_lua.setup {
   default_config,
-  cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
   settings = {
     Lua = {
       runtime = {version = 'LuaJIT', path = runtime_path},
