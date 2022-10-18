@@ -18,7 +18,7 @@ local mappings = {
   {'n','[E',":lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>"},
   {'n',']E',":lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>"},
 
-  {'n','<C-f>',":lua vim.lsp.buf.formatting()<CR>"},
+  {'n','<C-f>',":lua vim.lsp.buf.format { async = true }<CR>"},
   -- Telescope
   {'n','<c-s>',":lua require('telescope.builtin').grep_string { search = vim.fn.expand('<cword>') }<CR>"},
   {'n','<s-s>',":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>"},
