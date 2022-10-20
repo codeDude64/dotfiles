@@ -52,17 +52,17 @@ local mappings = {
   { 'n', '<A-k>', ":resize -5<CR>" },
   { 'n', '<A-j>', ":resize +5<CR>" },
   --LuaSnip
-  { { 'i', 's' }, '<c-k>', function()
+  { { 'i', 's' }, '<C-k>', function()
     if ls.expand_or_jumpable() then
       ls.expand_or_jump()
     end
   end },
-  { { 'i', 's' }, '<c-j>', function()
+  { { 'i', 's' }, '<C-j>', function()
     if ls.expand_or_jumpable(-1) then
       ls.jump(-1)
     end
   end },
-  { 'i', '<c-l>', function()
+  { 'i', '<C-l>', function()
     if ls.choice_active() then
       ls.change_choice()
     end

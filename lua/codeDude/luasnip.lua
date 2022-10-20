@@ -3,7 +3,7 @@ local types = require 'luasnip.util.types'
 
 ls.config.set_config {
   history = true,
-  updateEvents = "TextChanged,TextChangedI",
+  updateevents = "TextChanged,TextChangedI",
   enable_autosnippets = true,
   ext_opts = {
     [types.choiceNode] = {
@@ -13,3 +13,8 @@ ls.config.set_config {
     }
   }
 }
+
+ls.add_snippets("all", {
+  ls.parser.parse_snippet("todo", "TODO ($1) : $0")
+})
+
