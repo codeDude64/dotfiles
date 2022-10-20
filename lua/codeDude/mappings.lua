@@ -1,4 +1,5 @@
 local utils = require 'codeDude.utils'
+local ls = require 'luasnip'
 
 local mappings = {
   -- LSP
@@ -50,6 +51,22 @@ local mappings = {
   { 'n', '<A-h>', ":vertical resize -5<CR>" },
   { 'n', '<A-k>', ":resize -5<CR>" },
   { 'n', '<A-j>', ":resize +5<CR>" },
+  --LuaSnip
+  { { 'i', 's' }, '<c-k>', function()
+    if ls.expand_or_jumpable() then
+      ls.expand_or_jump()
+    end
+  end },
+  { { 'i', 's' }, '<c-j>', function()
+    if ls.expand_or_jumpable(-1) then
+      ls.jump(-1)
+    end
+  end },
+  { 'i', '<c-l>', function()
+    if ls.choice_active() then
+      ls.change_choice()
+    end
+  end },
 
   --Dap
   { 'n', '<F5>', "'lua require'dap'.continue()<CR>" },
@@ -66,11 +83,12 @@ local mappings = {
 
 local function setup_mappings(maps)
   for _, map in ipairs(maps) do
-    local mode = tostring(map[1])
-    local key = tostring(map[2])
-    local result = tostring(map[3])
+    local mode = map[1]
+    local key = map[2]
+    local result = map[3]
+    local opts = map[4]
 
-    utils.key_mapper(mode, key, result)
+    utils.key_mapper(mode, key, result, opts)
   end
 
 end
