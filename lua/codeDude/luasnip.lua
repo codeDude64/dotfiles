@@ -1,4 +1,7 @@
 local ls = require 'luasnip'
+local s = ls.s
+local fmt = require 'luasnip.extras.fmt'.fmt
+local i = ls.insert_node
 local types = require 'luasnip.util.types'
 
 ls.config.set_config {
@@ -14,7 +17,9 @@ ls.config.set_config {
   }
 }
 
+local git_user = vim.fn.system("git config user.name | tr -d '\n'")
+
 ls.add_snippets("all", {
-  ls.parser.parse_snippet("todo", "TODO ($1) : $0")
+  s("todo", fmt("TODO ({}): {}", {git_user, i(2)}))
 })
 
