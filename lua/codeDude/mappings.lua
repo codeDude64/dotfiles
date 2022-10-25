@@ -51,6 +51,12 @@ local mappings = {
   { 'n', '<A-h>', ":vertical resize -5<CR>" },
   { 'n', '<A-k>', ":resize -5<CR>" },
   { 'n', '<A-j>', ":resize +5<CR>" },
+  --Luasnip
+  { 'i', '<C-l>', function()
+    if ls.choice_active() then
+      ls.change_choice()
+    end
+  end },
   --Dap
   { 'n', '<F5>', "'lua require'dap'.continue()<CR>" },
   { 'n', '<F10>', ":lua require'dap'.step_over()<CR>" },
