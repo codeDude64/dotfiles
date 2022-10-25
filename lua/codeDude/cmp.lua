@@ -1,6 +1,7 @@
 local vim = vim
 local lspkind = require 'lspkind'
 local cmp = require 'cmp'
+local luasnip = require 'luasnip'
 
 
 cmp.setup({
@@ -20,10 +21,11 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      vim.fn['vsnip#anonymous'](args.body)
+      luasnip.lsp_expand(args.body)
     end
   },
   mapping = {
+    -- cmp mappings
     ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
@@ -33,21 +35,37 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' })
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
   },
   sources = {
+    { name = 'luasnip' },
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
     { name = 'path' },
     { name = 'buffer' },
     { name = 'cmd_line' }
   },
   formatting = {
     format = lspkind.cmp_format({ with_text = true, maxwidth = 50, menu = {
-      buffer = '[Buffer]',
       nvim_lsp = '[LSP]',
       luasnip = '[LuaSnip]',
+      buffer = '[Buffer]',
       nvim_lua = '[Lua]',
       latex_symbols = '[Latex]',
     } })
