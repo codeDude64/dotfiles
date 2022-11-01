@@ -1,8 +1,10 @@
-local vim = vim
+local status_cmp_ok, cmp = pcall(require, 'cmp')
+if not status_cmp_ok then
+  vim.notify('Error: cmp plugin is NIL')
+  return
+end
 local lspkind = require 'lspkind'
-local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-
 
 cmp.setup({
   completion = {
