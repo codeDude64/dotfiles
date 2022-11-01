@@ -1,6 +1,6 @@
 local status_cmp_ok, cmp = pcall(require, 'cmp')
 if not status_cmp_ok then
-  vim.notify('cmp is nil')
+  vim.notify('Error: cmp plugin is NIL')
   return
 end
 local lspkind = require 'lspkind'
