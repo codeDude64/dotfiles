@@ -52,11 +52,7 @@ material.setup({
   lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
   async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
   custom_colors = nil, -- If you want to everride the default colors, set this to a function
-  custom_highlights = {
-    NormalNC = {
-      bg = 'NONE'
-    },
-  }, -- Overwrite highlights with your own
+  custom_highlights = {}, -- Overwrite highlights with your own
 })
 
 vim.cmd 'colorscheme material'
