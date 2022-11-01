@@ -1,28 +1,12 @@
-local json_config  = require('codeDude.lsp.json_config')
-local lua_config   = require('codeDude.lsp.lua_config')
-local efm_config   = require('codeDude.lsp.efm_config')
-local ccls_config   = require('codeDude.lsp.ccls_config')
-local default_config = require('codeDude.lsp.default_config')
-local lspconfig    = require 'lspconfig'
+local lspconfig   = require 'lspconfig'
+local lsp_servers = require 'codeDude.lsp.lsp_servers'
 
-lspconfig.tsserver.setup(default_config)
-lspconfig.cssls.setup(default_config)
-lspconfig.html.setup(default_config)
-lspconfig.vuels.setup(default_config)
-lspconfig.omnisharp.setup(default_config)
-lspconfig.intelephense.setup(default_config)
-lspconfig.pyright.setup(default_config)
-lspconfig.bashls.setup(default_config)
-lspconfig.texlab.setup(default_config)
-lspconfig.yamlls.setup(default_config)
-lspconfig.vimls.setup(default_config)
-lspconfig.dockerls.setup(default_config)
-lspconfig.jdtls.setup(default_config)
-lspconfig.solargraph.setup(default_config)
-lspconfig.cmake.setup(default_config)
-lspconfig.lemminx.setup(default_config)
+local function load_lsp_servers()
+  for key, server in pairs(lsp_servers) do
+    print("hola")
+    lspconfig[key].setup(server)
+  end
 
-lspconfig.jsonls.setup(json_config)
-lspconfig.sumneko_lua.setup(lua_config)
-lspconfig.efm.setup(efm_config)
-lspconfig.ccls.setup(ccls_config)
+end
+
+load_lsp_servers()
