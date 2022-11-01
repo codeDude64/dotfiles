@@ -1,7 +1,6 @@
 local ls = require 'luasnip'
 local types = require 'luasnip.util.types'
-local all_snippets require 'codeDude.luasnip.all_snippets'
-local javascript_snippets require 'codeDude.luasnip.javascript_snippets'
+local snippets = require 'codeDude.luasnip.snippets'
 
 -- TODO (codeDude): posibles luasnip functions
 --local s = ls.s
@@ -28,9 +27,10 @@ ls.config.set_config {
   }
 }
 
+local function load_snippets()
+  for type, snippet in pairs(snippets) do
+    ls.add_snippets(type, snippet)
+  end
+end
 
-
-
-
-ls.add_snippets("all", all_snippets)
-ls.add_snippets("javascript", javascript_snippets)
+load_snippets()
