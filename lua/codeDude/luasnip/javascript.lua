@@ -104,6 +104,36 @@ local javascript_snippets = {
   },
     fmt([[export default {};]], i(1))),
   s({
+    trig = 're',
+    name = 'Require',
+    dscr = 'Require NodeJS'
+  },
+    fmt([[require({})]], i(1))),
+  s({
+    trig = 'req',
+    name = 'Require Assignment',
+    dscr = 'Require Assignment NodeJS'
+  },
+    fmt([[const {} = require('{}')]], { i(1), rep(1) })),
+  s({
+    trig = 'dreq',
+    name = 'Destructuring Require Assignment',
+    dscr = 'Require Assignment with destructuring NodeJS'
+  },
+    fmt([[const {{ {} }} = require('{}')]], { i(1), rep(1) })),
+  s({
+    trig = 'em',
+    name = 'Export Memeber',
+    dscr = 'Export Memeber NodeJS'
+  },
+    fmt([[exports.{} = {}]], { i(1), i(2) })),
+  s({
+    trig = 'me',
+    name = 'Module Export',
+    dscr = 'Module Export NodeJS'
+  },
+    fmt([[module.exports = {}]], i(1))),
+  s({
     trig = 'co',
     name = 'Constant',
     dscr = 'Declare a constant'
@@ -220,7 +250,210 @@ local javascript_snippets = {
       i(1),
       i(2),
       i(0)
-    }))
+    })),
+  s({
+    trig = 'fn',
+    name = 'Anonymous or Named Function',
+    dscr = 'Anonymous or named common Function'
+  },
+    fmt('function {}({}) {{\n  {}\n}}', { i(1), i(2), i(0) })),
+  s({
+    trig = 'af',
+    name = 'Arrow Function',
+    dscr = 'Arrow Function'
+  },
+    fmt('({}) => {}', {
+      i(1),
+      c(2, {
+        sn(1, fmt('{{\n  {}\n}}', i(1))),
+        sn(1, fmt('{}', i(1)))
+      })
+    })),
+  s({
+    trig = 'fe',
+    name = 'Foor Each Loop',
+    dscr = 'Foor Each Loop'
+  },
+    fmt('{}.forEach(({}) => {{\n  {}\n}});', { i(1), i(2), i(0) })),
+  s({
+    trig = 'map',
+    name = 'Map Loop',
+    dscr = 'Map Loop'
+  },
+    fmt('{}.map(({}) => {{\n  {}\n}});', { i(1), i(2), i(0) })),
+  s({
+    trig = 'filter',
+    name = 'Filter Loop',
+    dscr = 'Filter Loop'
+  },
+    fmt('{}.filter(({}) => {{\n  {}\n}});', { i(1), i(2), i(0) })),
+  s({
+    trig = 'find',
+    name = 'Find Loop',
+    dscr = 'Find Loop'
+  },
+    fmt('{}.find(({}) => {{\n  {}\n}});', { i(1), i(2), i(0) })),
+  s({
+    trig = 'reduce',
+    name = 'Reduce Loop',
+    dscr = 'Reduce Loop'
+  },
+    fmt('{}.reduce(({}) => {{\n  {}\n}}, [{}]);', { i(1), i(2), i(3), i(4) })),
+  s({
+    trig = 'ol',
+    name = 'Object Literal',
+    dscr = 'Object Literal'
+  },
+    fmt('{{\n  {}\n}}', i(1))),
+  s({
+    trig = 'kv',
+    name = 'Key/Value',
+    dscr = 'Key/Value pair'
+  },
+    fmt([[{}: {}]], { i(1), i(2) })),
+  s({
+    trig = 'c',
+    name = 'Class',
+    dscr = 'Class ES6'
+  },
+    fmt('class {} {{\n  constructor({}) {{\n    {}\n  }}\n}}', { i(1), i(2), i(0) })),
+  s({
+    trig = 'ctor',
+    name = 'Constructor',
+    dscr = 'Class Constructor ES6'
+  },
+    fmt('constructor({}) {{\n  super({});\n  {}\n}}', { i(1), rep(1), i(0) })),
+  s({
+    trig = 'm',
+    name = 'Method',
+    dscr = 'Method ES6'
+  },
+    fmt('{}({}) {{\n  {}\n}}', { i(1), i(2), i(0) })),
+  s({
+    trig = 'get',
+    name = 'Get',
+    dscr = 'Getter ES6'
+  },
+    fmt('get {}({}) {{\n  {}\n}}', { i(1), i(2), i(0) })),
+  s({
+    trig = 'set',
+    name = 'Set',
+    dscr = 'Setter ES6'
+  },
+    fmt('set {}({}) {{\n  {}\n}}', { i(1), i(2), i(0) })),
+  s({
+    trig = 'gs',
+    name = 'Getter and Setter',
+    dscr = 'Getter and Setter ES6'
+  },
+    fmt('get {}() {{\n  {}\n}}\nset {}({}) {{\n  \n}}', {
+      i(1),
+      i(0),
+      rep(1),
+      i(2)
+    })),
+  s({
+    trig = 'r',
+    name = 'Return',
+    dscr = 'Return'
+  },
+    fmt([[return {}]], i(0))),
+  s({
+    trig = 'rc',
+    name = 'Return Complex',
+    dscr = 'Return complex values like JSX'
+  },
+    fmt('return (\n  {}\n)', i(0))),
+  s({
+    trig = 'tof',
+    name = 'Typeof',
+    dscr = 'Comparation to return a boolean using typeof'
+  },
+    fmt([[ typeof {} === '{}']], { i(1), i(2) })),
+  s({
+    trig = 'iof',
+    name = 'Instance Of',
+    dscr = 'Comparation to return a boolean using instanceof'
+  },
+    fmt([[ {} instanceof '{}']], { i(1), i(2) })),
+  s({
+    trig = 'pr',
+    name = 'Promise',
+    dscr = 'Promise ES6'
+  },
+    fmt('new Promise((resolve, reject) => {{\n  {}\n}});', i(0))),
+  s({
+    trig = 'then',
+    name = 'Then',
+    dscr = 'Then Promise'
+  },
+    fmt('{}.then(({}) => {{\n  {}\n}})', { i(1), i(2), i(0) })),
+  s({
+    trig = 'catch',
+    name = 'Catch',
+    dscr = 'Catch Promise'
+  },
+    fmt('{}.catch(({}) => {{\n  {}\n}})', { i(1), i(2), i(0) })),
+  s({
+    trig = 'desc',
+    name = 'Describe',
+    dscr = 'Describe Jest'
+  },
+    fmt("describe('{}', () => {{\n  {}\n}});", { i(1), i(0) })),
+  s({
+    trig = 'cont',
+    name = 'Context',
+    dscr = 'Context Jest'
+  },
+    fmt("context('{}', () => {{\n  {}\n}});", { i(1), i(0) })),
+  s({
+    trig = 'it',
+    name = 'It Should',
+    dscr = 'It Should Jest'
+  },
+    fmt("it('should {}', () => {{\n  {}\n}});", { i(1), i(0) })),
+  s({
+    trig = 'bf',
+    name = 'Before',
+    dscr = 'Before Jest'
+  },
+    fmt('before(() => {{\n  {}\n}});', i(1))),
+  s({
+    trig = 'bfe',
+    name = 'Before Each',
+    dscr = 'Before Each Jest'
+  },
+    fmt('beforeEach(() => {{\n  {}\n}});', i(1))),
+  s({
+    trig = 'aft',
+    name = 'After',
+    dscr = 'After Jest'
+  },
+    fmt('after(() => {{\n  {}\n}});', i(1))),
+  s({
+    trig = 'afte',
+    name = 'After Each',
+    dscr = 'Afte Eachr Jest'
+  },
+    fmt('afterEach(() => {{\n  {}\n}});', i(1))),
+  s({
+    trig = 'st',
+    name = 'Set Timeout',
+    dscr = 'Set Timeout'
+  },
+    fmt('setTimeout(() => {{\n  {}\n}}, {});', { i(0), i(1) })),
+  s({
+    trig = 'si',
+    name = 'Set Interval',
+    dscr = 'Set Interval'
+  },
+    fmt('setInterval(() => {{\n  {}\n}}, {});', { i(0), i(1) })),
+  s({
+    trig = 'us',
+    name = 'Use Strict',
+    dscr = 'Use Strict'
+  },
+    t("'use strict'"))
 }
 
 for _, react_snippet in ipairs(react_snippets) do
