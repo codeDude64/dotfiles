@@ -5,6 +5,7 @@ local c = ls.choice_node
 local s = ls.s
 local t = ls.t
 local sn = ls.snippet_node
+local rep = require 'luasnip.extras'.rep
 local fmt = require 'luasnip.extras.fmt'.fmt
 
 local javascript_snippets = {
@@ -107,7 +108,7 @@ local javascript_snippets = {
     name = 'Constant',
     dscr = 'Declare a constant'
   },
-  fmt([[const {};]], {
+    fmt([[const {};]], {
       c(1, {
         sn(1, { i(1), t(' = '), i(2) }),
         sn(1, i(1)),
@@ -119,7 +120,7 @@ local javascript_snippets = {
     name = 'Variable',
     dscr = 'Declare a variable'
   },
-  fmt([[let {};]], {
+    fmt([[let {};]], {
       c(1, {
         sn(1, { i(1), t(' = '), i(2) }),
         sn(1, i(1)),
@@ -131,13 +132,13 @@ local javascript_snippets = {
     name = 'If Condition',
     dscr = 'If Condition'
   },
-  fmt('if ({}) {{\n  {}\n}}{}',{
+    fmt('if ({}) {{\n  {}\n}}{}', {
       i(1),
       i(2),
       c(3, {
         t(''),
-        sn(1, fmt(' else if ({}) {{\n  {}\n}} else {{\n  {}\n}}', {i(1), i(2), i(3)})),
-        sn(1, fmt(' else if ({}) {{\n  {}\n}}', {i(1), i(2)})),
+        sn(1, fmt(' else if ({}) {{\n  {}\n}} else {{\n  {}\n}}', { i(1), i(2), i(3) })),
+        sn(1, fmt(' else if ({}) {{\n  {}\n}}', { i(1), i(2) })),
         sn(1, fmt(' else {{\n  {}\n}}', i(1))),
       })
     })),
@@ -146,13 +147,80 @@ local javascript_snippets = {
     name = 'Else Condition',
     dscr = 'Else Condition'
   },
-  fmt("else {{\n  {}\n}}", i(1))),
+    fmt("else {{\n  {}\n}}", i(1))),
   s({
     trig = 'ei',
     name = 'Else If Condition',
     dscr = 'Else If Condition'
   },
-  fmt('else if ({}) {{\n  {}\n}}', {i(1), i(2)}))
+    fmt('else if ({}) {{\n  {}\n}}', { i(1), i(2) })),
+  s({
+    trig = 'ter',
+    name = 'Ternary Condition',
+    dscr = 'Ternary Condition'
+  },
+    fmt([[{} ? {} : {}]], { i(1), i(2), i(3) })),
+  s({
+    trig = 'fl',
+    name = 'For Loop',
+    dscr = 'Usual for loop'
+  },
+    fmt('for (let {} = 0, {} < {}.length; {}++)  {{\n  {}\n}}', {
+      i(1),
+      rep(1),
+      i(2),
+      rep(1),
+      i(0)
+    })),
+  s({
+    trig = 'fi',
+    name = 'For In Loop',
+    dscr = 'Foor in loop'
+  },
+    fmt('for (let {} in {}) {{\n  {}\n}}', {
+      i(1),
+      i(2),
+      i(0)
+    })),
+  s({
+    trig = 'fo',
+    name = 'For Of Loop',
+    dscr = 'Foor of loop'
+  },
+    fmt('for (let {} of {}) {{\n  {}\n}}', {
+      i(1),
+      i(2),
+      i(0)
+    })),
+  s({
+    trig = 'wl',
+    name = 'While Loop',
+    dscr = 'While Loop'
+  },
+    fmt('while ({}) {{\n  {}\n}}', { i(1), i(0) })),
+  s({
+    trig = 'tc',
+    name = 'Try/Catch',
+    dscr = 'Try Catch Scope'
+  },
+    fmt('try {{\n  {}\n}}{}', {
+      i(1),
+      c(2, {
+        sn(1, fmt(' catch ({}) {{\n  {}\n}}', { i(1), i(2) })),
+        sn(1, fmt(' finally {{\n  {}\n}} catch ({}) {{\n  {}\n}}', { i(1), i(2), i(3) })),
+        sn(1, fmt(' finally {{\n  {}\n}}', i(1))),
+      })
+    })),
+  s({
+    trig = 'sw',
+    name = 'Switch Case',
+    dscr = 'Switch Case Scope'
+  },
+    fmt('switch ({}) {{\n  case {}:\n  return; {}\ndefault:\n  return;\n}}', {
+      i(1),
+      i(2),
+      i(0)
+    }))
 }
 
 for _, react_snippet in ipairs(react_snippets) do
