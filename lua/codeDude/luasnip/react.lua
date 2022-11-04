@@ -20,7 +20,7 @@ return {
   s('impt', t [[import PropTypes from 'prop-types';]]),
   s('rpt', fmt('{}.propTypes = {{\n  {}\n}};', {
     filename(),
-    i(0)
+    i(1)
   })),
   s('rfc', fmt("import React from 'react';\n\nconst {} = ({}) => {{\n  return({});\n}}\n\nexport default {};", {
     filename(),
@@ -42,5 +42,5 @@ return {
     end, 1),
     i(2)
   })),
-  s('uef', fmt("useEffect(() => {{\n  {}\n}}, [{}]);", {i(1), i(0)}))
+  s('uef', fmt("useEffect(() => {{\n  {}\n}}, [{}]);", {i(1), i(2)}))
 }
