@@ -3,5 +3,7 @@ local javascript = require 'codeDude.luasnip.javascript'
 
 return {
   all = all,
-  javascript = javascript
+  javascript = javascript,
+  typescript = javascript,
+  typescriptreact = javascript
 }
