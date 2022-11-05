@@ -13,7 +13,7 @@ return {
   on_attach = default_config.on_attach,
   capabilities = default_config.capabilities,
   single_file_support = false,
-  filetypes = { 'javascript', 'javascriptreact', 'lua', 'typescript', 'vue' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript' },
   init_options = {
     documentFormatting = true,
     hover = true,
