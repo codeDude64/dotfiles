@@ -34,6 +34,7 @@ return packer.startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-cmdline'
   use 'onsails/lspkind-nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
