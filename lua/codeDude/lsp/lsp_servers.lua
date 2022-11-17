@@ -1,6 +1,5 @@
 local json_config    = require('codeDude.lsp.json_config')
 local lua_config     = require('codeDude.lsp.lua_config')
-local efm_config     = require('codeDude.lsp.efm_config')
 local ccls_config    = require('codeDude.lsp.ccls_config')
 local default_config = require('codeDude.lsp.default_config')
 
@@ -24,6 +23,5 @@ return {
 
   jsonls = json_config,
   sumneko_lua = lua_config,
-  efm = efm_config,
   ccls = ccls_config,
 }
