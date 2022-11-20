@@ -72,6 +72,8 @@ return packer.startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
+  -- Sillicon 
+  use 'narutoxy/silicon.lua'
 
   if packer_bootstrap then require('packer').sync() end
 end)

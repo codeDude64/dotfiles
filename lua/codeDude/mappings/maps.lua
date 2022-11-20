@@ -7,6 +7,7 @@ local maps_config = {
  nvim_tree = require 'codeDude.mappings.nvim_tree',
  resize = require 'codeDude.mappings.resize',
  telescope = require 'codeDude.mappings.telescope',
+ silicon = require 'codeDude.mappings.silicon'
 }
 
 local M = {}
