@@ -22,7 +22,6 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Style
   use 'marko-cerovac/material.nvim'
-  use { 'glepnir/galaxyline.nvim', branch = 'main' }
   -- LSP Plugins
   use 'neovim/nvim-lspconfig'
   use 'tjdevries/nlua.nvim'
