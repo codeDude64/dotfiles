@@ -1,4 +1,6 @@
 local lualine = require 'lualine'
+local components = require 'codeDude.lualine.components'
+
 
 lualine.setup {
   options = {
@@ -24,7 +26,7 @@ lualine.setup {
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'filename' },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
+    lualine_y = { 'progress', components.scrollbar },
     lualine_z = { 'location' }
   },
   inactive_sections = {
