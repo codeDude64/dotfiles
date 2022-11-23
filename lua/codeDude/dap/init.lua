@@ -4,6 +4,7 @@ local configurations = require 'codeDude.dap.configurations'
 
 dap.adapters.node2 = adapters.node2
 dap.adapters.nlua = adapters.nlua
+dap.adapters.codelldb = adapters.codelldb
 
 dap.configurations.javascript = configurations.javascript
 dap.configurations.javascriptreact = configurations.javascript
@@ -12,6 +13,9 @@ dap.configurations.typescript = configurations.javascript
 dap.configurations.typescriptreact = configurations.javascript
 
 dap.configurations.lua = configurations.lua
+
+dap.configurations.cpp = configurations.cpp
+dap.configurations.rust = configurations.cpp
 
 
 require('dap.ext.vscode').load_launchjs()
