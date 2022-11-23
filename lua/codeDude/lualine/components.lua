@@ -13,7 +13,6 @@ function M.scrollbar()
   else
     local line_no_fraction = vim.fn.floor(current_line) / vim.fn.floor(total_lines)
     index = vim.fn.float2nr(line_no_fraction * #default_chars)
-    P(index)
     if index == 0 then
       index = 1
     end
