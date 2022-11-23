@@ -1,25 +1,6 @@
 local lualine = require 'lualine'
+local components = require 'codeDude.lualine.components'
 
-local function scrollbar()
-  local current_line = vim.fn.line('.')
-  local total_lines = vim.fn.line('$')
-  local default_chars = { '  ', '__', '▁▁', '▂▂', '▃▃', '▄▄', '▅▅', '▆▆', '▇▇', '██' }
-  local index = 1
-
-  if current_line == 1 then
-    index = 1
-  elseif current_line == total_lines then
-    index = #default_chars
-  else
-    local line_no_fraction = vim.fn.floor(current_line) / vim.fn.floor(total_lines)
-    index = vim.fn.float2nr(line_no_fraction * #default_chars)
-    P(index)
-    if index == 0 then
-      index = 1
-    end
-  end
-  return default_chars[index]
-end
 
 lualine.setup {
   options = {
@@ -45,7 +26,7 @@ lualine.setup {
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'filename' },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress', scrollbar },
+    lualine_y = { 'progress', components.scrollbar },
     lualine_z = { 'location' }
   },
   inactive_sections = {
