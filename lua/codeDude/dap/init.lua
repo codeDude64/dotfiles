@@ -3,7 +3,12 @@ local adapters = require 'codeDude.dap.adapters'
 local configurations = require 'codeDude.dap.configurations'
 
 dap.adapters.node2 = adapters.node2
-dap.configurations.javascript = configurations.node
+
+dap.configurations.javascript = configurations.javascript
+dap.configurations.javascriptreact = configurations.javascript
+
+dap.configurations.typescript = configurations.javascript
+dap.configurations.typescriptreact = configurations.javascript
 
 require('dap.ext.vscode').load_launchjs()
 
