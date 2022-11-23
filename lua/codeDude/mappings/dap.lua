@@ -1,4 +1,5 @@
 local dap = require 'dap'
+local osv = require 'osv'
 
 return {
   { 'n', '<F5>', function() dap.continue() end },
@@ -10,5 +11,5 @@ return {
   { 'n', '<leader>lp', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message:')) end },
   { 'n', '<leader>dr', function() dap.repl.open() end },
   { 'n', '<leader>dl', function() dap.run_last() end },
-
+  { 'n', '<leader>ld', function() osv.run_this() end },
 }
