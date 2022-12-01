@@ -1,7 +1,6 @@
-local silicon = require 'silicon'
+local silicon = require('silicon')
 
-local filename = vim.fn.expand('%')
-
-silicon.setup = {
-  output = '~/Pictures/Silicon/'..filename
-}
+silicon.setup({
+  font = 'VictorMono Nerd Font=16',
+  theme = 'Dracula',
+})
