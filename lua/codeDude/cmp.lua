@@ -5,6 +5,7 @@ if not status_cmp_ok then
 end
 local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 cmp.setup({
   completion = {
@@ -12,13 +13,15 @@ cmp.setup({
   },
   sorting = {
     comparators = {
-      cmp.config.compare.sort_text,
-      cmp.config.compare.score,
-      cmp.config.compare.order,
       cmp.config.compare.offset,
-      cmp.config.compare.kind,
-      cmp.config.compare.length,
       cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
     },
   },
   snippet = {
@@ -76,3 +79,8 @@ cmp.setup({
   map_complete = true,
   auto_select = false,
 })
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
