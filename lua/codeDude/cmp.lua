@@ -80,6 +80,30 @@ cmp.setup({
   auto_select = false,
 })
 
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'cmp_git' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+
 cmp.event:on(
   'confirm_done',
   cmp_autopairs.on_confirm_done()
