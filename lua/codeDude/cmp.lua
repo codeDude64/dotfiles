@@ -11,6 +11,9 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
+  window = {
+    completion = cmp.config.window.bordered({ border = 'double' })
+  },
   sorting = {
     comparators = {
       cmp.config.compare.offset,
@@ -67,13 +70,17 @@ cmp.setup({
     { name = 'cmd_line' }
   },
   formatting = {
-    format = lspkind.cmp_format({ with_text = true, maxwidth = 50, menu = {
-      nvim_lsp = '[LSP]',
-      luasnip = '[LuaSnip]',
-      buffer = '[Buffer]',
-      nvim_lua = '[Lua]',
-      latex_symbols = '[Latex]',
-    } })
+    format = function(entry, vim_item)
+      if vim.tbl_contains({ 'path' }, entry.source.name) then
+        local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+        if icon then
+          vim_item.kind = icon
+          vim_item.kind_hl_group = hl_group
+          return vim_item
+        end
+      end
+      return lspkind.cmp_format({ with_text = true })(entry, vim_item)
+    end
   },
   map_cr = true,
   map_complete = true,
