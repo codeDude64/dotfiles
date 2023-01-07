@@ -11,6 +11,9 @@ cmp.setup({
   completion = {
     completeopt = 'menu,menuone,noinsert'
   },
+  window = {
+    completion = cmp.config.window.bordered({ border = 'double' })
+  },
   sorting = {
     comparators = {
       cmp.config.compare.offset,
