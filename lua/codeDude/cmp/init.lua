@@ -12,7 +12,8 @@ cmp.setup({
     completeopt = 'menu,menuone,noinsert'
   },
   window = {
-    completion = cmp.config.window.bordered({ border = 'double' })
+    completion = cmp.config.window.bordered({ border = 'double' }),
+    documentation = cmp.config.window.bordered({ col_offset = 5 })
   },
   sorting = {
     comparators = {
@@ -70,7 +71,7 @@ cmp.setup({
     { name = 'cmd_line' }
   },
   formatting = {
-    fields = { 'kind', 'abbr' },
+    fields = { 'kind', 'abbr', 'menu' },
     format = function(entry, vim_item)
       if vim.tbl_contains({ 'path' }, entry.source.name) then
         local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
