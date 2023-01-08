@@ -3,9 +3,9 @@ if not status_cmp_ok then
   vim.notify('Error: cmp plugin is NIL')
   return
 end
-local lspkind = require 'lspkind'
 local luasnip = require 'luasnip'
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp_kinds = require 'codeDude.cmp.icon_kinds'
 
 cmp.setup({
   completion = {
@@ -70,6 +70,7 @@ cmp.setup({
     { name = 'cmd_line' }
   },
   formatting = {
+    fields = { 'kind', 'abbr' },
     format = function(entry, vim_item)
       if vim.tbl_contains({ 'path' }, entry.source.name) then
         local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
@@ -79,7 +80,8 @@ cmp.setup({
           return vim_item
         end
       end
-      return lspkind.cmp_format({ with_text = true })(entry, vim_item)
+      vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+      return vim_item
     end
   },
   map_cr = true,
