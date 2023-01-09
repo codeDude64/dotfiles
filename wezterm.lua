@@ -1,7 +1,7 @@
 local wezterm = require'wezterm'
 
 return {
-  color_scheme = 'Nord (base16)',
+  color_scheme = 'palenight (Gogh)',
   window_background_opacity = .90,
   font = wezterm.font 'VictorMono Nerd Font',
 }
