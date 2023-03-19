@@ -19,7 +19,7 @@ local packer_bootstrap = ensure_packer()
 local packer = require 'packer'
 
 return packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim' --
   -- Style
   use 'marko-cerovac/material.nvim' --
   use 'nvim-lualine/lualine.nvim' --
@@ -37,10 +37,10 @@ return packer.startup(function(use)
   use 'onsails/lspkind-nvim' --
   use 'jose-elias-alvarez/null-ls.nvim' --
   -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/playground'
-  use 'nvim-treesitter/completion-treesitter'
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --
+  use 'nvim-treesitter/playground' --
+  use 'nvim-treesitter/completion-treesitter' --
+  use 'nvim-treesitter/nvim-treesitter-textobjects' --
   -- Telescope
   use 'nvim-lua/popup.nvim' --
   use 'nvim-lua/plenary.nvim' --
