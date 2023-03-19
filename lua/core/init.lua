@@ -3,8 +3,9 @@ local load_core = function ()
   require("core.options.global")
   require("core.options.buffer")
   require("core.options.window")
+  require("core.lazy")
 end
 
 load_core()
 
-require 'codeDude'
+--require 'codeDude'

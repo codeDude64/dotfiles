@@ -24,18 +24,18 @@ return packer.startup(function(use)
   use 'marko-cerovac/material.nvim'
   use 'nvim-lualine/lualine.nvim'
   -- LSP Plugins
-  use 'neovim/nvim-lspconfig'
+  use 'neovim/nvim-lspconfig' --
   use 'tjdevries/nlua.nvim'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp' --
+  use 'saadparwaiz1/cmp_luasnip' --
   use 'L3MON4D3/LuaSnip'
-  use 'hrsh7th/cmp-buffer'
-  use 'petertriho/cmp-git'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-cmdline'
-  use 'onsails/lspkind-nvim'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'hrsh7th/cmp-buffer' --
+  use 'petertriho/cmp-git' --
+  use 'hrsh7th/cmp-path' --
+  use 'hrsh7th/nvim-cmp' --
+  use 'hrsh7th/cmp-cmdline' --
+  use 'onsails/lspkind-nvim' --
+  use 'jose-elias-alvarez/null-ls.nvim' --
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
@@ -60,7 +60,7 @@ return packer.startup(function(use)
   -- Surround
   use 'kylechui/nvim-surround'
   -- Auto Pairs
-  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-autopairs' --
   -- Tmux navigator
   use 'christoomey/vim-tmux-navigator'
   -- Latex
