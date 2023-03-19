@@ -12,7 +12,6 @@ return {
       'nvim-lua/popup.nvim',
     },
     keys = function ()
-     print(vim.inspect(require('keymaps.telescope')))
       return require('keymaps.telescope')
     end,
     config = function()
