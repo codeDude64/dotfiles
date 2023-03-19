@@ -42,13 +42,13 @@ return packer.startup(function(use)
   use 'nvim-treesitter/completion-treesitter'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   -- Telescope
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-fzy-native.nvim'
-  use 'cljoly/telescope-repo.nvim'
-  use 'nvim-telescope/telescope-media-files.nvim'
-  use 'nvim-telescope/telescope-node-modules.nvim'
+  use 'nvim-lua/popup.nvim' --
+  use 'nvim-lua/plenary.nvim' --
+  use 'nvim-telescope/telescope.nvim' --
+  use 'nvim-telescope/telescope-fzy-native.nvim' --
+  use 'cljoly/telescope-repo.nvim' --
+  use 'nvim-telescope/telescope-media-files.nvim' --
+  use 'nvim-telescope/telescope-node-modules.nvim' --
   -- Tree
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
