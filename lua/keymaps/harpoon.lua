@@ -3,10 +3,10 @@ local harpoon_ui = require 'harpoon.ui'
 local harpoon_term = require 'harpoon.term'
 
 return {
-  { 'n', '<leader>hM', function() harpoon_mark.add_file() end },
-  { 'n', '<leader>hi', function() harpoon_ui.nav_next() end },
-  { 'n', '<leader>ho', function() harpoon_ui.nav_prev() end },
-  { 'n', '<leader>hm', function() harpoon_ui.toggle_quick_menu() end },
-  { 'n', '<leader>ht', function() harpoon_term.gotoTerminal(1) end },
-  { 'n', '<leader>hT', function() harpoon_term.gotoTerminal(2) end }
+  { '<leader>hM', function() harpoon_mark.add_file() end },
+  { '<leader>hi', function() harpoon_ui.nav_next() end },
+  { '<leader>ho', function() harpoon_ui.nav_prev() end },
+  { '<leader>hm', function() harpoon_ui.toggle_quick_menu() end },
+  { '<leader>ht', function() harpoon_term.gotoTerminal(1) end },
+  { '<leader>hT', function() harpoon_term.gotoTerminal(2) end }
 }

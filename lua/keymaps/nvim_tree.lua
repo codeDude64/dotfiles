@@ -1,5 +1,5 @@
 return {
-  { 'n', '<c-n>', ':NvimTreeToggle<CR>' },
-  { 'n', '<leader>r', ':NvimTreeRefresh<CR>' },
-  { 'n', '<leader>n', ':NvimTreeFindFile<CR>' }
+  { '<c-n>',     ':NvimTreeToggle<CR>' },
+  { '<leader>r', ':NvimTreeRefresh<CR>' },
+  { '<leader>n', ':NvimTreeFindFile<CR>' }
 }
