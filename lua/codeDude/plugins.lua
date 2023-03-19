@@ -28,7 +28,7 @@ return packer.startup(function(use)
   use 'tjdevries/nlua.nvim'
   use 'hrsh7th/cmp-nvim-lsp' --
   use 'saadparwaiz1/cmp_luasnip' --
-  use 'L3MON4D3/LuaSnip'
+  use 'L3MON4D3/LuaSnip' --
   use 'hrsh7th/cmp-buffer' --
   use 'petertriho/cmp-git' --
   use 'hrsh7th/cmp-path' --
