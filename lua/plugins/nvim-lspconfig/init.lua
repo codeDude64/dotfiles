@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   event = "BufReadPre",
   keys = function()
-    return require("keymaps.lsp")
+    return require("keymaps.nvim-lspconfig")
   end,
   dependencies = {
     'hrsh7th/nvim-cmp',
