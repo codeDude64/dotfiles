@@ -1,3 +1,8 @@
 return {
-  'akinsho/bufferline.nvim'
+  'akinsho/bufferline.nvim',
+  config = function()
+    local bufferline = require 'bufferline'
+
+    bufferline.setup()
+  end
 }
