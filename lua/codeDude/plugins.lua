@@ -70,10 +70,10 @@ return packer.startup(function(use)
   -- Harpoon
   use 'ThePrimeagen/harpoon' --
   -- Debugger
-  use 'mfussenegger/nvim-dap'
-  use 'theHamsta/nvim-dap-virtual-text'
-  use 'nvim-telescope/telescope-dap.nvim'
-  use 'jbyuki/one-small-step-for-vimkind'
+  use 'mfussenegger/nvim-dap' --
+  use 'theHamsta/nvim-dap-virtual-text' --
+  use 'nvim-telescope/telescope-dap.nvim' --
+  use 'jbyuki/one-small-step-for-vimkind' --
   -- Silicon 
   use { 'krivahtoo/silicon.nvim', run = './install.sh build' }
 
