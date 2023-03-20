@@ -64,7 +64,7 @@ return packer.startup(function(use)
   -- Tmux navigator
   use 'christoomey/vim-tmux-navigator' --
   -- Latex
-  use 'lervag/vimtex'
+  use 'lervag/vimtex' --
   -- Bufferline
   use 'akinsho/bufferline.nvim'
   -- Harpoon
