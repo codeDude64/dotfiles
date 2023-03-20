@@ -68,7 +68,7 @@ return packer.startup(function(use)
   -- Bufferline
   use 'akinsho/bufferline.nvim' --
   -- Harpoon
-  use 'ThePrimeagen/harpoon'
+  use 'ThePrimeagen/harpoon' --
   -- Debugger
   use 'mfussenegger/nvim-dap'
   use 'theHamsta/nvim-dap-virtual-text'
