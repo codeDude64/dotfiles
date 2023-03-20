@@ -53,9 +53,9 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons' --
   use 'kyazdani42/nvim-tree.lua' --
   -- Git
-  use 'TimUntersberger/neogit'
-  use 'sindrets/diffview.nvim'
-  use 'lewis6991/gitsigns.nvim'
+  use 'TimUntersberger/neogit' --
+  use 'sindrets/diffview.nvim' --
+  use 'lewis6991/gitsigns.nvim' --
 
   -- Surround
   use 'kylechui/nvim-surround'
