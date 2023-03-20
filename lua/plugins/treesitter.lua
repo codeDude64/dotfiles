@@ -11,25 +11,23 @@ return {
     local configs = require 'nvim-treesitter.configs'
 
     configs.setup {
+      ensure_installed = {
+        'javascript',
+        'typescript',
+        'html',
+        'css',
+        'ruby',
+        'cpp',
+        'c',
+        'cmake',
+        'lua',
+        'php',
+        'bash',
+        'python',
+        'yaml',
+        'latex',
+      },
       highlight = {
-        ensure_installed = {
-          'javascript',
-          'typescript',
-          'html',
-          'xml',
-          'css',
-          'ruby',
-          'cpp',
-          'c',
-          'cmake',
-          'lua',
-          'vimscript',
-          'php',
-          'bash',
-          'phython',
-          'yaml',
-          'latex',
-        },
         enable = true,
         custom_captures = {
           -- Highlight the @foo.bar capture group with the 'Identifier' highlight group.
