@@ -62,7 +62,7 @@ return packer.startup(function(use)
   -- Auto Pairs
   use 'windwp/nvim-autopairs' --
   -- Tmux navigator
-  use 'christoomey/vim-tmux-navigator'
+  use 'christoomey/vim-tmux-navigator' --
   -- Latex
   use 'lervag/vimtex'
   -- Bufferline
