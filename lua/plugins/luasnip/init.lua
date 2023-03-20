@@ -2,6 +2,9 @@ return {
   'L3MON4D3/LuaSnip',
 	version = "<CurrentMajor>.*",
 	build = "make install_jsregexp",
+  keys = function ()
+    return require('keymaps.luasnip')
+  end,
   config = function()
     local ls = require 'luasnip'
     local types = require 'luasnip.util.types'
