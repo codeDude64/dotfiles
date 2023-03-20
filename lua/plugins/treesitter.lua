@@ -2,7 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   event = "BufReadPre",
-  dependecies = {
+  dependencies = {
     'nvim-treesitter/playground',
     'nvim-treesitter/completion-treesitter',
     'nvim-treesitter/nvim-treesitter-textobjects'
