@@ -1,3 +1,3 @@
 return {
-  { 'v', '<leader>y', ":Silicon <CR>" },
+  { mode = 'v', '<leader>y', ":Silicon <CR>" },
 }
