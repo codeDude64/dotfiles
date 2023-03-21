@@ -3,7 +3,7 @@ return {
   lazy = false,
   config = function()
     local lualine = require 'lualine'
-    local components = require 'codeDude.lualine.components'
+    local components = require 'plugins.lualine.components'
 
 
     lualine.setup {
