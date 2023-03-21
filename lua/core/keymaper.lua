@@ -1,7 +1,6 @@
 
 local map = function(mode, key, result, opts)
   opts = opts or { noremap = true, silent = true }
-  print(mode, key, result, opts)
   vim.keymap.set(mode, key, result, opts)
 end
 
