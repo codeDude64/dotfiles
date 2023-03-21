@@ -3,6 +3,7 @@ local load_core = function ()
   require("core.options.global")
   require("core.options.buffer")
   require("core.options.window")
+  require("core.keymaper")
   require("core.lazy")
 end
 
