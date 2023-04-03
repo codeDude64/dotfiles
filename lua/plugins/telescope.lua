@@ -33,7 +33,15 @@ return {
           }
         },
         extensions = {
-          fzy_native = { override_generic_sorter = false, override_file_sorter = true }
+          fzy_native = { override_generic_sorter = false, override_file_sorter = true },
+          repo = {
+            list = {
+              search_dirs = {
+                "~/Projects",
+                "~/dotfiles/"
+              }
+            }
+          }
         }
       }
       telescope.load_extension('fzy_native')
