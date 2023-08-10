@@ -9,7 +9,8 @@ return  {
       diagnostics = { globals = { 'vim' } },
       workspace = {
         maxPreload = 10000,
-        library = vim.api.nvim_get_runtime_file('', true)
+        library = vim.api.nvim_get_runtime_file('', true),
+        checkThirdParty = false,
       },
       telemetry = { enable = false }
     }
