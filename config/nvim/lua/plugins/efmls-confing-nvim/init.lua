@@ -2,18 +2,25 @@ return {
   'creativenull/efmls-configs-nvim',
   dependencies = { 'neovim/nvim-lspconfig' },
   config = function()
-    local efmls = require 'efmls-configs'
-    local default_config = require 'plugins.nvim-lspconfig.default_config'
-    local config = require 'plugins.efmls-confing-nvim.config'
+    local lspconfig   = require 'lspconfig'
+    local default_config = require('plugins.nvim-lspconfig.default_config')
+    local languages = require 'plugins.efmls-confing-nvim.languages'
 
-    efmls.init {
-      on_attach = default_config.on_attach,
-      capabilities = default_config.capabilities,
+    local efmls_config = {
+      filetypes = vim.tbl_keys(languages),
+      settings = {
+        rootMarkers = { '.git/' },
+        languages = languages,
+      },
       init_options = {
         documentFormatting = true,
-      }
+        documentRangeFormatting = true,
+      },
     }
 
-    efmls.setup (config)
+    local config = vim.tbl_extend('force', efmls_config, default_config)
+
+    lspconfig.efm.setup(config)
+
   end
 }

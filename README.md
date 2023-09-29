@@ -33,5 +33,6 @@ Thanks to
 
 * [bkegley](https://github.com/bkegley) : The neovim configuration is based on his configuration. Besides, he helped me with my questions.
 * [creativenull](https://github.com/creativenull) : The diagnostic configuration is based on his configuration. Besides he helped me when I had issues
+* [creativenull](https://github.com/creativenull) : (Yes Again!) For his [efm-server package](https://github.com/creativenull/efmls-configs-nvim) and his support when I have questions.
 * BK discord community: They resolve my noobie questions
 * [ernestohs](https://github.com/ernestohs): He shared the alias commands with me.
