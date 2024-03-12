@@ -6,8 +6,6 @@ return {
       debug = false,
       disable_extra_info = 'no',
       language = "English"
-
-
     },
     build = function()
       vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
