@@ -26,6 +26,7 @@ return {
         'python',
         'yaml',
         'latex',
+        'markdown',
       },
       highlight = {
         enable = true,
