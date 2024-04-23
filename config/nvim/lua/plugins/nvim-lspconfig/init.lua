@@ -7,7 +7,6 @@ return {
   dependencies = {
     'hrsh7th/nvim-cmp',
     "onsails/lspkind-nvim",
-    "jose-elias-alvarez/null-ls.nvim"
   },
   config = function()
     local lspconfig   = require 'lspconfig'
