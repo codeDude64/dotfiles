@@ -1,5 +1,5 @@
 local options = {
-  clipboard = 'unnamed',
+  clipboard = 'unnamedplus',
   mouse = 'a',
   syntax = 'on',
   ruler = true,
