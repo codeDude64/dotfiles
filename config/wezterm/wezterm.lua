@@ -1,4 +1,4 @@
-local wezterm = require'wezterm'
+local wezterm = require 'wezterm'
 
 return {
   color_scheme = 'palenight (Gogh)',
