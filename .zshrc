@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export LANG="en_US.UTF-8"
-ZSH=/usr/share/oh-my-zsh/
+ZSH=$HOME/.oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow archlinux docker docker-compose tmux node npm nvm aws pip postgres laravel)
+plugins=(git git-extras git-flow docker docker-compose tmux node npm aws pip postgres laravel dnf)
 
 
 # User configuration
@@ -128,16 +128,6 @@ alias friday='pull && git commit -a -m "Last changes from Friday" && push'
 alias changes='git diff --'
 alias nomerge='git merge --abort'
 alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
-# scripts to run nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-source /usr/share/nvm/init-nvm.sh
-
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin:$HOME/.local/bin/"
 
 
-alias luamake=/home/salvador/dotfiles/lua-language-server/3rd/luamake/luamake
-
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
