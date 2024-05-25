@@ -13,44 +13,12 @@ return {
     "creativenull/efmls-configs-nvim"
   },
   config = function()
-    local lspconfig       = require 'lspconfig'
-    local lsp_servers     = require 'plugins.nvim-lspconfig.lsp_servers'
-    local mason           = require 'mason'
-    local mason_lspconfig = require 'mason-lspconfig'
-    local mason_tool_installer = require("mason-tool-installer")
-    local default_config  = require('plugins.nvim-lspconfig.default_config')
-    local languages       = require 'plugins.efmls-confing-nvim.languages'
+    local setup_lsp_servers = require 'plugins.nvim-lspconfig.setups.lsp_servers'
+    local setup_efmls        = require 'plugins.nvim-lspconfig.setups.efmls'
+    local setup_mason        = require 'plugins.nvim-lspconfig.setups.mason'
 
-
-    local function load_lsp_servers()
-      for server, config in pairs(lsp_servers) do
-        lspconfig[server].setup(config)
-      end
-    end
-
-    local function setup_efmls()
-      local efmls_config = {
-        filetypes = vim.tbl_keys(languages),
-        settings = {
-          rootMarkers = { '.git/' },
-          languages = languages,
-        },
-        init_options = {
-          documentFormatting = true,
-          documentRangeFormatting = true,
-        },
-      }
-
-      local efml_configs = vim.tbl_extend('force', efmls_config, default_config)
-
-      lspconfig.efm.setup(efml_configs)
-    end
-
-    mason.setup()
-    mason_tool_installer.setup{ automatic_installation = true }
-    mason_lspconfig.setup { automatic_installation = true }
-
-    load_lsp_servers()
+    setup_mason()
+    setup_lsp_servers()
     setup_efmls()
   end
 }
