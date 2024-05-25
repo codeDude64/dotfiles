@@ -68,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow docker docker-compose tmux node npm aws pip postgres laravel dnf)
+plugins=(git git-extras git-flow docker docker-compose tmux node npm aws pip postgres laravel archlinux)
 
 
 # User configuration
@@ -114,7 +114,7 @@ alias dcu="docker-compose up"
 alias v="nvim"
 # Alias git thanks Ernesto Herrera https://github.com/ernestohs
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
-alias pull='git pull --recurse-submodules origin $(git rev-parse --abbrev-ref HEAD)'
+alias pull='git pull --rebase --recurse-submodules origin $(git rev-parse --abbrev-ref HEAD)'
 alias s="git status -s"
 alias c="git commit -m "
 alias a='git add . && git status -s'
@@ -122,7 +122,6 @@ alias l='git log --oneline --all --graph --decorate'
 alias gb='git fetch && git checkout '
 alias undo='git checkout --'
 alias reset='git reset --hard HEAD~1'
-alias clean='git clean -dfx'
 alias branch='git checkout -b'
 alias friday='pull && git commit -a -m "Last changes from Friday" && push'
 alias changes='git diff --'
@@ -130,4 +129,5 @@ alias nomerge='git merge --abort'
 alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
 
 
-#eval "$(starship init zsh)"
+export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
+eval "$(starship init zsh)"
