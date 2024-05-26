@@ -1,16 +1,21 @@
 return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    opts = {
-      show_help = "yes",
-      debug = false,
-      disable_extra_info = 'no',
-      language = "English"
+    branch = "canary",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim" },
     },
-    build = function()
-      vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
-    end,
-    event = "VeryLazy",
+    opts = {
+      debug = true,
+      window = {
+        layout = 'float',
+        relative = 'cursor',
+        width = 1,
+        height = 0.4,
+        row = 1
+      }
+    },
     keys = function()
       return require("keymaps.copilot-chat")
     end

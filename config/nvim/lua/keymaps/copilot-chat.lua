@@ -1,32 +1,28 @@
 return {
-  { "<leader>ccb", ":CopilotChatBuffer ",         desc = "CopilotChat - Chat with current buffer" },
-  { "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
-  { "<leader>cct", "<cmd>CopilotChatTests<cr>",   desc = "CopilotChat - Generate tests" },
   {
-    "<leader>ccT",
-    "<cmd>CopilotChatVsplitToggle<cr>",
-    desc = "CopilotChat - Toggle Vsplit",
+    "<leader>ccq",
+    function()
+      local input = vim.fn.input("Quick Chat: ")
+      if input ~= "" then
+        require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+      end
+    end,
+    desc = "CopilotChat - Quick chat",
   },
   {
-    "<leader>ccv",
-    ":CopilotChatVisual ",
-    mode = "x",
-    desc = "CopilotChat - Open in vertical split",
+    "<leader>cch",
+    function()
+      local actions = require("CopilotChat.actions")
+      require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+    end,
+    desc = "CopilotChat - Help actions",
   },
   {
-    "<leader>ccx",
-    ":CopilotChatInPlace<cr>",
-    mode = "x",
-    desc = "CopilotChat - Run in-place code",
+    "<leader>ccp",
+    function()
+      local actions = require("CopilotChat.actions")
+      require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+    end,
+    desc = "CopilotChat - Prompt actions",
   },
-  {
-    "<leader>ccf",
-    "<cmd>CopilotChatFixDiagnostic<cr>",
-    desc = "CopilotChat - Fix diagnostic",
-  },
-  {
-    "<leader>ccr",
-    "<cmd>CopilotChatReset<cr>",
-    desc = "CopilotChat - Reset chat history and clear buffer",
-  }
 }
