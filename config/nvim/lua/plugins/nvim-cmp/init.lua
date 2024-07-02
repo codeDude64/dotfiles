@@ -14,10 +14,12 @@ return {
   },
   config = function()
     local status_cmp_ok, cmp = pcall(require, "cmp")
+
     if not status_cmp_ok then
       vim.notify("Error: cmp plugin is NIL")
       return
     end
+
     local luasnip = require("luasnip")
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
     local cmp_kinds = require("plugins.nvim-cmp.icon_kinds")
@@ -60,7 +62,7 @@ return {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.close(),
+        ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
