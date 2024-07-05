@@ -44,12 +44,12 @@ max-width=0
 # The placement of your panes.
 # valid: left, right, top, bottom
 # default="left"
-list-placement="left"
+list-placement="top"
 
 # How should panes be split?
 # valid: row, column
 # default="row"
-list-split="row"
+list-split="column"
 
 # The proportion of panes vs. content. 1 on this and 3 on content below results
 # in content taking up 3 times more space.
@@ -121,7 +121,7 @@ redraw-ui=true
 # default this is disabled and you enable it by setting a key here. It can only
 # consist of one char, so set it to something like a comma.
 # default=""
-leader-key=""
+leader-key=" "
 
 # Number of milliseconds before the leader command resets. So if you tap the
 # leader-key by mistake or are to slow it empties all the input after X
@@ -134,19 +134,30 @@ leader-timeout=1000
 # they should show and the key to activate them.
 
 # --- START OF EXAMPLE ---
-# [[general.timelines]]
-# name="home"
-# type="home"
-# hide-boosts=false
-# hide-replies=false
-# 
-# [[general.timelines]]
-# name="Notifications"
-# type="notifications"
-# keys=["n", "N"]
-# closed=true
-# on-creation-closed="new-pane"
-# on-focus="focus-self"
+ [[general.timelines]]
+ name="home"
+ type="home"
+ hide-boosts=false
+ hide-replies=false
+ 
+ [[general.timelines]]
+ name="[N]otifications"
+ type="notifications"
+ keys=["n", "N"]
+ closed=false
+
+ [[general.timelines]]
+ name="[L]ocal"
+ type="local"
+ keys=["l", "L"]
+ shortcut="l"
+ closed=false
+
+ [[general.timelines]]
+ name="[F]ederation"
+ type="federated"
+ keys=["f", "F"]
+ closed=false
 # --- END OF EXAMPLE ---
 
 # The name to display above the timeline
@@ -221,19 +232,19 @@ leader-timeout=1000
 # for more information.
 
 # --- START OF EXAMPLE ---
-# [[general.leader-actions]]
-# type="close-pane"
-# shortcut="q"
-# 
-# [[general.leader-actions]]
-# type="list-split"
-# data="row"
-# shortcut="r"
-# 
-# [[general.leader-actions]]
-# type="list-split"
-# data="column"
-# shortcut="c"
+ [[general.leader-actions]]
+ type="close-pane"
+ shortcut="q"
+ 
+ [[general.leader-actions]]
+ type="list-split"
+ data="row"
+ shortcut="r"
+ 
+ [[general.leader-actions]]
+ type="list-split"
+ data="column"
+ shortcut="c"
 # --- END OF EXAMPLE ---
 
 # The action you want to run.
@@ -264,7 +275,7 @@ delete-temp-files=true
 # The program to open images. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="TUT_OS_DEFAULT"
+program="koko"
 
 # Arguments to pass to the program.
 # default=""
@@ -289,7 +300,7 @@ reverse=false
 # The program to open videos. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="TUT_OS_DEFAULT"
+program="vlc"
 
 # Arguments to pass to the program.
 # default=""
@@ -314,7 +325,7 @@ reverse=false
 # The program to open audio. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="TUT_OS_DEFAULT"
+program="vlc"
 
 # Arguments to pass to the program.
 # default=""
@@ -339,7 +350,7 @@ reverse=false
 # The program to open links. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="TUT_OS_DEFAULT"
+program="firefox"
 
 # Arguments to pass to the program.
 # default=""
@@ -352,27 +363,27 @@ terminal=false
 [desktop-notification]
 # Enable notifications when someone follows you.
 # default=false
-followers=false
+followers=true
 
 # Enable notifications when one of your toots gets favorited.
 # default=false
-favorite=false
+favorite=true
 
 # Enable notifications  when someone mentions you.
 # default=false
-mention=false
+mention=true
 
 # Enable notifications when a post you have interacted with gets edited.
 # default=false
-update=false
+update=true
 
 # Enable notifications when one of your toots gets boosted.
 # default=false
-boost=false
+boost=true
 
 # Enable notifications when a poll ends.
 # default=false
-poll=false
+poll=true
 
 # Enable notifications for new posts.
 # default=false
