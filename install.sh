@@ -23,6 +23,8 @@ config_files=(
   $DOTFILES_DIR/config/tut/config.toml
   # Iamb
   $DOTFILES_DIR/config/iamb/config.toml
+  # Kitty
+  $DOTFILES_DIR/config/kitty/kitty.conf
 )
 
 home_files=(
@@ -40,6 +42,8 @@ files_to_remove=(
   $CONF_DIR/tut/config.toml
   # Iamb
   $CONF_DIR/iamb/config.toml
+  # Kitty
+  $CONF_DIR/kitty/kitty.conf
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
