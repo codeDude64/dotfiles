@@ -156,7 +156,7 @@ leader-timeout=1000
  [[general.timelines]]
  name="[F]ederation"
  type="federated"
- keys=["f", "F"]
+ shortcut="f"
  closed=false
 # --- END OF EXAMPLE ---
 
