@@ -14,11 +14,15 @@ remove_file_if_exists() {
 }
 
 config_files=(
+  # Neovim
   $DOTFILES_DIR/config/nvim/lua
   $DOTFILES_DIR/config/nvim/init.lua
+  # Tut
   $DOTFILES_DIR/config/tut/themes
   $DOTFILES_DIR/config/tut/accounts.toml
   $DOTFILES_DIR/config/tut/config.toml
+  # Iamb
+  $DOTFILES_DIR/config/iamb/config.toml
 )
 
 home_files=(
@@ -27,11 +31,16 @@ home_files=(
 )
 
 files_to_remove=(
+  # Neovim
   $CONF_DIR/nvim/lua
   $CONF_DIR/nvim/init.lua
+  # Tut
   $CONF_DIR/tut/themes
   $CONF_DIR/tut/accounts.toml
   $CONF_DIR/tut/config.toml
+  # Iamb
+  $CONF_DIR/iamb/config.toml
+  # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
 )
