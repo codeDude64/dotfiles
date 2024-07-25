@@ -13,3 +13,6 @@ members = ["server", "~localpart"]
 
 [settings.image_preview]
 protocol.type="kitty"
+
+[macros.insert]
+"<Tab>" = "<C-n>"
