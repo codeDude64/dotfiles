@@ -131,3 +131,4 @@ alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; 
 
 export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 eval "$(starship init zsh)"
+source /usr/share/nvm/init-nvm.sh
