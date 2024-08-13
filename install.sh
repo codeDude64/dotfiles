@@ -25,6 +25,8 @@ config_files=(
   $DOTFILES_DIR/config/iamb/config.toml
   # Kitty
   $DOTFILES_DIR/config/kitty/kitty.conf
+  # Newsboat
+  $DOTFILES_DIR/config/newsboat/urls
 )
 
 home_files=(
@@ -44,6 +46,8 @@ files_to_remove=(
   $CONF_DIR/iamb/config.toml
   # Kitty
   $CONF_DIR/kitty/kitty.conf
+  # Newsboat
+  $CONF_DIR/newsboat/urls
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
