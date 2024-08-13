@@ -27,6 +27,7 @@ config_files=(
   $DOTFILES_DIR/config/kitty/kitty.conf
   # Newsboat
   $DOTFILES_DIR/config/newsboat/urls
+  $DOTFILES_DIR/config/newsboat/config
 )
 
 home_files=(
@@ -48,6 +49,7 @@ files_to_remove=(
   $CONF_DIR/kitty/kitty.conf
   # Newsboat
   $CONF_DIR/newsboat/urls
+  $CONF_DIR/newsboat/config
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
