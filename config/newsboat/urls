@@ -1,40 +1,45 @@
-# peertube
-https://video.asgardius.company/feeds/videos.xml?videoChannelId=2040 "Peertube"
+"query:---Peertube---:tags # \"Tag\""
+https://video.asgardius.company/feeds/videos.xml?videoChannelId=2040 "~LinuxChad Link" Peertube
 
-#Arch Linux
-https://archlinux.org/feeds/packages/ "Arch Linux"
+"query:---Youtube---:tags # \"Tag\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "~Migala" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrNXDTY2PNu9EuNydjOd5SQ "~El Pasquin" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCpMSfnlbvJiZzlVb9wYlvfw "~Main Watchers" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3yDP9DLJI7rPqPovQaOJMg "~GioCode" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "~FireShip"Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCX9NJ471o7Wie1DQe94RVIg "~Fazt"Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC55-mxUj5Nj3niXFReG44OQ "~Platzi"Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCa-lsDvCuyK6ZmkRLDlnzsg "~LinuxChad"Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1viRct91s1a3Z5yvk7FJXw "~Diego Ruzzarin" Youtube
 
-# News
-https://www.radioformula.com.mx/rss/feed.html?r=1 "News"
-https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml "News"
-https://www.jornada.com.mx/rss/edicion.xml?v=1 "News"
-https://www.reforma.com/rss/portada.xml "News"
+"query:---News---:tags # \"Tag\""
+https://www.radioformula.com.mx/rss/feed.html?r=1 News
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
+https://www.jornada.com.mx/rss/edicion.xml?v=1 News
+https://www.reforma.com/rss/portada.xml News
 
-# Blogs
-https://www.muylinux.com/feed/ "Blogs"
-https://www.xataka.com/index.xml "Blogs"
-https://www.genbeta.com/index.xml "Blogs"
-https://decoracion.trendencias.com/index.xml "Blogs"
-https://www.xatakandroid.com/index.xml "Blogs"
-http://feeds.feedburner.com/desdelinuxweb "Blogs"
+"query:---Blogs---:tags # \"Tag\""
+https://www.muylinux.com/feed/ Blogs
+https://www.xataka.com/index.xml Blogs
+https://www.genbeta.com/index.xml Blogs
+https://decoracion.trendencias.com/index.xml Blogs
+https://www.xatakandroid.com/index.xml Blogs
+http://feeds.feedburner.com/desdelinuxweb Blogs
 
-# reddit
-https://www.reddit.com/r/cpp/.rss "Reddit"
-https://www.reddit.com/r/cpp_questions/.rss "Reddit"
-https://www.reddit.com/r/Fedora/.rss "Reddit"
-https://www.reddit.com/r/kde/.rss "Reddit"
-https://www.reddit.com/r/linux/.rss "Reddit"
-https://www.reddit.com/r/linux4noobs/.rss "Reddit"
-https://www.reddit.com/r/Weechat/.rss "Reddit"
-https://www.reddit.com/r/archlinux/.rss "Reddit"
+"query:---Reddit---:tags # \"Tag\""
+https://www.reddit.com/r/cpp/.rss Reddit
+https://www.reddit.com/r/cpp_questions/.rss Reddit
+https://www.reddit.com/r/Fedora/.rss Reddit
+https://www.reddit.com/r/kde/.rss Reddit
+https://www.reddit.com/r/linux/.rss Reddit
+https://www.reddit.com/r/linux4noobs/.rss Reddit
+https://www.reddit.com/r/Weechat/.rss Reddit
+https://www.reddit.com/r/archlinux/.rss Reddit ArchLinux
 
-# youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCrNXDTY2PNu9EuNydjOd5SQ "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCpMSfnlbvJiZzlVb9wYlvfw "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC1viRct91s1a3Z5yvk7FJXw "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC3yDP9DLJI7rPqPovQaOJMg "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCX9NJ471o7Wie1DQe94RVIg "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UC55-mxUj5Nj3niXFReG44OQ "Youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCa-lsDvCuyK6ZmkRLDlnzsg "Youtube"
+"query:---ArchLinux---:tags # \"Tag\"" 
+https://archlinux.org/feeds/packages/ ArchLinux
+https://aur.archlinux.org/rss ArchLinux
+https://aur.archlinux.org/rss/modified
+
+
+"query:Unread Articles:unread = \"yes\""
