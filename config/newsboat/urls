@@ -1,32 +1,70 @@
-"query:---Peertube---:tags # \"Tag\""
-https://video.asgardius.company/feeds/videos.xml?videoChannelId=2040 "~LinuxChad Link" Peertube
+"query:---Peertube---:tags # \"Peertube\""
+https://video.asgardius.company/feeds/videos.xml?videoChannelId=2040 "~LinuxChad Peertube" Peertube
+https://tilvids.com/feeds/videos.xml?videoChannelId=4776 "~Linux User Space" Peertube
+https://tilvids.com/feeds/videos.xml?videoChannelId=7933 "~Veronica Explains" Peertube
+https://video.hardlimit.com/feeds/videos.xml?videoChannelId=8840 "~Houman" Peertube
+https://tilvids.com/feeds/videos.xml?videoChannelId=47 "~The Linux Experiment" Peertube
 
-"query:---Youtube---:tags # \"Tag\""
+"query:---Youtube---:tags # \"Youtube\""
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "~Migala" Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCrNXDTY2PNu9EuNydjOd5SQ "~El Pasquin" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrNXDTY2PNu9EuNydjOd5SQ "~El Pasquin" Youtube 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCf_MY8uWjWH8gwzFK6vCAmg "~Esquizofrenia Natural" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCb8GKeOvI7WsFUkB4UVAeXA "~Cordura Artificial" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCpMSfnlbvJiZzlVb9wYlvfw "~Main Watchers" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCiBwOVBljEjcsLUjwI274Xw "~The top comics" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCN_CWpl70T3DgnfS9HjMfKQ "~VSX" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFFLP0dKesrKWccYscdAr9A "~The urban pinguin" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrBzBOMcUVV8ryyAU_c6P5g "~Pelado Nerd" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1CFfZCWz8xMU683hkLTtfw "~Riduculeando" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3yDP9DLJI7rPqPovQaOJMg "~GioCode" Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "~FireShip"Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCX9NJ471o7Wie1DQe94RVIg "~Fazt"Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC55-mxUj5Nj3niXFReG44OQ "~Platzi"Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCa-lsDvCuyK6ZmkRLDlnzsg "~LinuxChad"Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "~FireShip" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCX9NJ471o7Wie1DQe94RVIg "~Fazt" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC55-mxUj5Nj3niXFReG44OQ "~Platzi" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCa-lsDvCuyK6ZmkRLDlnzsg "~LinuxChad" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCoryWpk4QVYKFCJul9KBdyw "~Switched to Linux" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCgErca6xmDIcaHDnVghHk6w "~Nos gusta Linux" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UClb90NQQcskPUGDIXsQEz5Q "~Developedbyed" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCP8dTCaLNJFxfklb_GNqe6A "~Atareao con Linux" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~Distrotube" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UC1viRct91s1a3Z5yvk7FJXw "~Diego Ruzzarin" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVbOEcs6RMxXXX3WWNtl_Fw "~El mapa de Sebas" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCPH3Oz99Y_jrVBCQMjQZNSg "~Memorias de pez" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3bRVqfLpexxvzmoIyYc-KQ "~Memorias de tiburon" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCyRNgVyohl8CrBMy3Uf3S_w "~Memorias de Dolly" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCeYSnd34IPe57sM8hkjWhrw "~Historia para tontos podcast" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBIMW0ZhwULY_x7fdaPRPiQ "~Pero esta es otra historia" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtIdb7KRqOTcOogKsos_QRw "~Lord Draugr" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCg6gPGh8HU2U01vaFCAsvmQ "~Chris Titus Tech" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBKM3HATRILZyG9jGNJKGXQ "~Software Engineering Daily" Youtube 
 
-"query:---News---:tags # \"Tag\""
+"query:---Podcast---:tags # \"Podcast\""
+http://feeds.codenewbie.org/cnpodcast.xml "~Codenewbie" Podcast
+https://changelog.com/podcast/feed "~Chagelog" Podcast
+https://feeds.transistor.fm/programming-throwdown "~Programming Throwdown" Podcast
+https://blog.codepen.io/feed/podcast/codepen-radio/ "~CodePen radio" Podcast
+https://www.spreaker.com/show/6102064/episodes/feed "~Javascript Jabber Podcast" Podcast
+https://anchor.fm/s/5a5b39c/podcast/rss "~Atareao con Linux podcast" Podcast
+
+"query:---News---:tags # \"News\""
 https://www.radioformula.com.mx/rss/feed.html?r=1 News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
 https://www.jornada.com.mx/rss/edicion.xml?v=1 News
 https://www.reforma.com/rss/portada.xml News
 
-"query:---Blogs---:tags # \"Tag\""
+"query:---Blogs---:tags # \"Blogs\""
 https://www.muylinux.com/feed/ Blogs
 https://www.xataka.com/index.xml Blogs
 https://www.genbeta.com/index.xml Blogs
 https://decoracion.trendencias.com/index.xml Blogs
 https://www.xatakandroid.com/index.xml Blogs
 http://feeds.feedburner.com/desdelinuxweb Blogs
+https://9to5linux.com/feed/atom Blogs
+https://itsfoss.com/rss/ Blogs
+https://thelinuxexp.com/feed.xml "~The Linux Experiment Blog" Blogs
+https://thelinuxcast.org/feed/feed.xml "~The Linux Cast Blog" Blogs
+https://www.fsf.org/static/fsforg/rss/news.xml
 
-"query:---Reddit---:tags # \"Tag\""
+"query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/cpp/.rss Reddit
 https://www.reddit.com/r/cpp_questions/.rss Reddit
 https://www.reddit.com/r/Fedora/.rss Reddit
@@ -36,10 +74,10 @@ https://www.reddit.com/r/linux4noobs/.rss Reddit
 https://www.reddit.com/r/Weechat/.rss Reddit
 https://www.reddit.com/r/archlinux/.rss Reddit ArchLinux
 
-"query:---ArchLinux---:tags # \"Tag\"" 
-https://archlinux.org/feeds/packages/ ArchLinux
-https://aur.archlinux.org/rss ArchLinux
-https://aur.archlinux.org/rss/modified
+"query:---ArchLinux---:tags # \"ArchLinux\"" 
+https://archlinux.org/feeds/packages/ "~Arch Linux packages" ArchLinux
+https://aur.archlinux.org/rss ArchLinux "~Arch Linux AUR packages" ArchLinux
+https://aur.archlinux.org/rss/modified "~Arch Linux AUR modified packages" ArchLinux
 
 
 "query:Unread Articles:unread = \"yes\""
