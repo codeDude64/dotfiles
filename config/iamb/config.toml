@@ -2,17 +2,17 @@
 user_id = "@codedude64:matrix.org"
 
 [settings]
-message_user_color=true
+message_user_color = true
 
 [settings.notifications]
-enable=true
+enable = true
 
 [settings.sort]
-rooms=["unread", "name", "favorite", "lowpriority"]
+rooms = ["unread", "name", "favorite", "lowpriority"]
 members = ["server", "~localpart"]
 
 [settings.image_preview]
-protocol.type="kitty"
+protocol.type = "kitty"
 
 [macros.insert]
 "<Tab>" = "<C-n>"
