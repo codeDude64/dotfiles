@@ -1,0 +1,50 @@
+auto-reload yes
+reload-threads 100
+browser "lynx --accept-all-cookies --display_charset=utf-8 $u"
+
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key H prev-feed
+bind-key L next-feed
+bind-key g home
+bind-key G end
+bind-key SPACE macro-prefix 
+bind-key b bookmark 
+bind-key ^F pagedown 
+bind-key ^B pageup 
+bind-key ^H toggle-show-read-feeds 
+
+
+macro v set browser "mpv %u" ; open-in-browser ; set browser "lynx --accept-all-cookies --display_charset=utf-8 $u"
+macro f set browser "firefox %u" ; open-in-browser ; set browser "lynx --accept-all-cookies --display_charset=utf-8 $u"
+
+
+
+# Newsboat colour scheme to work with the Gruvbox palette
+# Inspired by the vim theme https://github.com/morhetz/gruvbox
+# Tested with the Kitty gruvbox terminal colour scheme
+# https://github.com/wdomitrz/kitty-gruvbox-theme
+
+color background          color108   color235
+
+color listnormal          color223   color235
+color listnormal_unread   color172   color235
+
+color listfocus           color223   color132
+color listfocus_unread    color214   color132
+
+color info                color124   color235
+color article             color223   color235
+
+# highlights
+
+highlight feedlist "---.*---" yellow color235 bold
+highlight feedlist ".*0/0.." yellow color235 bold
+
+highlight article "^(Feed|Link):.*$" color175 color235 bold
+highlight article "^(Title|Date|Author):.*$" color175 color235 bold
+highlight article "https?://[^ ]+" color108 color235 bold
+highlight article "\\[[0-9]+\\]" color108 color235 bold
+highlight article "\\[image\\ [0-9]+\\]" color108 color235 bold
