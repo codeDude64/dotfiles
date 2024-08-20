@@ -300,7 +300,7 @@ reverse=false
 # The program to open videos. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="vlc"
+program="mpv"
 
 # Arguments to pass to the program.
 # default=""
@@ -476,7 +476,7 @@ posts=false
 # theme="none" and then you can create your own theme below.
 # 
 # default="default"
-theme="nord"
+theme="gruvbox"
 
 # The xrdb prefix used for colors in .Xresources.
 # default="guess"
