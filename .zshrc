@@ -68,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow docker docker-compose tmux node npm aws pip postgres laravel archlinux)
+plugins=(git git-extras git-flow docker docker-compose tmux node npm aws pip postgres laravel archlinux pass)
 
 
 # User configuration
@@ -128,6 +128,9 @@ alias changes='git diff --'
 alias nomerge='git merge --abort'
 alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
 
+alias ddg="lynx --accept-all-cookies --display_charset=utf-8 www.duckduckgo.com"
+alias lcpp="lynx --accept-all-cookies --display_charset=utf-8 www.learncpp.com"
+alias yt="ytfzf -t"
 
 export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 eval "$(starship init zsh)"
