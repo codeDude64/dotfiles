@@ -1,8 +1,9 @@
 #!/bin/sh +x
 
-export CONF_DIR=$HOME/.config
+export CONFIG_DIR=$HOME/.config
 
 export DOTFILES_DIR=$HOME/dotfiles
+export CONFIG_DOCKER_DIR=$DOTFILES_DIR/config
 
 remove_file_if_exists() {
   local file="$1"
@@ -13,21 +14,31 @@ remove_file_if_exists() {
   fi
 }
 
+create_dir_if_doesnt_exists() {
+  local dir="$1"
+  if [ -d "$dir" ]; then
+    echo "The directory $dir already exists"
+  else 
+    mkdir -p "$dir"
+    echo "The directory $dir was created successfully"
+  fi
+}
+
 config_files=(
   # Neovim
-  $DOTFILES_DIR/config/nvim/lua
-  $DOTFILES_DIR/config/nvim/init.lua
+  $CONFIG_DOCKER_DIR/nvim/lua
+  $CONFIG_DOCKER_DIR/nvim/init.lua
   # Tut
-  $DOTFILES_DIR/config/tut/themes
-  $DOTFILES_DIR/config/tut/accounts.toml
-  $DOTFILES_DIR/config/tut/config.toml
+  $CONFIG_DOCKER_DIR/tut/themes
+  $CONFIG_DOCKER_DIR/tut/accounts.toml
+  $CONFIG_DOCKER_DIR/tut.toml
   # Iamb
-  $DOTFILES_DIR/config/iamb/config.toml
+  $CONFIG_DOCKER_DIR/iamb.toml
   # Kitty
-  $DOTFILES_DIR/config/kitty/kitty.conf
+  $CONFIG_DOCKER_DIR/kitty/kitty.conf
   # Newsboat
-  $DOTFILES_DIR/config/newsboat/urls
-  $DOTFILES_DIR/config/newsboat/config
+  $CONFIG_DOCKER_DIR/newsboat/urls
+  $CONFIG_DOCKER_DIR/newsboat
 )
 
 home_files=(
@@ -37,26 +48,38 @@ home_files=(
 
 files_to_remove=(
   # Neovim
-  $CONF_DIR/nvim/lua
-  $CONF_DIR/nvim/init.lua
+  $CONFIG_DIR/nvim/lua
+  $CONFIG_DIR/nvim/init.lua
   # Tut
-  $CONF_DIR/tut/themes
-  $CONF_DIR/tut/accounts.toml
-  $CONF_DIR/tut/config.toml
+  $CONFIG_DIR/tut/themes
+  $CONFIG_DIR/tut/accounts.toml
+  $CONFIG_DIR/tut/config.toml
   # Iamb
-  $CONF_DIR/iamb/config.toml
+  $CONFIG_DIR/iamb/config.toml
   # Kitty
-  $CONF_DIR/kitty/kitty.conf
+  $CONFIG_DIR/kitty/kitty.conf
   # Newsboat
-  $CONF_DIR/newsboat/urls
-  $CONF_DIR/newsboat/config
+  $CONFIG_DIR/newsboat/urls
+  $CONFIG_DIR/newsboat/config
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
 )
 
+dirs_to_create=(
+  $CONFIG_DIR/nvim
+  $CONFIG_DIR/tut
+  $CONFIG_DIR/iamb
+  $CONFIG_DIR/kitty
+  $CONFIG_DIR/newsboat
+)
+
 for file in "${files_to_remove[@]}"; do
   remove_file_if_exists "$file"
+done
+
+for dir in "${dirs_to_create[@]}"; do
+  create_dir_if_doesnt_exists "$dir"
 done
 
 
@@ -68,9 +91,9 @@ for file in "${config_files[@]}"; do
   last_two_levels="${path_components[-2]}/${path_components[-1]}"
   echo "  got the last_two_levels $last_two_levels"
 
-  ln -s "$file" $CONF_DIR/"$last_two_levels"
+  ln -s "$file" $CONFIG_DIR/"$last_two_levels"
 
-  echo "  $CONF_DIR/$last_two_levels added successfully"
+  echo "  $CONFIG_DIR/$last_two_levels added successfully"
 
 done
 
