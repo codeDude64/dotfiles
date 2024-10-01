@@ -44,6 +44,9 @@ config_files=(
   # Waybar
   $CONFIG_DOTFILES_DIR/waybar/config.jsonc
   $CONFIG_DOTFILES_DIR/waybar/style.css
+  # Wofi
+  $CONFIG_DOTFILES_DIR/wofi/config
+  $CONFIG_DOTFILES_DIR/wofi/style.css
 )
 
 home_files=(
@@ -71,6 +74,9 @@ files_to_remove=(
   # Waybar
   $CONFIG_DIR/waybar/config.jsonc
   $CONFIG_DIR/waybar/style.css
+  # Wofi
+  $CONFIG_DIR/wofi/config
+  $CONFIG_DIR/wofi/style.css
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
@@ -84,6 +90,7 @@ dirs_to_create=(
   $CONFIG_DIR/newsboat
   $CONFIG_DIR/sway
   $CONFIG_DIR/waybar
+  $CONFIG_DIR/wofi
 )
 
 for file in "${files_to_remove[@]}"; do
