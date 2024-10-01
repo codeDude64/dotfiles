@@ -3,7 +3,7 @@
 export CONFIG_DIR=$HOME/.config
 
 export DOTFILES_DIR=$HOME/dotfiles
-export CONFIG_DOCKER_DIR=$DOTFILES_DIR/config
+export CONFIG_DOTFILES_DIR=$DOTFILES_DIR/config
 
 remove_file_if_exists() {
   local file="$1"
@@ -26,19 +26,24 @@ create_dir_if_doesnt_exists() {
 
 config_files=(
   # Neovim
-  $CONFIG_DOCKER_DIR/nvim/lua
-  $CONFIG_DOCKER_DIR/nvim/init.lua
+  $CONFIG_DOTFILES_DIR/nvim/lua
+  $CONFIG_DOTFILES_DIR/nvim/init.lua
   # Tut
-  $CONFIG_DOCKER_DIR/tut/themes
-  $CONFIG_DOCKER_DIR/tut/accounts.toml
-  $CONFIG_DOCKER_DIR/tut/config.toml
+  $CONFIG_DOTFILES_DIR/tut/themes
+  $CONFIG_DOTFILES_DIR/tut/accounts.toml
+  $CONFIG_DOTFILES_DIR/tut/config.toml
   # Iamb
-  $CONFIG_DOCKER_DIR/iamb/config.toml
+  $CONFIG_DOTFILES_DIR/iamb/config.toml
   # Kitty
-  $CONFIG_DOCKER_DIR/kitty/kitty.conf
+  $CONFIG_DOTFILES_DIR/kitty/kitty.conf
   # Newsboat
-  $CONFIG_DOCKER_DIR/newsboat/urls
-  $CONFIG_DOCKER_DIR/newsboat/config
+  $CONFIG_DOTFILES_DIR/newsboat/urls
+  $CONFIG_DOTFILES_DIR/newsboat/config
+  # Sway
+  $CONFIG_DOTFILES_DIR/sway/config
+  # Waybar
+  $CONFIG_DOTFILES_DIR/waybar/config.jsonc
+  $CONFIG_DOTFILES_DIR/waybar/style.css
 )
 
 home_files=(
@@ -61,6 +66,11 @@ files_to_remove=(
   # Newsboat
   $CONFIG_DIR/newsboat/urls
   $CONFIG_DIR/newsboat/config
+  # Sway
+  $CONFIG_DIR/sway/config
+  # Waybar
+  $CONFIG_DIR/waybar/config.jsonc
+  $CONFIG_DIR/waybar/style.css
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
@@ -72,6 +82,8 @@ dirs_to_create=(
   $CONFIG_DIR/iamb
   $CONFIG_DIR/kitty
   $CONFIG_DIR/newsboat
+  $CONFIG_DIR/sway
+  $CONFIG_DIR/waybar
 )
 
 for file in "${files_to_remove[@]}"; do
