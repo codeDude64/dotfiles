@@ -31,14 +31,14 @@ config_files=(
   # Tut
   $CONFIG_DOCKER_DIR/tut/themes
   $CONFIG_DOCKER_DIR/tut/accounts.toml
-  $CONFIG_DOCKER_DIR/tut.toml
+  $CONFIG_DOCKER_DIR/tut/config.toml
   # Iamb
-  $CONFIG_DOCKER_DIR/iamb.toml
+  $CONFIG_DOCKER_DIR/iamb/config.toml
   # Kitty
   $CONFIG_DOCKER_DIR/kitty/kitty.conf
   # Newsboat
   $CONFIG_DOCKER_DIR/newsboat/urls
-  $CONFIG_DOCKER_DIR/newsboat
+  $CONFIG_DOCKER_DIR/newsboat/config
 )
 
 home_files=(
