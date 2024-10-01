@@ -132,6 +132,9 @@ alias ddg="lynx --accept-all-cookies --display_charset=utf-8 www.duckduckgo.com"
 alias lcpp="lynx --accept-all-cookies --display_charset=utf-8 www.learncpp.com"
 alias yt="ytfzf -t"
 
-export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
+
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
+
 eval "$(starship init zsh)"
 source /usr/share/nvm/init-nvm.sh
