@@ -1,10 +1,13 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 10, // Waybar height (to be removed for auto height)
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
+    "margin" : "10 5 10 5",
+    "fixed-center": true,
+    "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
@@ -33,23 +36,23 @@
         "tray",
         "custom/power"
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+     // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "warp-on-scroll": false,
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": ""
+          // "urgent": "",
+          // "focused": "",
+          //  "default": ""
+         }
+     },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -60,7 +63,11 @@
         }
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}",
+        "format-icons": {
+          "default": "",
+          "resize": "󰩨"
+        }
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -113,7 +120,7 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": true
     },
     "memory": {
         "format": "{}% "
@@ -145,9 +152,6 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -201,15 +205,8 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
+    "format" : "⏻ ",
 		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+    "on-click": "~/.config/waybar/power_menu.sh"
     }
 }
