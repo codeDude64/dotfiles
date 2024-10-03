@@ -43,6 +43,7 @@ config_files=(
   $CONFIG_DOTFILES_DIR/sway/config
   # Waybar
   $CONFIG_DOTFILES_DIR/waybar/config.jsonc
+  $CONFIG_DOTFILES_DIR/waybar/power_menu.sh
   $CONFIG_DOTFILES_DIR/waybar/style.css
   # Wofi
   $CONFIG_DOTFILES_DIR/wofi/config
@@ -73,6 +74,7 @@ files_to_remove=(
   $CONFIG_DIR/sway/config
   # Waybar
   $CONFIG_DIR/waybar/config.jsonc
+  $CONFIG_DIR/waybar/power_menu.sh
   $CONFIG_DIR/waybar/style.css
   # Wofi
   $CONFIG_DIR/wofi/config

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+OPTIONS=("Shutdown" "Reboot" "Suspend" "Hibernate")
+
+OPTION=$(printf '%s\n' "${OPTIONS[@]}" | wofi --dmenu --prompt "Power Menu")
+
+if [-z "$OPTION"]; then
+  echo "No option selected"
+  exit 0
+fi
+
+case "$OPTION" in
+  Shutdown)
+    systemctl poweroff &
+    ;;
+  Reboot)
+    systemctl reboot &
+    ;;
+  Suspend)
+    systemctl suspend &
+    ;;
+  Hibernate)
+    systemctl hibernate &
+    ;;
+  *)
+    echo "Invalid selection"
+    ;;
+esac
