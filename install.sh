@@ -48,6 +48,8 @@ config_files=(
   # Wofi
   $CONFIG_DOTFILES_DIR/wofi/config
   $CONFIG_DOTFILES_DIR/wofi/style.css
+  # MPD
+  $CONFIG_DOTFILES_DIR/mpd/mpd.conf
 )
 
 home_files=(
@@ -79,6 +81,8 @@ files_to_remove=(
   # Wofi
   $CONFIG_DIR/wofi/config
   $CONFIG_DIR/wofi/style.css
+  # MPD
+  $CONFIG_DIR/mpd/mpd.conf
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
@@ -93,6 +97,7 @@ dirs_to_create=(
   $CONFIG_DIR/sway
   $CONFIG_DIR/waybar
   $CONFIG_DIR/wofi
+  $CONFIG_DIR/mpd
 )
 
 for file in "${files_to_remove[@]}"; do
