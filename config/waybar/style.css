@@ -9,7 +9,7 @@
   background: @background;
   border: none;
   border-radius: 5;
-  font-family: Input, "Agave Nerd Font";
+  font-family: "Symbols Nerd Font";
   font-size: 13px;
   min-height: 0;
 }
@@ -91,21 +91,12 @@ window#waybar {
 #memory,
 #backlight,
 #battery,
-#clock {
-  padding: 0 6px;
-  margin: 0 6px;
-}
-
 #custom-vpn,
 #custom-dnd,
 #language,
-#custom-recording {
-  padding: 0;
-  margin: 0 6px;
-}
-
-#tray {
-  margin-left: -1000000px;
+#custom-recording
+#clock {
+  margin: 0 4px;
 }
 
 #backlight,
