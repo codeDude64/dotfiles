@@ -4,39 +4,43 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 5, // Gaps between modules (4px)
     "margin" : "10 5 10 5",
     "fixed-center": true,
     "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
+        "custom/arch",
         "sway/mode",
         "sway/scratchpad",
         "custom/media"
     ],
     "modules-center": [
-        "sway/window"
+        "sway/workspaces"
     ],
     "modules-right": [
         "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
+        "power-profiles-daemon",
         "sway/language",
-        "battery",
-        "battery#bat2",
-        "clock",
+        "pulseaudio",
+        "network",
         "tray",
+        "clock",
+        "battery",
         "custom/power"
     ],
      // Modules configuration
+     "custom/arch" : {
+       "format": "󰣇"
+     },
+
+
+     "tray": {
+       "format" : "hola"
+     },
+
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
@@ -47,27 +51,22 @@
              "2": "",
              "3": "",
              "4": "",
-             "5": ""
-          // "urgent": "",
-          // "focused": "",
-          //  "default": ""
+             "5": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
          }
      },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "sway/mode": {
         "format": "{}",
         "format-icons": {
           "default": "",
           "resize": "󰩨"
         }
+    },
+    "sway/language" : {
+      "format": "{short}",
+      "tooltip-format": "{long}"
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -109,21 +108,17 @@
             "deactivated": ""
         }
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
     "clock": {
-        // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%d/%m/%Y}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "",
         "tooltip": true
     },
     "memory": {
-        "format": "{}% "
+        "format": "",
+        "tooltip-format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -135,7 +130,8 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        "format": "{icon}",
+        "tooltip-format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
@@ -166,16 +162,17 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{essid} ({signalStrength}%) \n{ipaddr}/{cidr} 󱦂",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "󰖪",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{icon}",
+        "tooltip-format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
