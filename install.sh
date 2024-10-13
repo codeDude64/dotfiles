@@ -44,6 +44,7 @@ config_files=(
   # Waybar
   $CONFIG_DOTFILES_DIR/waybar/config.jsonc
   $CONFIG_DOTFILES_DIR/waybar/power_menu.sh
+  $CONFIG_DOTFILES_DIR/waybar/mediaplayer.py
   $CONFIG_DOTFILES_DIR/waybar/style.css
   # Wofi
   $CONFIG_DOTFILES_DIR/wofi/config
@@ -77,6 +78,7 @@ files_to_remove=(
   # Waybar
   $CONFIG_DIR/waybar/config.jsonc
   $CONFIG_DIR/waybar/power_menu.sh
+  $CONFIG_DIR/waybar/mediaplayer.py
   $CONFIG_DIR/waybar/style.css
   # Wofi
   $CONFIG_DIR/wofi/config
