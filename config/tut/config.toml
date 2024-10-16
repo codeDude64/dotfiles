@@ -275,7 +275,7 @@ delete-temp-files=true
 # The program to open images. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="koko"
+program="mpv"
 
 # Arguments to pass to the program.
 # default=""
@@ -325,7 +325,7 @@ reverse=false
 # The program to open audio. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="vlc"
+program="mpv"
 
 # Arguments to pass to the program.
 # default=""
