@@ -1,6 +1,7 @@
 include /etc/sway/config.d/*
 
 exec_always "pkill waybar; waybar"
+exec_always "pkill avizo-service; avizo-service"
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -189,13 +190,14 @@ output * bg ~/Downloads/wallpaper.png fill
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym --locked XF86AudioPrev exec playerctl previous
 
-    bindsym --locked XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-    bindsym --locked XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@ -1%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioRaiseVolume exec volumectl -u up
+    bindsym XF86AudioLowerVolume exec volumectl -u down
+    bindsym XF86AudioMute exec volumectl toggle-mute
+    bindsym XF86AudioMicMute exec volumectl -m toggle-mute
 
+    bindsym XF86MonBrightnessUp exec lightctl up
+    bindsym XF86MonBrightnessDown exec lightctl down
 
-    bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
-    bindsym XF86MonBrightnessUp   exec brightnessctl set +1%
 
 #
 # Scratchpad:
