@@ -56,6 +56,8 @@ config_files=(
   $CONFIG_DOTFILES_DIR/mpv/input.conf
   # Mako
   $CONFIG_DOTFILES_DIR/mako/config
+  # Avizo
+  $CONFIG_DOTFILES_DIR/avizo/config.ini
 
 )
 
@@ -96,6 +98,8 @@ files_to_remove=(
   $CONFIG_DIR/mpv/input.conf
   # Mako
   $CONFIG_DIR/mako/config
+  # Avizo
+  $CONFIG_DIR/avizo/config.ini
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
@@ -113,6 +117,7 @@ dirs_to_create=(
   $CONFIG_DIR/mpd
   $CONFIG_DIR/mpv
   $CONFIG_DIR/mako
+  $CONFIG_DIR/avizo
 )
 
 for file in "${files_to_remove[@]}"; do
