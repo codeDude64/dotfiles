@@ -5,7 +5,7 @@ local default_config = require('plugins.nvim-lspconfig.default_config')
 local solargraph_config = require('plugins.nvim-lspconfig.solargraph_config')
 
 return {
-  tsserver = default_config,
+  ts_ls = default_config,
   cssls = default_config,
   html = default_config,
   intelephense = default_config,
