@@ -204,6 +204,6 @@
     "custom/power": {
     "format" : "⏻ ",
 		"tooltip": false,
-    "on-click": "~/.config/waybar/power_menu.sh"
+    "on-click": "~/.config/bin/power_menu"
     }
 }
