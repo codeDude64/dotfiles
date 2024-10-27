@@ -43,7 +43,6 @@ config_files=(
   $CONFIG_DOTFILES_DIR/sway/config
   # Waybar
   $CONFIG_DOTFILES_DIR/waybar/config.jsonc
-  $CONFIG_DOTFILES_DIR/waybar/power_menu.sh
   $CONFIG_DOTFILES_DIR/waybar/mediaplayer.py
   $CONFIG_DOTFILES_DIR/waybar/style.css
   # Wofi
@@ -58,6 +57,8 @@ config_files=(
   $CONFIG_DOTFILES_DIR/mako/config
   # Avizo
   $CONFIG_DOTFILES_DIR/avizo/config.ini
+  # bin
+  $CONFIG_DOTFILES_DIR/bin/power_menu
 
 )
 
@@ -85,7 +86,6 @@ files_to_remove=(
   $CONFIG_DIR/sway/config
   # Waybar
   $CONFIG_DIR/waybar/config.jsonc
-  $CONFIG_DIR/waybar/power_menu.sh
   $CONFIG_DIR/waybar/mediaplayer.py
   $CONFIG_DIR/waybar/style.css
   # Wofi
@@ -100,6 +100,8 @@ files_to_remove=(
   $CONFIG_DIR/mako/config
   # Avizo
   $CONFIG_DIR/avizo/config.ini
+  # bin
+  $CONFIG_DIR/bin/power_menu
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
@@ -118,6 +120,7 @@ dirs_to_create=(
   $CONFIG_DIR/mpv
   $CONFIG_DIR/mako
   $CONFIG_DIR/avizo
+  $CONFIG_DIR/bin
 )
 
 for file in "${files_to_remove[@]}"; do
