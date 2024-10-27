@@ -10,13 +10,13 @@
     "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": [
-        "custom/arch",
+        "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
         "custom/media"
     ],
     "modules-center": [
-        "sway/workspaces"
+        "clock"
     ],
     "modules-right": [
         "mpd",
@@ -27,20 +27,9 @@
         "pulseaudio",
         "network",
         "tray",
-        "clock",
         "battery",
         "custom/power"
     ],
-     // Modules configuration
-     "custom/arch" : {
-       "format": "󰣇"
-     },
-
-
-     "tray": {
-       "format" : "hola"
-     },
-
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": false,
@@ -109,6 +98,7 @@
         }
     },
     "clock": {
+        "format": "{:%H:%M %A, %B %d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d/%m/%Y}"
     },
