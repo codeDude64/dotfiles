@@ -136,5 +136,7 @@ alias yt="ytfzf -t"
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
 
+export PATH="$PATH:$HOME/.config/bin"
+
 eval "$(starship init zsh)"
 source /usr/share/nvm/init-nvm.sh
