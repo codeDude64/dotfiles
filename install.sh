@@ -59,6 +59,7 @@ config_files=(
   $CONFIG_DOTFILES_DIR/avizo/config.ini
   # bin
   $CONFIG_DOTFILES_DIR/bin/power_menu
+  $CONFIG_DOTFILES_DIR/bin/share_file
 
 )
 
@@ -102,6 +103,7 @@ files_to_remove=(
   $CONFIG_DIR/avizo/config.ini
   # bin
   $CONFIG_DIR/bin/power_menu
+  $CONFIG_DIR/bin/share_file
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
