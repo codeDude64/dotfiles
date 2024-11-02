@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ $# -le 0 ]; then
+  echo "You should share a file"
+  exit 1
+fi
+
+file="${@: -1}"
+
+if [ ! -e $file ]; then
+  echo "The file $file does not exist"
+  exit
+fi
+
+size="$(stat -c%s "$file")"
+
+if [ "$size" -gt 512000000 ]; then
+  echo "The file size is greated than 512.0 MiB"
+  exit 1
+fi
+
+link="$(curl -s -F"file=@$file" 0x0.st)"
+expected="http://0x0.st/*"
+
+case "$link" in
+  $expected) echo "The link is on the clipboard" ; wl-copy "$link" ;;
+  *) echo  "ERROR" ; exit 1 ;;
+esac
