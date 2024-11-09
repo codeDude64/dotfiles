@@ -59,6 +59,8 @@ config_files=(
   $CONFIG_DOTFILES_DIR/avizo/config.ini
   # Swappy
   $CONFIG_DOTFILES_DIR/swappy/config
+  # GTK
+  $CONFIG_DOTFILES_DIR/gtk-3.0/settings.ini
   # bin
   $CONFIG_DOTFILES_DIR/bin/power_menu
   $CONFIG_DOTFILES_DIR/bin/share_file
@@ -105,6 +107,8 @@ files_to_remove=(
   $CONFIG_DIR/avizo/config.ini
   # Swappy
   $CONFIG_DIR/swappy/config
+  # GTK
+  $CONFIG_DIR/gtk-3.0/settings.ini
   # bin
   $CONFIG_DIR/bin/power_menu
   $CONFIG_DIR/bin/share_file
@@ -127,6 +131,7 @@ dirs_to_create=(
   $CONFIG_DIR/mako
   $CONFIG_DIR/avizo
   $CONFIG_DIR/swappy
+  $CONFIG_DIR/gtk-3.0
   $CONFIG_DIR/bin
 )
 
