@@ -65,6 +65,7 @@ config_files=(
   $CONFIG_DOTFILES_DIR/bin/power_menu
   $CONFIG_DOTFILES_DIR/bin/share_file
   $CONFIG_DOTFILES_DIR/bin/capture_visible
+  $CONFIG_DOTFILES_DIR/bin/capture_cut
 
 )
 
@@ -114,6 +115,7 @@ files_to_remove=(
   $CONFIG_DIR/bin/power_menu
   $CONFIG_DIR/bin/share_file
   $CONFIG_DIR/bin/capture_visible
+  $CONFIG_DIR/bin/capture_cut
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
