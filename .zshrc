@@ -138,5 +138,8 @@ export PATH="$PATH:$GEM_HOME/bin"
 
 export PATH="$PATH:$HOME/.config/bin"
 
+export GTK_THEME="Gruvbox-Material-Dark"
+export GTK_ICON_THEME="Gruvbox-Material-Dark"
+
 eval "$(starship init zsh)"
 source /usr/share/nvm/init-nvm.sh
