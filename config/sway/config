@@ -199,7 +199,7 @@ output * bg  ~/Pictures/gruvbox_image46.png fill
     bindsym XF86MonBrightnessUp exec lightctl up
     bindsym XF86MonBrightnessDown exec lightctl down
 
-    bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+    bindsym Print exec ~/.config/bin/capture_cut
     bindsym $mod+Print exec ~/.config/bin/capture_visible
 
 #
