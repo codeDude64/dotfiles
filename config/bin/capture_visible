@@ -1,3 +1,5 @@
 #!/bin/sh
+export GTK_THEME="Gruvbox-Material-Dark"
+export GTK_ICON_THEME="Gruvbox-Material-Dark"
 
 grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -

@@ -1,0 +1,6 @@
+#!/bin/sh
+export GTK_THEME="Gruvbox-Material-Dark"
+export GTK_ICON_THEME="Gruvbox-Material-Dark"
+
+grim -g "$(slurp)" - | swappy -f -
+
