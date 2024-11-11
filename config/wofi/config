@@ -4,5 +4,5 @@ prompt=Run
 allow_images=true
 term=kitty
 hide_scroll=true
-matching=fuzzy
+matching=multi-contains
 insensitive=true
