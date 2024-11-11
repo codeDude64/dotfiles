@@ -41,6 +41,7 @@ config_files=(
   $CONFIG_DOTFILES_DIR/newsboat/config
   # Sway
   $CONFIG_DOTFILES_DIR/sway/config
+  $CONFIG_DOTFILES_DIR/sway/wp.png
   # Waybar
   $CONFIG_DOTFILES_DIR/waybar/config.jsonc
   $CONFIG_DOTFILES_DIR/waybar/mediaplayer.py
@@ -91,6 +92,7 @@ files_to_remove=(
   $CONFIG_DIR/newsboat/config
   # Sway
   $CONFIG_DIR/sway/config
+  $CONFIG_DIR/sway/wp.png
   # Waybar
   $CONFIG_DIR/waybar/config.jsonc
   $CONFIG_DIR/waybar/mediaplayer.py
