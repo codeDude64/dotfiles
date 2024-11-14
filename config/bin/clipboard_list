@@ -1,0 +1,17 @@
+#!/bin/bash
+
+CLIPBOARD_HISTORY="$HOME/.clipboard_history"
+
+touch "$CLIPBOARD_HISTORY"
+
+current_clipboard=$(wl-paste)
+last_entry=$(tail -n 1 "$CLIPBOARD_HISTORY")
+if [[ "$current_clipboard" != "$last_entry" ]]; then
+    echo "$current_clipboard" >> "$CLIPBOARD_HISTORY"
+fi
+
+selected=$(tac "$CLIPBOARD_HISTORY" | wofi --show dmenu --prompt "Clipboard History")
+
+if [[ -n "$selected" ]]; then
+    echo "$selected" | wl-copy
+fi
