@@ -209,6 +209,7 @@ workspace 2 output $output-secondary
     bindsym Print exec ~/.config/bin/capture_cut
     bindsym $mod+Print exec ~/.config/bin/capture_visible
 
+    bindsym $mod+c exec ~/.config/bin/clipboard_list
 #
 # Scratchpad:
 #
