@@ -1,4 +1,5 @@
 "query:---Peertube---:tags # \"Peertube\""
+https://fediverse.tv/feeds/videos.xml?videoChannelId=45 "~Gnuxero Rikylinux" Peertube
 https://video.asgardius.company/feeds/videos.xml?videoChannelId=2040 "~LinuxChad Peertube" Peertube
 https://tilvids.com/feeds/videos.xml?videoChannelId=4776 "~Linux User Space" Peertube
 https://tilvids.com/feeds/videos.xml?videoChannelId=7933 "~Veronica Explains" Peertube
