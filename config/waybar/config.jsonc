@@ -20,6 +20,7 @@
     ],
     "modules-right": [
         "mpd",
+        "custom/clipboard",
         "cpu",
         "memory",
         "power-profiles-daemon",
@@ -46,6 +47,18 @@
              "default": ""
          }
      },
+     "custom/clipboard": {
+      "format": "🄯",
+      "interval": "once",
+      "return-type": "json",
+      "on-click": "swaymsg -q exec '$clipboard'; pkill -RTMIN+9 waybar",
+      "on-click-right": "swaymsg -q exec '$clipboard-del'; pkill -RTMIN+9 waybar",
+      "on-click-middle": "swaymsg -q exec '$clipboard-del-all'",
+      "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)",
+      "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
+      "signal": 9
+    },
+
     "sway/mode": {
         "format": "{}",
         "format-icons": {
