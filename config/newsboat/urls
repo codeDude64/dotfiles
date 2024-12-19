@@ -1,4 +1,5 @@
 "query:---Peertube---:tags # \"Peertube\""
+https://video.hardlimit.com/feeds/videos.xml?videoChannelId=9059 "~Autumn64" Peertube
 https://fediverse.tv/feeds/videos.xml?videoChannelId=45 "~Gnuxero Rikylinux" Peertube
 https://video.asgardius.company/feeds/videos.xml?videoChannelId=2040 "~LinuxChad Peertube" Peertube
 https://tilvids.com/feeds/videos.xml?videoChannelId=4776 "~Linux User Space" Peertube
@@ -11,9 +12,11 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "~M
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrNXDTY2PNu9EuNydjOd5SQ "~El Pasquin" Youtube 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCf_MY8uWjWH8gwzFK6vCAmg "~Esquizofrenia Natural" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCb8GKeOvI7WsFUkB4UVAeXA "~Cordura Artificial" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCo5HJNjfdSoPWsdAHLsvSxQ "~ShaunTrack" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCpMSfnlbvJiZzlVb9wYlvfw "~Main Watchers" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCiBwOVBljEjcsLUjwI274Xw "~The top comics" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCN_CWpl70T3DgnfS9HjMfKQ "~VSX" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA "~TJDevries" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg "~The Linux Cast" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCFFLP0dKesrKWccYscdAr9A "~The urban pinguin" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCrBzBOMcUVV8ryyAU_c6P5g "~Pelado Nerd" Youtube
@@ -52,6 +55,7 @@ https://www.radioformula.com.mx/rss/feed.html?r=1 News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
 https://www.jornada.com.mx/rss/edicion.xml?v=1 News
 https://www.reforma.com/rss/portada.xml News
+https://www.elsoldezamora.com.mx/rss.xml "~El Sol de Zamora" News
 
 "query:---Blogs---:tags # \"Blogs\""
 https://www.muylinux.com/feed/ Blogs

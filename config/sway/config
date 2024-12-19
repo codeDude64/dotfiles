@@ -2,6 +2,7 @@ include /etc/sway/config.d/*
 
 exec_always "pkill waybar; waybar"
 exec_always "pkill avizo-service; avizo-service"
+exec "wl-paste --watch cliphist store"
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -62,10 +63,10 @@ workspace 2 output $output-secondary
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
+          timeout 300 'swaylock -f --image ~/.config/sway/wp.png' \
           timeout 600 'swaymsg "output * dpms off"' \
           resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep 'swaylock -f --image ~/.config/sway/wp.png'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -81,6 +82,13 @@ workspace 2 output $output-secondary
        natural_scroll disabled
        middle_emulation enabled
    }
+
+## Clipboard
+
+    set $clipboard cliphist list | wofi --dmenu --prompt "clipboard" | cliphist decode | wl-copy
+    set $clipboard-del cliphist list | wofi --dmenu --prompt "delete" | cliphist delete; pkill -RTMIN+9 waybar
+    set $clipboard-del-all rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar
+
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -209,7 +217,7 @@ workspace 2 output $output-secondary
     bindsym Print exec ~/.config/bin/capture_cut
     bindsym $mod+Print exec ~/.config/bin/capture_visible
 
-    bindsym $mod+c exec ~/.config/bin/clipboard_list
+    bindsym $mod+c exec $clipboard
 #
 # Scratchpad:
 #
