@@ -3,7 +3,7 @@
 ## About
 
 > [!NOTE]
-> This project is developing now on [codeberg.org](https://codeberg.org/codeDude/dotfiles) in the name of FLOSS this github repo is working as a mirror. All the changes on codeberg will be reflected on this github repo.
+> This project is developing now on [codeberg.org](https://codeberg.org/codeDude/dotfiles) in the name of FLOSS. This github repo is working as a mirror, so all the changes on codeberg will be reflected on this github repo.
 
 
 This is my dotfiles to my ArchLinux system,  there are the following configurations.
