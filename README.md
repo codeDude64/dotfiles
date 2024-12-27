@@ -8,18 +8,26 @@
 
 This is my dotfiles to my ArchLinux system,  there are the following configurations.
 
-* nvim
-* tmux
+* neovim
+* sway
 * zsh
-* nvm default packages
+* kitty
+* tut
+* iamb
+* mpd
+* mpv
+* newsboat
 
 ## Install
 
 You can run the script install.bash to install the configuration using: \
-`chmod 744 install.bash` \
-`./install.bash` 
+`chmod 744 install.sh` \
+`./install.sh` 
 
 ## Alternative to try it
+
+> [!NOTE]
+> There is time ago that I don't test this.
 
 There is a docker image to test the dotfiles in an archlinux image.
 you can run the docker image with the following commands.
@@ -28,8 +36,6 @@ you can run the docker image with the following commands.
 `docker run -it  nvim-imagen /bin/zsh` \
 When you are in, you should to install node, npm and the default packages (languages servers) using `nvm install stable`
 
-## Install neovim packages
-I've used packer.nvim so you need to run the command `:PackerSync` inside neovim to install the packages.
 
 ## Acknowledgment
 
