@@ -49,26 +49,29 @@ https://feeds.transistor.fm/programming-throwdown "~Programming Throwdown" Podca
 https://blog.codepen.io/feed/podcast/codepen-radio/ "~CodePen radio" Podcast
 https://www.spreaker.com/show/6102064/episodes/feed "~Javascript Jabber Podcast" Podcast
 https://anchor.fm/s/5a5b39c/podcast/rss "~Atareao con Linux podcast" Podcast
+https://feeds.redcircle.com/0835997e-47ec-438e-b6ae-0b390966aa7e "~C++ club" Podcast
 
 "query:---News---:tags # \"News\""
 https://www.radioformula.com.mx/rss/feed.html?r=1 News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
 https://www.jornada.com.mx/rss/edicion.xml?v=1 News
 https://www.reforma.com/rss/portada.xml News
-https://www.elsoldezamora.com.mx/rss.xml "~El Sol de Zamora" News
 
 "query:---Blogs---:tags # \"Blogs\""
 https://www.muylinux.com/feed/ Blogs
 https://www.xataka.com/index.xml Blogs
 https://www.genbeta.com/index.xml Blogs
-https://decoracion.trendencias.com/index.xml Blogs
 https://www.xatakandroid.com/index.xml Blogs
 http://feeds.feedburner.com/desdelinuxweb Blogs
 https://9to5linux.com/feed/atom Blogs
 https://itsfoss.com/rss/ Blogs
+https://www.gamingonlinux.com/article_rss.php "~Gaming on Linux" Blogs
+https://www.meetingcpp.com/blogen.xml "~Meeting C++" Blogs
+https://www.cppstories.com/index.xml "~C++ stories" Blogs
+https://devblogs.microsoft.com/cppblog/feed/ "~Microsoft C++ Blog" Blogs
 https://thelinuxexp.com/feed.xml "~The Linux Experiment Blog" Blogs
 https://thelinuxcast.org/feed/feed.xml "~The Linux Cast Blog" Blogs
-https://www.fsf.org/static/fsforg/rss/news.xml
+https://www.fsf.org/static/fsforg/rss/news.xml Blogs
 
 "query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/cpp/.rss Reddit
@@ -78,12 +81,17 @@ https://www.reddit.com/r/kde/.rss Reddit
 https://www.reddit.com/r/linux/.rss Reddit
 https://www.reddit.com/r/linux4noobs/.rss Reddit
 https://www.reddit.com/r/Weechat/.rss Reddit
-https://www.reddit.com/r/archlinux/.rss Reddit ArchLinux
+https://www.reddit.com/r/archlinux/.rss Reddit
 
 "query:---ArchLinux---:tags # \"ArchLinux\"" 
+https://archlinux.org/feeds/news/ "~Arch Linux news" ArchLinux
+https://archlinux.org/feeds/planet/ "~Arch Linux planet" ArchLinux
 https://archlinux.org/feeds/packages/ "~Arch Linux packages" ArchLinux
+https://archlinux.org/feeds/packages/added/ "~Arch Linux added packages" ArchLinux
+https://archlinux.org/feeds/packages/removed/ "~Arch Linux added packages" ArchLinux
 https://aur.archlinux.org/rss ArchLinux "~Arch Linux AUR packages" ArchLinux
 https://aur.archlinux.org/rss/modified "~Arch Linux AUR modified packages" ArchLinux
+https://archlinux.org/feeds/releases/ "~Arch Linux ISO release" ArchLinux
 
 
 "query:Unread Articles:unread = \"yes\""
