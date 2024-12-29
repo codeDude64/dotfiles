@@ -128,10 +128,10 @@ alias changes='git diff --'
 alias nomerge='git merge --abort'
 alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
 
+alias lynx='lynx -vikeys'
 alias ddg="lynx --accept-all-cookies --display_charset=utf-8 www.duckduckgo.com"
 alias lcpp="lynx --accept-all-cookies --display_charset=utf-8 www.learncpp.com"
 alias yt="ytfzf -t"
-
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
@@ -143,3 +143,10 @@ export GTK_ICON_THEME="Gruvbox-Material-Dark"
 
 eval "$(starship init zsh)"
 source /usr/share/nvm/init-nvm.sh
+
+if [[ $- == *i* ]]; then
+  set_gpg_tty() {
+    export GPG_TTY=$(tty)
+  }
+  set_gpg_tty
+fi
