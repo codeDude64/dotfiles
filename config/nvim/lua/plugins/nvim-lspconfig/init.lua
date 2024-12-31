@@ -9,7 +9,6 @@ return {
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     'hrsh7th/nvim-cmp',
-    "onsails/lspkind-nvim",
     "creativenull/efmls-configs-nvim"
   },
   config = function()
