@@ -6,11 +6,11 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-buffer",
     "petertriho/cmp-git",
-    "zbirenbaum/copilot-cmp",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "L3MON4D3/LuaSnip",
     "windwp/nvim-autopairs",
+    "onsails/lspkind-nvim",
   },
   config = function()
     local status_cmp_ok, cmp = pcall(require, "cmp")
@@ -22,12 +22,11 @@ return {
 
     local luasnip = require("luasnip")
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-    local cmp_kinds = require("plugins.nvim-cmp.icon_kinds")
+    local lspkind = require("lspkind")
+
+    lspkind.init {}
 
     cmp.setup({
-      formatters = {
-        insert_text = require("copilot_cmp.format").remove_existing,
-      },
       completion = {
         completeopt = "menu,menuone,noinsert",
       },
@@ -84,26 +83,22 @@ return {
         end, { "i", "s" }),
       },
       sources = {
-        { name = "luasnip",  group_index = 2 },
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "path",     group_index = 2 },
-        { name = "buffer",   group_index = 2 },
-        { name = "cmd_line", group_index = 2 },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "path" },
+        { name = "cmd_line" },
+        { name = "buffer" },
       },
       formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = function(entry, vim_item)
-          if vim.tbl_contains({ "path" }, entry.source.name) then
-            local icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
-            if icon then
-              vim_item.kind = icon
-              vim_item.kind_hl_group = hl_group
-              return vim_item
-            end
-          end
-          vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
-          return vim_item
-        end,
+        format = lspkind.cmp_format({
+          maxWidth = {
+            menu = 50,
+            abbr = 50,
+          },
+          ellipsis_char = '...',
+          show_labelDetails = true,
+        }),
       },
       map_cr = true,
       map_complete = true,
