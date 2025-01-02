@@ -4,8 +4,10 @@ return {
   keys = function()
     return require('keymaps.neogit')
   end,
-  config = function()
-    local neogit = require('neogit')
-    neogit.setup { integrations = { diffview = true, telescope = true } }
-  end
+  opts = {
+    integrations = {
+      diffview = true,
+      telescope = true
+    }
+  }
 }
