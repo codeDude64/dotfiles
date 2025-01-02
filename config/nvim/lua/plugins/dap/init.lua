@@ -1,51 +1,56 @@
 return {
   'mfussenegger/nvim-dap',
-  dependencies  = {
-  'theHamsta/nvim-dap-virtual-text',
-  'jbyuki/one-small-step-for-vimkind'
+  dependencies = {
+    'rcarriga/nvim-dap-ui',
+    'theHamsta/nvim-dap-virtual-text',
+    'jbyuki/one-small-step-for-vimkind',
+    'nvim-neotest/nvim-nio',
+    'williamboman/mason.nvim',
+    'suketa/nvim-dap-ruby',
+    'mxsdev/nvim-dap-vscode-js',
+    'jbyuki/one-small-step-for-vimkind'
   },
-  keys = function ()
+  keys = function()
     return require('keymaps.dap')
   end,
   config = function()
     local dap = require 'dap'
+    local ui = require 'dapui'
+
+
     local adapters = require 'plugins.dap.adapters'
     local configurations = require 'plugins.dap.configurations'
 
-    dap.adapters.node2 = adapters.node2
+    ui.setup {}
+    require('dap-ruby').setup()
+    require("dap-vscode-js").setup({
+      adapters = adapters.javascriptTypescript,
+    })
+
+    for _, language in ipairs({ "typescript", "javascript" }) do
+      dap.configurations[language] = configurations.javascriptTypescript
+    end
+
     dap.adapters.nlua = adapters.nlua
-    dap.adapters.codelldb = adapters.codelldb
 
-    dap.configurations.javascript = configurations.javascript
-    dap.configurations.javascriptreact = configurations.javascript
+    dap.configurations = configurations.nlua
 
-    dap.configurations.typescript = configurations.javascript
-    dap.configurations.typescriptreact = configurations.javascript
+    dap.adapters.gbd = adapters.gbd
 
-    dap.configurations.lua = configurations.lua
+    dap.configurations.c = configurations.c
+    dap.configurations.cpp = configurations.c
 
-    dap.configurations.cpp = configurations.cpp
-    dap.configurations.rust = configurations.cpp
-
-
-    require('dap.ext.vscode').load_launchjs()
-
-    require('nvim-dap-virtual-text').setup {
-      enabled = true,
-      enabled_commands = true,
-      highlight_changed_variables = true,
-      highlight_new_as_changed = false,
-      show_stop_reason = true,
-      commented = false,
-      only_first_definition = true,
-      all_references = false,
-      filter_references_pattern = '<module',
-
-      virt_text_pos = 'eol',
-      all_frames = false,
-      virt_lines = false,
-      virt_text_win_col = nil
-
-    }
+    dap.listeners.before.attach.dapui_config = function()
+      ui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+      ui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
+      ui.open()
+    end
+    dap.listeners.before.event_exited.dapui_config = function()
+      ui.open()
+    end
   end
 }
