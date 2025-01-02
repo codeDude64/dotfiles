@@ -1,49 +1,69 @@
 return {
-  javascript = {
+  javascriptTypescript = {
     {
-      name = 'Launch',
-      type = 'node2',
-      request = 'launch',
-      program = '${file}',
-      cwd = vim.fn.getcwd(),
-      sourceMaps = true,
-      protocol = 'inspector',
-      console = 'integratedTerminal'
-    },
-    {
-      name = 'Attach to process',
-      type = 'node2',
-      request = 'attach',
-      processId = require 'dap.utils'.pick_process
-    },
-    {
-      type = "chrome",
-      request = "attach",
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch file",
       program = "${file}",
-      cwd = vim.fn.getcwd(),
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach",
+      processId = require 'dap.utils'.pick_process,
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Debug Jest Tests",
+      runtimeExecutable = "node",
+      runtimeArgs = {
+        "./node_modules/jest/bin/jest.js",
+        "--runInBand",
+      },
+      rootPath = "${workspaceFolder}",
+      cwd = "${workspaceFolder}",
+      console = "integratedTerminal",
+      internalConsoleOptions = "neverOpen",
+    },
+    {
+      type = "pwa-chrome",
+      request = "launch",
+      name = "Launch Chrome",
+      url = "http://localhost",
+      webRoot = "${workspaceFolder}",
       sourceMaps = true,
       protocol = "inspector",
       port = 9222,
-      webRoot = "${workspaceFolder}"
-    }
+      runtimeExecutable = "google-chrome-stable",
+    },
+    {
+      type = "pwa-chrome",
+      request = "attach",
+      name = "Attach to Chrome",
+      cwd = "${workspaceFolder}",
+      port = 9222,
+      webRoot = "${workspaceFolder}",
+      url = "http://localhost",
+    },
   },
-  lua = {
+  nlua = {
     {
       type = 'nlua',
       request = 'attach',
       name = "Attach to running Neovim instance",
     }
   },
-  cpp = {
-    {
-      name = "Launch file",
-      type = "codelldb",
-      request = "launch",
-      program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-      end,
-      cwd = '${workspaceFolder}',
-      stopOnEntry = true,
-    }
-  }
+  c = {
+    name = "Launch",
+    type = "gdb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = false,
+  },
 }
