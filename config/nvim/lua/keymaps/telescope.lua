@@ -9,6 +9,7 @@ return {
   { 'gl',            function() telescope_builtin.git_commits() end },
   { 'gb',            function() telescope_builtin.git_branches() end },
   { '<leader>ts',    function() telescope_builtin.treesitter() end },
+  { '<leader>th',    function() telescope_builtin.help_tags() end },
   { '<leader>to',    function() telescope_builtin.builtin() end },
   { '<leader><c-p>', function() telescope.extensions.repo.list {} end },
   { '<leader><c-n>', function() telescope.extensions.node_modules.list {} end }
