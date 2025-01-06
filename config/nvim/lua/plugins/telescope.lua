@@ -3,14 +3,14 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-fzy-native.nvim',
+      { 'nvim-telescope/telescope-fzy-native.nvim', build = 'make' },
       'cljoly/telescope-repo.nvim',
       'nvim-telescope/telescope-media-files.nvim',
       'nvim-telescope/telescope-node-modules.nvim',
       'nvim-telescope/telescope-dap.nvim',
       'nvim-lua/popup.nvim',
     },
-    keys = function ()
+    keys = function()
       return require('keymaps.telescope')
     end,
     config = function()
@@ -36,7 +36,7 @@ return {
           repo = {
             list = {
               search_dirs = {
-                "~/Projects",
+                "~/projects",
                 "~/dotfiles/"
               }
             }
