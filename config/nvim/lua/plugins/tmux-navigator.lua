@@ -1,6 +1,3 @@
 return {
-  'connordeckers/tmux-navigator.nvim',
-  opts = {
-    enable = true
-  }
+  'christoomey/vim-tmux-navigator',
 }
