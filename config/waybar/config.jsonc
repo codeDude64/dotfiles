@@ -9,13 +9,13 @@
   "modules-left": [
     "sway/workspaces",
     "sway/mode",
-    "sway/scratchpad"
+    "sway/scratchpad",
+    "mpd"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "mpd",
     "idle_inhibitor",
     "custom/clipboard",
     "temperature",
@@ -73,10 +73,10 @@
     "tooltip-format": "{app}: {title}"
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format": "{title} ",
     "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
+    "format-stopped": "Stopped 󰓛",
+    "unknown-tag": "unknown",
     "interval": 5,
     "consume-icons": {
       "on": " "
@@ -95,7 +95,7 @@
       "paused": "",
       "playing": ""
     },
-    "tooltip-format": "MPD (connected)",
+    "tooltip-format": "Title: {title}\nArtist: {artist}\nAlbum: {album}\n({elapsedTime:%M:%S}/{totalTime:%M:%S})\nVolumen: {volume}%\n{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "idle_inhibitor": {
