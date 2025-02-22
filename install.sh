@@ -51,6 +51,8 @@ config_files=(
   $CONFIG_DOTFILES_DIR/wofi/style.css
   # MPD
   $CONFIG_DOTFILES_DIR/mpd/mpd.conf
+  # Ncmpcpp
+  $CONFIG_DOTFILES_DIR/ncmpcpp/config
   # MPV
   $CONFIG_DOTFILES_DIR/mpv/mpv.conf
   $CONFIG_DOTFILES_DIR/mpv/input.conf
@@ -105,6 +107,8 @@ files_to_remove=(
   $CONFIG_DIR/wofi/style.css
   # MPD
   $CONFIG_DIR/mpd/mpd.conf
+  # Ncmpcpp
+  $CONFIG_DIR/ncmpcpp/config
   # MPV
   $CONFIG_DIR/mpv/mpv.conf
   $CONFIG_DIR/mpv/input.conf
@@ -139,6 +143,7 @@ dirs_to_create=(
   $CONFIG_DIR/waybar
   $CONFIG_DIR/wofi
   $CONFIG_DIR/mpd
+  $CONFIG_DIR/ncmpcpp
   $CONFIG_DIR/mpv
   $CONFIG_DIR/mako
   $CONFIG_DIR/avizo
