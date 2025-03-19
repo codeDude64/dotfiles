@@ -1,3 +1,22 @@
+
+"query:---Blogs---:tags # \"Blogs\""
+https://www.muylinux.com/feed/ Blogs
+https://www.xataka.com/index.xml Blogs
+https://www.genbeta.com/index.xml Blogs
+https://www.xatakandroid.com/index.xml Blogs
+http://feeds.feedburner.com/desdelinuxweb Blogs
+https://9to5linux.com/feed/atom Blogs
+https://itsfoss.com/rss/ Blogs
+https://lukesmith.xyz/index.xml "~Lukesmith" Blogs
+https://landchad.net/index.xml "~Lukesmith landchad" Blogs
+https://www.gamingonlinux.com/article_rss.php "~Gaming on Linux" Blogs
+https://www.meetingcpp.com/blogen.xml "~Meeting C++" Blogs
+https://www.cppstories.com/index.xml "~C++ stories" Blogs
+https://devblogs.microsoft.com/cppblog/feed/ "~Microsoft C++ Blog" Blogs
+https://thelinuxexp.com/feed.xml "~The Linux Experiment Blog" Blogs
+https://thelinuxcast.org/feed/feed.xml "~The Linux Cast Blog" Blogs
+https://www.fsf.org/static/fsforg/rss/news.xml Blogs
+
 "query:---Peertube---:tags # \"Peertube\""
 https://video.hardlimit.com/feeds/videos.xml?videoChannelId=9059 "~Autumn64" Peertube
 https://fediverse.tv/feeds/videos.xml?videoChannelId=45 "~Gnuxero Rikylinux" Peertube
@@ -6,6 +25,8 @@ https://tilvids.com/feeds/videos.xml?videoChannelId=4776 "~Linux User Space" Pee
 https://tilvids.com/feeds/videos.xml?videoChannelId=7933 "~Veronica Explains" Peertube
 https://video.hardlimit.com/feeds/videos.xml?videoChannelId=8840 "~Houman" Peertube
 https://tilvids.com/feeds/videos.xml?videoChannelId=47 "~The Linux Experiment" Peertube
+https://tube.archworks.co/feeds/videos.xml?videoChannelId=16414 "~Mental Outlaw" Peertube
+https://videos.lukesmith.xyz/feeds/videos.xml?videoChannelId=2 "~Lukesmith" Peertube
 
 "query:---Youtube---:tags # \"Youtube\""
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "~Migala" Youtube
@@ -56,22 +77,6 @@ https://www.radioformula.com.mx/rss/feed.html?r=1 News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
 https://www.jornada.com.mx/rss/edicion.xml?v=1 News
 https://www.reforma.com/rss/portada.xml News
-
-"query:---Blogs---:tags # \"Blogs\""
-https://www.muylinux.com/feed/ Blogs
-https://www.xataka.com/index.xml Blogs
-https://www.genbeta.com/index.xml Blogs
-https://www.xatakandroid.com/index.xml Blogs
-http://feeds.feedburner.com/desdelinuxweb Blogs
-https://9to5linux.com/feed/atom Blogs
-https://itsfoss.com/rss/ Blogs
-https://www.gamingonlinux.com/article_rss.php "~Gaming on Linux" Blogs
-https://www.meetingcpp.com/blogen.xml "~Meeting C++" Blogs
-https://www.cppstories.com/index.xml "~C++ stories" Blogs
-https://devblogs.microsoft.com/cppblog/feed/ "~Microsoft C++ Blog" Blogs
-https://thelinuxexp.com/feed.xml "~The Linux Experiment Blog" Blogs
-https://thelinuxcast.org/feed/feed.xml "~The Linux Cast Blog" Blogs
-https://www.fsf.org/static/fsforg/rss/news.xml Blogs
 
 "query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/cpp/.rss Reddit
