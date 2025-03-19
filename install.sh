@@ -72,7 +72,8 @@ config_files=(
   $CONFIG_DOTFILES_DIR/bin/capture_visible
   $CONFIG_DOTFILES_DIR/bin/capture_cut
   $CONFIG_DOTFILES_DIR/bin/clipboard_list
-
+  $CONFIG_DOTFILES_DIR/bin/clipboard_list
+  $CONFIG_DOTFILES_DIR/bin/songinfo
 )
 
 home_files=(
@@ -128,6 +129,7 @@ files_to_remove=(
   $CONFIG_DIR/bin/capture_visible
   $CONFIG_DIR/bin/capture_cut
   $CONFIG_DIR/bin/clipboard_list
+  $CONFIG_DIR/bin/songinfo
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
