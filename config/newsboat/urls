@@ -2,11 +2,14 @@
 "query:---Blogs---:tags # \"Blogs\""
 https://www.muylinux.com/feed/ Blogs
 https://www.xataka.com/index.xml Blogs
+https://www.xataka.com.mx/feedburner.xml Blogs
 https://www.genbeta.com/index.xml Blogs
 https://www.xatakandroid.com/index.xml Blogs
 http://feeds.feedburner.com/desdelinuxweb Blogs
 https://9to5linux.com/feed/atom Blogs
 https://itsfoss.com/rss/ Blogs
+https://fosspost.org/feed Blogs
+http://fossforce.com/feed/ Blogs
 https://lukesmith.xyz/index.xml "~Lukesmith" Blogs
 https://landchad.net/index.xml "~Lukesmith landchad" Blogs
 https://www.gamingonlinux.com/article_rss.php "~Gaming on Linux" Blogs
@@ -15,7 +18,7 @@ https://www.cppstories.com/index.xml "~C++ stories" Blogs
 https://devblogs.microsoft.com/cppblog/feed/ "~Microsoft C++ Blog" Blogs
 https://thelinuxexp.com/feed.xml "~The Linux Experiment Blog" Blogs
 https://thelinuxcast.org/feed/feed.xml "~The Linux Cast Blog" Blogs
-https://www.fsf.org/static/fsforg/rss/news.xml Blogs
+https://www.fsf.org/static/fsforg/rss/blogs.xml Blogs
 
 "query:---Peertube---:tags # \"Peertube\""
 https://video.hardlimit.com/feeds/videos.xml?videoChannelId=9059 "~Autumn64" Peertube
@@ -77,16 +80,31 @@ https://www.radioformula.com.mx/rss/feed.html?r=1 News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
 https://www.jornada.com.mx/rss/edicion.xml?v=1 News
 https://www.reforma.com/rss/portada.xml News
+https://www.elfinanciero.com.mx/rss/ News
+https://www.fsf.org/static/fsforg/rss/news.xml News
 
 "query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/cpp/.rss Reddit
 https://www.reddit.com/r/cpp_questions/.rss Reddit
-https://www.reddit.com/r/Fedora/.rss Reddit
-https://www.reddit.com/r/kde/.rss Reddit
 https://www.reddit.com/r/linux/.rss Reddit
 https://www.reddit.com/r/linux4noobs/.rss Reddit
 https://www.reddit.com/r/Weechat/.rss Reddit
 https://www.reddit.com/r/archlinux/.rss Reddit
+
+
+"query:---Jobs---:tags # \"Jobs\""
+https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
+https://www.fossjobs.net/rss/programmers/
+
+"query:---Events---:tags # \"Events\""
+https://www.fsf.org/static/fsforg/rss/events.xml Events
+
+"query:---Codeberg---:tags # \"Codeberg\""
+https://codeberg.org/codeDude.rss Codeberg
+https://codeberg.org/codeDude/dotfiles.rss Codeberg
+
+"query:---OSM---:tags # \"OSM\""
+https://www.openstreetmap.org/diary/rss OS
 
 "query:---ArchLinux---:tags # \"ArchLinux\"" 
 https://archlinux.org/feeds/news/ "~Arch Linux news" ArchLinux
