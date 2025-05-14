@@ -18,6 +18,7 @@ return {
   solargraph = solargraph_config,
   cmake = default_config,
   lemminx = default_config,
+  graphql = default_config,
 
   jsonls = json_config,
   lua_ls = lua_config,
