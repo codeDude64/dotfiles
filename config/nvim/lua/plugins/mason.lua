@@ -1,9 +1,9 @@
 return {
   'williamboman/mason.nvim',
   dependencies = {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'jay-babu/mason-nvim-dap.nvim'
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'jay-babu/mason-nvim-dap.nvim',
   },
   config = function()
     local mason                = require 'mason'
@@ -13,8 +13,32 @@ return {
 
 
     mason.setup()
-    mason_tool_installer.setup { automatic_installation = true }
-    mason_lspconfig.setup { automatic_installation = true }
+    mason_lspconfig.setup {
+      automatic_installation = true
+    }
+    mason_tool_installer.setup {
+      automatic_installation = true,
+      ensure_installed = {
+        "ts_ls",
+        "html",
+        "css-lsp",
+        "intelephense",
+        "pyright",
+        "bashls",
+        "texlab",
+        "yamlls",
+        "vimls",
+        "dockerls",
+        "solargraph",
+        "cmake",
+        "lemminx",
+        "graphql",
+
+        "jsonls",
+        "lua_ls",
+      }
+
+    }
     mason_nvim_dap.setup { automatic_installation = true }
   end
 }
