@@ -74,6 +74,7 @@ config_files=(
   $CONFIG_DOTFILES_DIR/bin/clipboard_list
   $CONFIG_DOTFILES_DIR/bin/clipboard_list
   $CONFIG_DOTFILES_DIR/bin/songinfo
+  $CONFIG_DOTFILES_DIR/bin/reset_sway_workspaces
 )
 
 home_files=(
@@ -130,6 +131,7 @@ files_to_remove=(
   $CONFIG_DIR/bin/capture_cut
   $CONFIG_DIR/bin/clipboard_list
   $CONFIG_DIR/bin/songinfo
+  $CONFIG_DIR/bin/reset_sway_workspaces
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf

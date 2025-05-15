@@ -1,0 +1,8 @@
+#!/bin/sh
+swaymsg output eDP-1 resolution 1920x1080 position 0 0
+swaymsg output HDMI-A-1 resolution 2560x1080 position 1920 0
+swaymsg output HDMI-A-2 resolution 1920x1080 position 4480 0
+
+swaymsg workspace 1; swaymsg move workspace to output eDP-1
+swaymsg workspace 2; swaymsg move workspace to output HDMI-A-1
+swaymsg workspace 3; swaymsg move workspace to output HDMI-A-2
