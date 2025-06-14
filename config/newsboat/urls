@@ -19,6 +19,47 @@ https://devblogs.microsoft.com/cppblog/feed/ "~Microsoft C++ Blog" Blogs
 https://thelinuxexp.com/feed.xml "~The Linux Experiment Blog" Blogs
 https://thelinuxcast.org/feed/feed.xml "~The Linux Cast Blog" Blogs
 https://www.fsf.org/static/fsforg/rss/blogs.xml Blogs
+https://blog.pragmaticengineer.com/rss/ Blogs
+https://medium.com/feed/airtable-eng Blogs
+https://medium.com/feed/medium-eng Blogs
+http://distill.pub/rss.xml Blogs
+https://lilianweng.github.io/lil-log/feed.xml Blogs
+
+"query:---News---:tags # \"News\""
+https://www.radioformula.com.mx/rss/feed.html?r=1 News
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
+https://www.jornada.com.mx/rss/edicion.xml?v=1 News
+https://www.reforma.com/rss/portada.xml News
+https://www.elfinanciero.com.mx/rss/ News
+https://www.theguardian.com/world/mexico/rss News
+https://www.excelsior.com.mx/rss.xml News
+https://vanguardia.com.mx/rss.xml News
+https://www.24-horas.mx/feed/ News
+https://www.debate.com.mx/rss/feed.xml News
+https://mexiconewsdaily.com/feed/ News
+https://diario.mx/jrz/media/sitemaps/rss.xml News
+https://8columnas.com.mx/feed/ News
+http://news.ycombinator.com/rss News
+https://techcrunch.com/feed/ News
+http://news.mit.edu/rss/topic/artificial-intelligence2 Blogs
+https://www.fsf.org/static/fsforg/rss/news.xml News
+
+"query:---Jobs---:tags # \"Jobs\""
+https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
+https://www.fossjobs.net/rss/programmers/
+
+"query:---Events---:tags # \"Events\""
+https://www.fsf.org/static/fsforg/rss/events.xml Events
+
+"query:---HackerProblems---:tags # \"HackerProblems\""
+https://projecteuler.net/rss2_euler.xml HackerProblems
+
+"query:---Codeberg---:tags # \"Codeberg\""
+https://codeberg.org/codeDude.rss Codeberg
+https://codeberg.org/codeDude/dotfiles.rss Codeberg
+
+"query:---OSM---:tags # \"OSM\""
+https://www.openstreetmap.org/diary/rss OSM
 
 "query:---Peertube---:tags # \"Peertube\""
 https://video.hardlimit.com/feeds/videos.xml?videoChannelId=9059 "~Autumn64" Peertube
@@ -65,6 +106,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCBIMW0ZhwULY_x7fdaPRPiQ "~P
 https://www.youtube.com/feeds/videos.xml?channel_id=UCtIdb7KRqOTcOogKsos_QRw "~Lord Draugr" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCg6gPGh8HU2U01vaFCAsvmQ "~Chris Titus Tech" Youtube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCBKM3HATRILZyG9jGNJKGXQ "~Software Engineering Daily" Youtube 
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ "~The primeagent primeTime" Youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVk4b-svNJoeytrrlOixebQ "~The primeagent vimagent" Youtube
 
 "query:---Podcast---:tags # \"Podcast\""
 http://feeds.codenewbie.org/cnpodcast.xml "~Codenewbie" Podcast
@@ -75,14 +118,6 @@ https://www.spreaker.com/show/6102064/episodes/feed "~Javascript Jabber Podcast"
 https://anchor.fm/s/5a5b39c/podcast/rss "~Atareao con Linux podcast" Podcast
 https://feeds.redcircle.com/0835997e-47ec-438e-b6ae-0b390966aa7e "~C++ club" Podcast
 
-"query:---News---:tags # \"News\""
-https://www.radioformula.com.mx/rss/feed.html?r=1 News
-https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
-https://www.jornada.com.mx/rss/edicion.xml?v=1 News
-https://www.reforma.com/rss/portada.xml News
-https://www.elfinanciero.com.mx/rss/ News
-https://www.fsf.org/static/fsforg/rss/news.xml News
-
 "query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/cpp/.rss Reddit
 https://www.reddit.com/r/cpp_questions/.rss Reddit
@@ -90,21 +125,6 @@ https://www.reddit.com/r/linux/.rss Reddit
 https://www.reddit.com/r/linux4noobs/.rss Reddit
 https://www.reddit.com/r/Weechat/.rss Reddit
 https://www.reddit.com/r/archlinux/.rss Reddit
-
-
-"query:---Jobs---:tags # \"Jobs\""
-https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
-https://www.fossjobs.net/rss/programmers/
-
-"query:---Events---:tags # \"Events\""
-https://www.fsf.org/static/fsforg/rss/events.xml Events
-
-"query:---Codeberg---:tags # \"Codeberg\""
-https://codeberg.org/codeDude.rss Codeberg
-https://codeberg.org/codeDude/dotfiles.rss Codeberg
-
-"query:---OSM---:tags # \"OSM\""
-https://www.openstreetmap.org/diary/rss OS
 
 "query:---ArchLinux---:tags # \"ArchLinux\"" 
 https://archlinux.org/feeds/news/ "~Arch Linux news" ArchLinux
