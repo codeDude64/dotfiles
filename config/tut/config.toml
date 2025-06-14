@@ -350,7 +350,7 @@ reverse=false
 # The program to open links. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="firefox"
+program="librewolf"
 
 # Arguments to pass to the program.
 # default=""
