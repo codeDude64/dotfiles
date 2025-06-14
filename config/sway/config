@@ -214,6 +214,9 @@ workspace 3 output HDMI-A-2     # Samsung
     bindsym XF86MonBrightnessUp exec lightctl up
     bindsym XF86MonBrightnessDown exec lightctl down
 
+    bindsym $mod+XF86MonBrightnessUp exec brightnessctl -d tpacpi::kbd_backlight set +1
+    bindsym $mod+XF86MonBrightnessDown exec brightnessctl -d tpacpi::kbd_backlight set 1-
+
     bindsym Print exec ~/.config/bin/capture_cut
     bindsym $mod+Print exec ~/.config/bin/capture_visible
 
