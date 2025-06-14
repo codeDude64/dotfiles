@@ -13,6 +13,7 @@ import os
 from typing import List
 
 logger = logging.getLogger(__name__)
+#logger.addHandler(logging.StreamHandler(sys.stdout))
 
 def signal_handler(sig, frame):
     logger.info("Received signal to stop, exiting")
