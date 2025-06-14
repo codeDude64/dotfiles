@@ -132,6 +132,7 @@ alias lynx='lynx -vikeys'
 alias ddg="lynx --accept-all-cookies --display_charset=utf-8 www.duckduckgo.com"
 alias lcpp="lynx --accept-all-cookies --display_charset=utf-8 www.learncpp.com"
 alias yt="ytfzf -t"
+alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"

@@ -1,8 +1,8 @@
 {
-  "layer": "top", 
-  "position": "top", 
-  "height": 24, 
-  "spacing": 5, 
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 5,
   "margin": "10 5 10 5",
   "fixed-center": true,
   "reload_style_on_change": true,
@@ -10,7 +10,8 @@
     "sway/workspaces",
     "sway/mode",
     "sway/scratchpad",
-    "mpd"
+    "mpd",
+    "custom/media"
   ],
   "modules-center": [
     "clock"
@@ -210,5 +211,16 @@
     "format": "⏻ ",
     "tooltip": false,
     "on-click": "~/.config/bin/power_menu"
+  },
+  "custom/media": {
+    "format": "{text} {icon}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": ""
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
   }
 }
