@@ -1,6 +1,7 @@
 local ls = require 'luasnip'
 local i = ls.i
 local c = ls.choice_node
+local r = ls.restore_node
 local s = ls.s
 local t = ls.t
 local sn = ls.snippet_node
@@ -9,137 +10,186 @@ local fmt = require 'luasnip.extras.fmt'.fmt
 
 return {
   s({
-    trig = 'cout',
-    name = 'Cout',
-    dscr = 'output of standar library'
-  },
-    fmt("std::cout << {} << '\\n';", i(1))),
+      trig = 'cout',
+      name = 'Cout',
+      dscr = 'output of standar library'
+    },
+    fmt([[std::cout << {output} << '\n';]],
+      {
+        output = c(1, {
+          sn(1, { r(1, "") }),
+          sn(1, { t('"'), r(1, ""), t('"') })
+        })
+      }
+    )
+  ),
   s({
-    trig = 'cin',
-    name = 'Cin',
-    dscr = 'input of standar library'
-  },
-    fmt("std::cin >> {};", i(1))),
+      trig = 'cin',
+      name = 'Cin',
+      dscr = 'input of standar library'
+    },
+    fmt("std::cin >> {input};", {
+      input = i(1, "/*input*/")
+    })
+  ),
   s({
-    trig = 'main',
-    name = 'Main',
-    dscr = 'Main function'
-  },
-    fmt('int main(int argc, char* argv[]) {{\n  return {};\n}}', {i(0)})),
+      trig = 'main',
+      name = 'Main',
+      dscr = 'Main function'
+    },
+    fmt('int main(int argc, char* argv[]) {{\n {code}\n return 0;\n}}', { code = i(0, "// white your code here") })
+  ),
   s({
-    trig = 'for',
-    name = 'For Loop',
-    dscr = 'Usual for loop'
-  },
-    fmt('for ({} {} = 0; {} < {}; {}++)  {{\n  {}\n}}', {
-      i(1),
-      i(2),
+      trig = 'for',
+      name = 'For Loop',
+      dscr = 'Usual for loop'
+    },
+    fmt('for ({type} {variable} = 0; {} < {length}; {}++)  {{\n  {code}\n}}', {
+      type = i(1, "int"),
+      variable = i(2, "i"),
       rep(2),
-      i(3),
+      length = i(3, "arr.length"),
       rep(2),
-      i(0)
-    })),
+      code = i(0, "// write your code here")
+    })
+  ),
   s({
-    trig = 'forrange',
-    name = 'Range-Based For loop',
-    dscr = 'Range-Based For loop Similar to ForEach'
-  },
-    fmt('for ({} {} : {}) {{\n  {}\n}}', { i(1), i(2), i(3), i(0) })),
+      trig = 'forrange',
+      name = 'Range-Based For loop',
+      dscr = 'Range-Based For loop Similar to ForEach'
+    },
+    fmt('for ({type} {element} : {range}) {{\n  {code}\n}}', {
+      type = i(1, "int"),
+      element = i(2, "element"),
+      range = i(3, "range"),
+      code = i(0, "// white your code here")
+    })
+  ),
   s({
-    trig = 'do',
-    name = 'Do While Loop',
-    dscr = 'Usual do while loop'
-  },
-    fmt('do {{\n  {}\n}} while({});', { i(0), i(1) })),
+      trig = 'do',
+      name = 'Do While Loop',
+      dscr = 'Usual do while loop'
+    },
+    fmt('do {{\n  {code}\n}} while({condition});',
+      { code = i(0, "// write your code here"), condition = i(1, "condition") })
+  ),
   s({
-    trig = 'while',
-    name = 'While Loop',
-    dscr = 'Usual while loop'
-  },
-    fmt('while ({}) {{\n  {}\n}}', { i(1), i(0) })),
+      trig = 'while',
+      name = 'While Loop',
+      dscr = 'Usual while loop'
+    },
+    fmt('while ({condition}) {{\n  {code}\n}}', { condition = i(1, "condition"), code = i(0, "// white your code here") })
+  ),
   s({
-    trig = 'if',
-    name = 'If Condition',
-    dscr = 'If Condition'
-  },
-    fmt('if ({}) {{\n  {}\n}}{}', {
-      i(1),
-      i(2),
-      c(3, {
+      trig = 'if',
+      name = 'If Condition',
+      dscr = 'If Condition'
+    },
+    fmt('if ({condition}) {{\n  {code}\n}}{el}', {
+      condition = i(1, "condition"),
+      code = i(2, "// write your code here"),
+      el = c(3, {
         t(''),
-        sn(1, fmt(' else if ({}) {{\n  {}\n}} else {{\n  {}\n}}', { i(1), i(2), i(3) })),
-        sn(1, fmt(' else if ({}) {{\n  {}\n}}', { i(1), i(2) })),
-        sn(1, fmt(' else {{\n  {}\n}}', i(1))),
+        sn(1, fmt(' else if ({condition}) {{\n  {elseif_code}\n}} else {{\n  {else_code}\n}}', {
+          condition = i(1, "condition"),
+          elseif_code = i(2, "// write your code here"),
+          else_code = i(3, "// write your code here")
+        })),
+        sn(1, fmt(' else if ({condition}) {{\n  {code}\n}}', {
+          condition = i(1, "condition"),
+          code = i(2, "// white your code here")
+        })),
+        sn(1, fmt(' else {{\n  {code}\n}}', { code = i(1, "// write your code here") })),
       })
-    })),
+    })
+  ),
   s({
-    trig = 'el',
-    name = 'Else Condition',
-    dscr = 'Else Condition'
-  },
-    fmt("else {{\n  {}\n}}", i(1))),
+      trig = 'else',
+      name = 'Else Condition',
+      dscr = 'Else Condition'
+    },
+    fmt("else {{\n  {code}\n}}", { code = i(1, "// write your code here") })
+  ),
   s({
-    trig = 'ei',
-    name = 'Else If Condition',
-    dscr = 'Else If Condition'
-  },
-    fmt('else if ({}) {{\n  {}\n}}', { i(1), i(2) })),
+      trig = 'elif',
+      name = 'Else If Condition',
+      dscr = 'Else If Condition'
+    },
+    fmt('else if ({condition}) {{\n  {code}\n}}',
+      { condition = i(1, "condition"), code = i(2, "// write your code here") })
+  ),
   s({
-    trig = 'enum',
-    name = 'Enum',
-    dscr = 'Enum data structure'
-  },
-    fmt('enum {} {{\n  {}\n}};', { i(1), i(0) })),
+      trig = 'enum',
+      name = 'Enum',
+      dscr = 'Enum data structure'
+    },
+    fmt('enum {name} {{\n  {body}\n}};', { name = i(1, "Name"), body = i(0, "// write the body here") })
+  ),
   s({
-    trig = 'class',
-    name = 'Class',
-    dscr = 'Class data structure'
-  },
-    fmt('class {} {{\n  public:\n    {}(){{\n      {}\n    }}\n  private:\n}};', { i(1), rep(1), i(0) })),
+      trig = 'class',
+      name = 'Class',
+      dscr = 'Class data structure'
+    },
+    fmt('class {name} {{\n  public:\n    {}(){{\n      {constructor}\n    }}\n  private:\n}};', {
+      name = i(1, "Name"),
+      rep(1),
+      constructor = i(0, "// write your code here")
+    })
+  ),
   s({
-    trig = 'struct',
-    name = 'Struct',
-    dscr = 'Struct data structure'
-  },
-    fmt('struct {} {{\n  {}\n}};', { i(1), i(0) })),
+      trig = 'struct',
+      name = 'Struct',
+      dscr = 'Struct data structure'
+    },
+    fmt('struct {name} {{\n  {code}\n}};', { name = i(1, "Name"), code = i(0, "// write your code here") })
+  ),
   s({
-    trig = 'union',
-    name = 'Union',
-    dscr = 'Union data structure'
-  },
-    fmt('union {} {{\n  {}\n}};', { i(1), i(0) })),
+      trig = 'union',
+      name = 'Union',
+      dscr = 'Union data structure'
+    },
+    fmt('union {name} {{\n  {body}\n}};', { name = i(1, "Name"), body = i(0, "// write the body code here") })
+  ),
   s({
-    trig = 'namespace',
-    name = 'Namespace',
-    dscr = 'Namespace Scope'
-  },
-    fmt('namespace {{\n  {}\n}}', i(0))),
+      trig = 'namespace',
+      name = 'Namespace',
+      dscr = 'Namespace Scope'
+    },
+    fmt('namespace {name} {{\n  {code}\n}}', { name = i(1, "Name"), code = i(0, "// write your code here") })
+  ),
   s({
-    trig = 'ifdef',
-    name = 'If is define',
-    dscr = 'If is define macro'
-  },
-    fmt('#ifdef {}\n  {}\n#endif // {}', { i(1), i(0), rep(1) })),
+      trig = 'ifdef',
+      name = 'If is define',
+      dscr = 'If is define macro'
+    },
+    fmt('#ifdef {condition}\n  {code}\n#endif // {}',
+      { condition = i(1, "condition"), code = i(0, "// write your code here"), rep(1) })
+  ),
   s({
-    trig = 'ifndef',
-    name = 'If is not define',
-    dscr = 'If is not define macro'
-  },
-    fmt('#ifndef {}\n  {}\n#endif // {}', { i(1), i(0), rep(1) })),
+      trig = 'ifndef',
+      name = 'If is not define',
+      dscr = 'If is not define macro'
+    },
+    fmt('#ifndef {condition}\n  {code}\n#endif // {}',
+      { condition = i(1, "condition"), code = i(0, "// write your code here"), rep(1) })
+  ),
   s({
-    trig = 'switch',
-    name = 'Switch Case',
-    dscr = 'Switch Case Scope'
-  },
-    fmt('switch ({}) {{\n  case {}:\n  break; {}\ndefault:\n  break;\n}}', {
-      i(1),
-      i(2),
-      i(0)
-    })),
+      trig = 'switch',
+      name = 'Switch Case',
+      dscr = 'Switch Case Scope'
+    },
+    fmt('switch ({key}) {{\n  case {value}:\n    {case_code}\n  break;\n  default:\n\n  break;\n}}', {
+      key = i(1, "key"),
+      value = i(2, "value"),
+      case_code = i (0, "// write your code here")
+    })
+  ),
   s({
-    trig = 'tc',
-    name = 'Try/Catch',
-    dscr = 'Try Catch Scope'
-  },
-    fmt('try {{\n  {}\n}} catch({}) {{\n\n}}', { i(0), i(1) })),
+      trig = 'tc',
+      name = 'Try/Catch',
+      dscr = 'Try Catch Scope'
+    },
+    fmt('try {{\n  {code}\n}} catch({error}) {{\n {exception} \n}}',
+      { code = i(1, "// write your code here"), error = i(2, "int error"), exception = i(0, "throw(error)") })
+  ),
 }
