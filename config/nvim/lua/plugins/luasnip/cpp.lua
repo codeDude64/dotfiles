@@ -10,6 +10,20 @@ local fmt = require 'luasnip.extras.fmt'.fmt
 
 return {
   s({
+      trig = '#inc',
+      name = 'Include',
+      dscr = 'include a library'
+    },
+    fmt([[#include {library}]],
+      {
+        library = c(1, {
+          sn(1, { t('"'), r(1, "library"), t('"') }),
+          sn(1, { t('<'), r(1, "library"), t('>') })
+        })
+      }
+    )
+  ),
+  s({
       trig = 'cout',
       name = 'Cout',
       dscr = 'output of standar library'
@@ -119,6 +133,18 @@ return {
       { condition = i(1, "condition"), code = i(2, "// write your code here") })
   ),
   s({
+      trig = 'fn',
+      name = 'Function',
+      dscr = 'function'
+    },
+    fmt('{type} {name}({args}) {{\n {code}\n}}', {
+      type = i(1, "void"),
+      name = i(2, "name"),
+      args = i(3, "int args"),
+      code = i(0, "// white your code here")
+    })
+  ),
+  s({
       trig = 'enum',
       name = 'Enum',
       dscr = 'Enum data structure'
@@ -130,10 +156,23 @@ return {
       name = 'Class',
       dscr = 'Class data structure'
     },
-    fmt('class {name} {{\n  public:\n    {}(){{\n      {constructor}\n    }}\n  private:\n}};', {
+    fmt('class {name} {{\n  public:\n    {}();\n    {code};\n  private:\n}};', {
       name = i(1, "Name"),
       rep(1),
-      constructor = i(0, "// write your code here")
+      code = i(2, "// write your code here")
+    })
+  ),
+  s({
+      trig = 'method',
+      name = 'Method',
+      dscr = 'Method of a class'
+    },
+    fmt('{type} {class}::{method}({args}) {{\n  {code}\n}}', {
+      type = i(1, "void"),
+      class = i(2, "Class"),
+      method = i(3, "method"),
+      args = i(4, "int args"),
+      code = i(0, "// write your code here")
     })
   ),
   s({
@@ -181,7 +220,7 @@ return {
     fmt('switch ({key}) {{\n  case {value}:\n    {case_code}\n  break;\n  default:\n\n  break;\n}}', {
       key = i(1, "key"),
       value = i(2, "value"),
-      case_code = i (0, "// write your code here")
+      case_code = i(0, "// write your code here")
     })
   ),
   s({
