@@ -10,5 +10,5 @@ return {
       name = 'TODO',
       dscr = 'TODO comment'
     },
-    fmt("TODO ({}): {}", { i(1, git_user), i(0, "things TODO ...") }))
+    fmt("TODO ({user}): {todo}", { user = i(1, git_user), todo = i(0, "things TODO ...") }))
 }
