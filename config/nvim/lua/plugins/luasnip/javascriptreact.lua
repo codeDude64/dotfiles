@@ -1,3 +1,4 @@
+local javascript = require 'plugins.luasnip.javascript'
 local ls = require 'luasnip'
 local i = ls.i
 local s = ls.s
@@ -14,7 +15,7 @@ local filename = function()
   end)
 end
 
-return {
+local javascriptreact = {
   s('imr', t [[import React from 'react']]),
   s('imrse', t [[import React, { useState, useEffect } from 'react']]),
   s('impt', t [[import PropTypes from 'prop-types';]]),
@@ -44,3 +45,7 @@ return {
   })),
   s('uef', fmt("useEffect(() => {{\n  {}\n}}, [{}]);", {i(1), i(2)}))
 }
+
+vim.list_extend(javascriptreact, javascript)
+
+return javascriptreact
