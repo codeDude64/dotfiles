@@ -2,7 +2,7 @@ local ls = require 'luasnip'
 
 return {
   {
-    mode = 'i',
+    mode = {'i', 'v'},
     '<C-l>',
     function()
       if ls.choice_active() then
