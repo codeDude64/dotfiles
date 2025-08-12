@@ -9,7 +9,7 @@ local fmt = require 'luasnip.extras.fmt'.fmt
 
 local filename = function()
   return f(function(_, snip)
-    local name = vim.split(snip.snippet.env.TM_FILENAME, ".", true)
+    local name = vim.split(snip.snippet.env.TM_FILENAME, ".")
     return name[1] or ""
   end)
 end
