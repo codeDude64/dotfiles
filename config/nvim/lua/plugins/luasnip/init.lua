@@ -1,6 +1,7 @@
 return {
   'L3MON4D3/LuaSnip',
 	build = "make install_jsregexp",
+  version = "v2.*",
   keys = function ()
     return require('keymaps.luasnip')
   end,
@@ -22,9 +23,7 @@ return {
     --local fmt = require 'luasnip.extras.fmt'.fmt
 
     ls.config.set_config {
-      history = true,
       updateevents = "TextChanged,TextChangedI",
-      enable_autosnippets = true,
       ext_opts = {
         [types.choiceNode] = {
           active = {
