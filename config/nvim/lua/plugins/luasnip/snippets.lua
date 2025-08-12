@@ -1,6 +1,7 @@
 local all = require 'plugins.luasnip.all'
 local javascript = require 'plugins.luasnip.javascript'
 local javascriptreact = require 'plugins.luasnip.javascriptreact'
+local typescriptreact = require 'plugins.luasnip.typescriptreact'
 local cpp = require 'plugins.luasnip.cpp'
 
 return {
@@ -8,6 +9,6 @@ return {
   javascript = javascript,
   javascriptreact = javascriptreact,
   typescript = javascript,
-  typescriptreact = javascript,
+  typescriptreact = typescriptreact,
   cpp = cpp
 }
