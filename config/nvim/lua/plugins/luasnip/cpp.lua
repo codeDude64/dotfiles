@@ -62,7 +62,7 @@ return {
       type = i(1, "int"),
       variable = i(2, "i"),
       rep(2),
-      length = i(3, "arr.length"),
+      length = i(3, "array.length"),
       rep(2),
       code = i(0, "// write your code here")
     })
