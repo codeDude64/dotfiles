@@ -8,42 +8,71 @@ local c = ls.choice_node
 local sn = ls.snippet_node
 local fmt = require 'luasnip.extras.fmt'.fmt
 
-local filename = function()
-  return f(function(_, snip)
-    local name = vim.split(snip.snippet.env.TM_FILENAME, ".")
+local getFilename = function()
+  return f(function(_, snippet)
+    local name = vim.split(snippet.snippet.env.TM_FILENAME, ".", { plain = true })
     return name[1] or ""
   end)
 end
 
 local javascriptreact = {
-  s('imr', t [[import React from 'react']]),
-  s('imrse', t [[import React, { useState, useEffect } from 'react']]),
-  s('impt', t [[import PropTypes from 'prop-types';]]),
-  s('rpt', fmt('{}.propTypes = {{\n  {}\n}};', {
-    filename(),
-    i(1)
+  s({
+    trig = 'imr',
+    name = 'Import React',
+    dscr = 'Import React Library'
+  }, t [[import React from 'react']]),
+  s({
+    trig = 'imrse',
+    name = 'Import React State and Effect',
+    dscr = 'Import React Library with the states and effect hooks'
+  }, t [[import React, { useState, useEffect } from 'react']]),
+  s({
+    trig = 'impt',
+    name = 'Import PropTypes',
+    dscr = 'Import PropTypes'
+  }, t [[import PropTypes from 'prop-types';]]),
+  s({
+    trig = 'propTypes',
+    name = 'PropTypes',
+    dscr = 'Define PropTypes'
+
+  }, fmt('{filename}.propTypes = {{\n  {body}\n}};', {
+    filename = getFilename(),
+    body = i(1, "// write the proptypes here")
   })),
-  s('rfc', fmt("import React from 'react';\n\nconst {} = ({}) => {{\n  return({});\n}}\n\nexport default {};", {
-    filename(),
-    c(1, {
-      sn(1, i(1)),
-      sn(1, { t('{ '), i(1), t(' }') })
+  s({
+    trig = 'rfc',
+    name = 'React Functiona Component',
+    dscr = 'React Functiona Component'
+  }, fmt("import React from 'react';\n\nconst {component} = ({props}) => {{\n  return({body});\n}}\n\nexport default {comp};", {
+    component = getFilename(),
+    props = c(1, {
+      sn(1, { t('{ '), i(1, "/*props*/"), t(' }') }),
+      sn(1, i(1, "/*props*/"))
     }),
-    i(0),
-    filename()
+    body = i(0, "/*whrite your code here*/"),
+    comp = getFilename()
   })),
-  s('usf', fmt([[const [{}, set{}] = useState({});]], {
-    i(1),
-    f(function(args)
+  s({
+    trig = 'usf',
+    name = 'useState',
+    dscr = 'useState hook'
+  }, fmt([[const [{state}, set{State}] = useState({initial_state});]], {
+    state = i(1, "state"),
+    State = f(function(args)
       local previous_node_value = args[1][1]
       local first_letter = string.upper(string.sub(previous_node_value, 1, 1))
       local rest_word = string.sub(previous_node_value, 2, -1)
       local current_node_value = first_letter .. rest_word
       return current_node_value
-    end, 1),
-    i(2)
+    end, {1}),
+    initial_state = i(2, "initialState")
   })),
-  s('uef', fmt("useEffect(() => {{\n  {}\n}}, [{}]);", {i(1), i(2)}))
+  s({
+    trig = 'uef',
+    name = 'useEffect',
+    dscr = 'useEffect hook'
+  }, fmt("useEffect(() => {{\n  {body}\n}}, [{dependencies}]);", { body = i(0, "// Write your code here"), dependencies = i(1, "") }))
 }
 
 vim.list_extend(javascriptreact, javascript)
