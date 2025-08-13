@@ -10,78 +10,16 @@ local fmt = require 'luasnip.extras.fmt'.fmt
 
 return {
   s({
-    trig = 'cl',
+    trig = 'console',
     name = 'Console Log',
     dscr = 'Log a message or a variable on the console'
-  }, fmt([[console.log({log});]],
+  }, fmt([[console.{fn}({log});]],
     {
-      log = c(1, {
-        sn(1, { t('"'), r(1, "log"), t('"') }),
-        sn(1, { t('"'), r(1, "log"), t('"'), t(', '), i(2, '"cool"') }),
-        sn(1, { t('{ '), i(1, "/*log*/"), t(' }') })
-      })
-    }
-  )),
-  s({
-    trig = 'ci',
-    name = 'Console Info',
-    dscr = 'Log a info message or a variable on the console'
-  }, fmt([[console.info({log});]],
-    {
-      log = c(1, {
-        sn(1, { t('"'), r(1, "log"), t('"') }),
-        sn(1, { t('"'), r(1, "log"), t('"'), t(', '), i(2, '"cool"') }),
-        sn(1, { t('{ '), i(1, "/*log*/"), t(' }') })
-      })
-    }
-  )),
-  s({
-    trig = 'cd',
-    name = 'Console Debug',
-    dscr = 'Log a debug message or a variable on the console'
-  }, fmt([[console.debug({log});]],
-    {
-      log = c(1, {
-        sn(1, { t('"'), r(1, "log"), t('"') }),
-        sn(1, { t('"'), r(1, "log"), t('"'), t(', '), i(2, '"cool"') }),
-        sn(1, { t('{ '), i(1, "/*log*/"), t(' }') })
-      })
-    }
-  )),
-  s({
-    trig = 'ce',
-    name = 'Console Error',
-    dscr = 'Log a error message or a variable on the console'
-  }, fmt([[console.error({log});]],
-    {
-      log = c(1, {
-        sn(1, { t('"'), r(1, "log"), t('"') }),
-        sn(1, { t('"'), r(1, "log"), t('"'), t(', '), i(2, '"cool"') }),
-        sn(1, { t('{ '), i(1, "/*log*/"), t(' }') })
-      })
-    }
-  )),
-  s({
-    trig = 'ctr',
-    name = 'Console Trace',
-    dscr = 'Log the trace of a message or a variable on the console'
-  }, fmt([[console.trace({log});]],
-    {
-      log = c(1, {
-        sn(1, i(1, "/*log*/")),
-        sn(1, { t('{ '), i(1, "/*log*/"), t(' }') })
-      })
-    }
-  )),
-  s({
-    trig = 'ctb',
-    name = 'Console Table',
-    dscr = 'Log an array or an object on the console as a Table'
-  }, fmt([[console.table({log});]],
-    {
-      log = c(1, {
-        sn(1, { t('['), i(1, "elements"), t(']') }),
-        sn(1, { t('{'), i(1, "elements"), t('}') })
+      fn = i(1, "log"),
+      log = c(2, {
+        sn(1, { t('"'), i(1, "message"), t('"') }),
+        sn(1, { t('{ '), i(1, "/*variable*/"), t(' }') }),
+        sn(1, { i(1, "/*variable*/"), t(', '), i(2, '"cool"') })
       })
     }
   )),

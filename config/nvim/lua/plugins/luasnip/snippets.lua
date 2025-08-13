@@ -4,6 +4,7 @@ local javascriptreact = require 'plugins.luasnip.javascriptreact'
 local typescriptreact = require 'plugins.luasnip.typescriptreact'
 local cpp = require 'plugins.luasnip.cpp'
 local python = require 'plugins.luasnip.python'
+local ruby   = require 'plugins.luasnip.ruby'
 
 return {
   all = all,
@@ -12,5 +13,6 @@ return {
   typescript = javascript,
   typescriptreact = typescriptreact,
   cpp = cpp,
-  python =python
+  python = python,
+  ruby = ruby
 }
