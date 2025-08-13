@@ -179,10 +179,10 @@ return {
       name = 'For In Loop',
       dscr = 'Foor in loop'
     },
-    fmt('for ({type} {element} in {range}) {{\n  {code}\n}}', {
+    fmt('for ({type} {element} in {array}) {{\n  {code}\n}}', {
       type = i(1, "const"),
       element = i(2, "element"),
-      range = i(3, "range"),
+      array = i(3, "array"),
       code = i(0, "// white your code here")
     })
   ),
@@ -191,10 +191,10 @@ return {
       name = 'For Of Loop',
       dscr = 'Foor of loop'
     },
-    fmt('for ({type} {element} of {range}) {{\n  {code}\n}}', {
+    fmt('for ({type} {element} of {array}) {{\n  {code}\n}}', {
       type = i(1, "const"),
       element = i(2, "element"),
-      range = i(3, "range"),
+      array = i(3, "array"),
       code = i(0, "// white your code here")
     })
   ),
@@ -230,7 +230,7 @@ return {
       dscr = 'Anonymous or named common Function'
     },
     fmt('function {name}({args}) {{\n  {code}\n}}',
-      { name = i(1, ""), args = i(2, "args"), code = i(0, "// write your code here") })),
+      { name = i(1, "name"), args = i(2, "args"), code = i(0, "// write your code here") })),
   s({
       trig = 'af',
       name = 'Arrow Function',
