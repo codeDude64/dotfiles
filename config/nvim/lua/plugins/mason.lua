@@ -29,13 +29,14 @@ return {
         "yamlls",
         "vimls",
         "dockerls",
-        "solargraph",
+        "ruby_lsp",
         "cmake",
         "lemminx",
         "graphql",
 
         "jsonls",
         "lua_ls",
+        "eslint_d",
       }
 
     }
