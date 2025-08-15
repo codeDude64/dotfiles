@@ -75,6 +75,7 @@ config_files=(
   $CONFIG_DOTFILES_DIR/bin/clipboard_list
   $CONFIG_DOTFILES_DIR/bin/songinfo
   $CONFIG_DOTFILES_DIR/bin/reset_sway_workspaces
+  $CONFIG_DOTFILES_DIR/bin/passwofi
 )
 
 home_files=(
@@ -132,6 +133,7 @@ files_to_remove=(
   $CONFIG_DIR/bin/clipboard_list
   $CONFIG_DIR/bin/songinfo
   $CONFIG_DIR/bin/reset_sway_workspaces
+  $CONFIG_DIR/bin/passwofi
   # Home
   $HOME/.zshrc
   $HOME/.tmux.conf
