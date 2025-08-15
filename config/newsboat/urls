@@ -26,7 +26,6 @@ http://distill.pub/rss.xml Blogs
 https://lilianweng.github.io/lil-log/feed.xml Blogs
 
 "query:---News---:tags # \"News\""
-https://www.radioformula.com.mx/rss/feed.html?r=1 News
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
 https://www.jornada.com.mx/rss/edicion.xml?v=1 News
 https://www.reforma.com/rss/portada.xml News
@@ -35,19 +34,18 @@ https://www.theguardian.com/world/mexico/rss News
 https://www.excelsior.com.mx/rss.xml News
 https://vanguardia.com.mx/rss.xml News
 https://www.24-horas.mx/feed/ News
-https://www.debate.com.mx/rss/feed.xml News
 https://mexiconewsdaily.com/feed/ News
-https://diario.mx/jrz/media/sitemaps/rss.xml News
 https://8columnas.com.mx/feed/ News
 http://news.ycombinator.com/rss News
 https://techcrunch.com/feed/ News
-http://news.mit.edu/rss/topic/artificial-intelligence2 Blogs
+http://news.mit.edu/rss/topic/artificial-intelligence2 News
 https://www.fsf.org/static/fsforg/rss/news.xml News
+https://rubyonrails.org/feed.xml News
 
 "query:---Jobs---:tags # \"Jobs\""
 https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
 https://www.fossjobs.net/rss/programmers/
-
+https://weworkremotely.com/categories/remote-full-stack-programming-jobs.rss "~We work remotely" Jobs
 "query:---Events---:tags # \"Events\""
 https://www.fsf.org/static/fsforg/rss/events.xml Events
 
@@ -117,6 +115,7 @@ https://blog.codepen.io/feed/podcast/codepen-radio/ "~CodePen radio" Podcast
 https://www.spreaker.com/show/6102064/episodes/feed "~Javascript Jabber Podcast" Podcast
 https://anchor.fm/s/5a5b39c/podcast/rss "~Atareao con Linux podcast" Podcast
 https://feeds.redcircle.com/0835997e-47ec-438e-b6ae-0b390966aa7e "~C++ club" Podcast
+https://feeds.buzzsprout.com/2462975.rss "~on Rails" Podcast
 
 "query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/cpp/.rss Reddit
