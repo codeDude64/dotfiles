@@ -68,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow docker docker-compose podman node npm aws pip postgres laravel archlinux pass rails)
+plugins=(git git-extras git-flow docker docker-compose podman node npm aws pip postgres laravel archlinux pass rails rvm ruby)
 
 
 # User configuration
@@ -135,8 +135,6 @@ alias yt="ytfzf -t"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
 
 export MANPAGER='nvim +Man!'
-export GEM_HOME="$(gem env user_gemhome)"
-export PATH="$PATH:$GEM_HOME/bin"
 
 export PATH="$PATH:$HOME/.config/bin"
 
@@ -152,3 +150,7 @@ if [[ $- == *i* ]]; then
   }
   set_gpg_tty
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
