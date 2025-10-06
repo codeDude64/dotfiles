@@ -24,6 +24,7 @@ https://medium.com/feed/airtable-eng Blogs
 https://medium.com/feed/medium-eng Blogs
 http://distill.pub/rss.xml Blogs
 https://lilianweng.github.io/lil-log/feed.xml Blogs
+https://codedude.xyz/feed.xml Blogs
 
 "query:---News---:tags # \"News\""
 https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml News
@@ -45,7 +46,9 @@ https://rubyonrails.org/feed.xml News
 "query:---Jobs---:tags # \"Jobs\""
 https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
 https://www.fossjobs.net/rss/programmers/
-https://weworkremotely.com/categories/remote-full-stack-programming-jobs.rss "~We work remotely" Jobs
+https://weworkremotely.com/categories/remote-full-stack-programming-jobs.rss "~We work remotely Full stack" Jobs
+https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss "~We work remotely Front end"  Jobs
+https://weworkremotely.com/categories/remote-back-end-programming-jobs.rss "~We work remotely Back end"  Jobs
 "query:---Events---:tags # \"Events\""
 https://www.fsf.org/static/fsforg/rss/events.xml Events
 
@@ -118,6 +121,7 @@ https://feeds.redcircle.com/0835997e-47ec-438e-b6ae-0b390966aa7e "~C++ club" Pod
 https://feeds.buzzsprout.com/2462975.rss "~on Rails" Podcast
 
 "query:---Reddit---:tags # \"Reddit\""
+https://www.reddit.com/r/taquerosprogramadores/.rss Reddit
 https://www.reddit.com/r/cpp/.rss Reddit
 https://www.reddit.com/r/cpp_questions/.rss Reddit
 https://www.reddit.com/r/linux/.rss Reddit
