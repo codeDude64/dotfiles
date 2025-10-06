@@ -238,6 +238,9 @@ workspace 3 output HDMI-A-2     # Samsung
 #
 # Resizing containers:
 #
+
+bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
+
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
