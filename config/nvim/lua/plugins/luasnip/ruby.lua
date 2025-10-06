@@ -16,7 +16,6 @@ local getAccessors = function(accessors_plain)
     table.insert(accessors, accessor_plain)
   end
 
-  P(accessors)
   return accessors
 end
 

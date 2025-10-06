@@ -20,7 +20,7 @@ bind-key ^H toggle-show-read-feeds
 macro l set browser "lynx -vikeys --accept-all-cookies --display_charset=utf-8 $u"
 macro v set browser "mpv %u"
 macro a set browser "mpv --no-video %u"
-macro w set browser "librewolf %u"
+macro w set browser "zen-browser %u"
 macro y set browser "wl-copy %u"; open-in-browser ; set browser "lynx -vikeys --accept-all-cookies --display_charset=utf-8 $u"
 
 
