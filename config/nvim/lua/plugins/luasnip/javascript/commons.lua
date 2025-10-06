@@ -103,11 +103,11 @@ return {
       name = 'For Loop',
       dscr = 'Usual for loop'
     },
-    fmt('for ({type} {variable} = 0; {} < {length}; {}++)  {{\n  {code}\n}}', {
+    fmt('for ({type} {variable} = 0; {} < {array}.length; {}++)  {{\n  {code}\n}}', {
       type = i(1, "const"),
       variable = i(2, "i"),
       rep(2),
-      length = i(3, "arr.length"),
+      array = i(3, "array"),
       rep(2),
       code = i(0, "// write your code here")
     })
