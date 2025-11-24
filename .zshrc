@@ -68,7 +68,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras git-flow docker docker-compose podman node npm aws pip postgres laravel archlinux pass rails rvm ruby)
+plugins=(git git-extras git-flow docker docker-compose podman kubectl node nodenv npm aws pip postgres laravel archlinux pass rails ruby rbenv)
 
 
 # User configuration
@@ -141,16 +141,9 @@ export PATH="$PATH:$HOME/.config/bin"
 export GTK_THEME="Gruvbox-Material-Dark"
 export GTK_ICON_THEME="Gruvbox-Material-Dark"
 
-eval "$(starship init zsh)"
-source /usr/share/nvm/init-nvm.sh
-
 if [[ $- == *i* ]]; then
   set_gpg_tty() {
     export GPG_TTY=$(tty)
   }
   set_gpg_tty
 fi
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
