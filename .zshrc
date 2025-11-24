@@ -112,7 +112,7 @@ alias dcdr="docker-compose down -v --remove-orphans"
 alias dcu="docker-compose up"
 # Alias Vim
 alias v="nvim"
-# Alias git thanks Ernesto Herrera https://github.com/ernestohs
+# Git aliases
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias pull='git pull --rebase --recurse-submodules origin $(git rev-parse --abbrev-ref HEAD)'
 alias s="git status -s"
@@ -127,10 +127,14 @@ alias friday='pull && git commit -a -m "Last changes from Friday" && push'
 alias changes='git diff --'
 alias nomerge='git merge --abort'
 alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
-
+# ps aliases
+alias cpustatus='ps -eo pid,comm,%cpu,%mem --sort=-%cpu --width=100 | head -n 11'
+alias memstatus='ps -eo pid,comm,%cpu,%mem --sort=-%mem --width=100 | head -n 11'
+# lynx aliases
 alias lynx='lynx -vikeys'
 alias ddg="lynx --accept-all-cookies --display_charset=utf-8 www.duckduckgo.com"
 alias lcpp="lynx --accept-all-cookies --display_charset=utf-8 www.learncpp.com"
+# yt-dlp aliases
 alias yt="ytfzf -t"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
 
