@@ -24,6 +24,8 @@ https://medium.com/feed/airtable-eng Blogs
 https://medium.com/feed/medium-eng Blogs
 http://distill.pub/rss.xml Blogs
 https://lilianweng.github.io/lil-log/feed.xml Blogs
+https://blog.joinmastodon.org/index.xml Blogs
+https://world.hey.com/dhh/feed.atom Blogs
 https://codedude.xyz/feed.xml Blogs
 
 "query:---News---:tags # \"News\""
