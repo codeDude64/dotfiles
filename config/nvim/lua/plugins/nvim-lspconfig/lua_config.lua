@@ -1,7 +1,6 @@
 local default_config = require("plugins.nvim-lspconfig.default_config")
 
 return {
-  on_attach = default_config.on_attach,
   capabilities = default_config.capabilities,
   on_init = function(client)
     if client.workspace_folders then

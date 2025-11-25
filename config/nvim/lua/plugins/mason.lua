@@ -1,7 +1,7 @@
 return {
-  'williamboman/mason.nvim',
+  'mason-org/mason.nvim',
   dependencies = {
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     'jay-babu/mason-nvim-dap.nvim',
   },
@@ -14,14 +14,11 @@ return {
 
     mason.setup()
     mason_lspconfig.setup {
-      automatic_installation = true
-    }
-    mason_tool_installer.setup {
       automatic_installation = true,
       ensure_installed = {
         "ts_ls",
         "html",
-        "css-lsp",
+        "cssls",
         "intelephense",
         "pyright",
         "bashls",
@@ -29,17 +26,20 @@ return {
         "yamlls",
         "vimls",
         "dockerls",
-        "ruby_lsp",
         "cmake",
         "lemminx",
         "graphql",
-
         "jsonls",
         "lua_ls",
+      }
+    }
+    mason_tool_installer.setup {
+      auto_update = true,
+      ensure_installed = {
         "eslint_d",
       }
 
     }
-    mason_nvim_dap.setup { automatic_installation = true }
+    mason_nvim_dap.setup { automatic_installation = true, ensure_installed = { "js-debug-adapter", "rdbg" } }
   end
 }
