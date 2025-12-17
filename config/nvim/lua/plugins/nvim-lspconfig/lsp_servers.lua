@@ -15,7 +15,7 @@ return {
   yamlls = yamlls_config,
   vimls = default_config,
   dockerls = default_config,
-  ruby_lsp = default_config,
+  solargraph = default_config,
   cmake = default_config,
   lemminx = default_config,
   graphql = default_config,
