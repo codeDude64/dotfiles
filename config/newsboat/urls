@@ -26,6 +26,9 @@ http://distill.pub/rss.xml Blogs
 https://lilianweng.github.io/lil-log/feed.xml Blogs
 https://blog.joinmastodon.org/index.xml Blogs
 https://world.hey.com/dhh/feed.atom Blogs
+https://rubyflow.com/rss Blogs
+https://rubyland.news/feed.rss Blogs
+https://rubyonrails.org/feed.xml Blogs
 https://codedude.xyz/feed.xml Blogs
 
 "query:---News---:tags # \"News\""
@@ -44,6 +47,7 @@ https://techcrunch.com/feed/ News
 http://news.mit.edu/rss/topic/artificial-intelligence2 News
 https://www.fsf.org/static/fsforg/rss/news.xml News
 https://rubyonrails.org/feed.xml News
+https://www.ruby-lang.org/en/feeds/news.rss News
 
 "query:---Jobs---:tags # \"Jobs\""
 https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
