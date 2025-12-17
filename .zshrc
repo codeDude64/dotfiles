@@ -151,3 +151,6 @@ if [[ $- == *i* ]]; then
   }
   set_gpg_tty
 fi
+
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
