@@ -42,7 +42,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -104,7 +104,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-alias jj-contentful='bin/contentful'
 # Alias to docker
 alias docker-compose="docker compose"
 alias dcd="docker-compose down"
@@ -131,12 +130,16 @@ alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; 
 alias cpustatus='ps -eo pid,comm,%cpu,%mem --sort=-%cpu --width=100 | head -n 11'
 alias memstatus='ps -eo pid,comm,%cpu,%mem --sort=-%mem --width=100 | head -n 11'
 # lynx aliases
-alias lynx='lynx -vikeys'
-alias ddg="lynx --accept-all-cookies --display_charset=utf-8 www.duckduckgo.com"
-alias lcpp="lynx --accept-all-cookies --display_charset=utf-8 www.learncpp.com"
+alias lynx='lynx --accept-all-cookies --display_charset=utf-8 -vikeys'
+alias ddg="lynx www.duckduckgo.com"
+alias lcpp="lynx www.learncpp.com"
 # yt-dlp aliases
-alias yt="ytfzf -t"
+alias yt="yt-x"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
+
+# starship
+
+eval "$(starship init zsh)"
 
 export MANPAGER='nvim +Man!'
 
