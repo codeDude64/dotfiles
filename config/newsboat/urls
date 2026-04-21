@@ -29,6 +29,7 @@ https://world.hey.com/dhh/feed.atom Blogs
 https://rubyflow.com/rss Blogs
 https://rubyland.news/feed.rss Blogs
 https://rubyonrails.org/feed.xml Blogs
+https://www.driftingruby.com/episodes/feed.atom Blogs
 https://codedude.xyz/feed.xml Blogs
 
 "query:---News---:tags # \"News\""
@@ -48,6 +49,12 @@ http://news.mit.edu/rss/topic/artificial-intelligence2 News
 https://www.fsf.org/static/fsforg/rss/news.xml News
 https://rubyonrails.org/feed.xml News
 https://www.ruby-lang.org/en/feeds/news.rss News
+https://neovim.io/news.xml News
+
+"query:---Nitter---:tags # \"Nitter\""
+https://xcancel.com/ElSrSanto/rss Nitter
+https://xcancel.com/Mr_Buho/rss Nitter
+https://xcancel.com/pasquinmx/rss Nitter
 
 "query:---Jobs---:tags # \"Jobs\""
 https://www.fsf.org/static/fsforg/rss/jobs.xml Jobs
@@ -125,6 +132,7 @@ https://www.spreaker.com/show/6102064/episodes/feed "~Javascript Jabber Podcast"
 https://anchor.fm/s/5a5b39c/podcast/rss "~Atareao con Linux podcast" Podcast
 https://feeds.redcircle.com/0835997e-47ec-438e-b6ae-0b390966aa7e "~C++ club" Podcast
 https://feeds.buzzsprout.com/2462975.rss "~on Rails" Podcast
+https://feeds.fireside.fm/therubyonrailspodcast/rss "~Ruby on Rails podcast" Podcast
 
 "query:---Reddit---:tags # \"Reddit\""
 https://www.reddit.com/r/taquerosprogramadores/.rss Reddit
