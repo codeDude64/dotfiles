@@ -275,7 +275,7 @@ delete-temp-files=true
 # The program to open images. TUT_OS_DEFAULT equals xdg-open on Linux, open on
 # MacOS and start on Windows.
 # default="TUT_OS_DEFAULT"
-program="mpv"
+program="swayimg"
 
 # Arguments to pass to the program.
 # default=""
