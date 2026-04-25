@@ -28,6 +28,10 @@ config_files=(
   # Neovim
   $CONFIG_DOTFILES_DIR/nvim/lua
   $CONFIG_DOTFILES_DIR/nvim/init.lua
+  # Minimal Neovim
+  $CONFIG_DOTFILES_DIR/mnvim/lua
+  $CONFIG_DOTFILES_DIR/mnvim/init.lua
+  $CONFIG_DOTFILES_DIR/mnvim/nvim-pack-lock.json
   # Tut
   $CONFIG_DOTFILES_DIR/tut/themes
   $CONFIG_DOTFILES_DIR/tut/accounts.toml
@@ -87,6 +91,10 @@ files_to_remove=(
   # Neovim
   $CONFIG_DIR/nvim/lua
   $CONFIG_DIR/nvim/init.lua
+  # Minimal Neovim
+  $CONFIG_DIR/mnvim/lua
+  $CONFIG_DIR/mnvim/init.lua
+  $CONFIG_DIR/mnvim/nvim-pack-lock.json
   # Tut
   $CONFIG_DIR/tut/themes
   $CONFIG_DIR/tut/accounts.toml
@@ -141,6 +149,7 @@ files_to_remove=(
 
 dirs_to_create=(
   $CONFIG_DIR/nvim
+  $CONFIG_DIR/mnvim
   $CONFIG_DIR/tut
   $CONFIG_DIR/iamb
   $CONFIG_DIR/kitty

@@ -111,6 +111,7 @@ alias dcdr="docker-compose down -v --remove-orphans"
 alias dcu="docker-compose up"
 # Alias Vim
 alias v="nvim"
+alias mv="NVIM_APPNAME=mnvim nvim"
 # Git aliases
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias pull='git pull --rebase --recurse-submodules origin $(git rev-parse --abbrev-ref HEAD)'
