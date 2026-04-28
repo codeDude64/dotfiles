@@ -8,6 +8,7 @@ M.setup = function ()
   require("plugins.nvim-lspconfig")
   require("plugins.nvim-tree")
   require("plugins.bufferline")
+  require("plugins.diffview")
 end
 
 return M
