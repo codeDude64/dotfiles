@@ -7,6 +7,7 @@ M.setup = function ()
   require("plugins.nvim-cmp")
   require("plugins.nvim-lspconfig")
   require("plugins.nvim-tree")
+  require("plugins.bufferline")
 end
 
 return M
