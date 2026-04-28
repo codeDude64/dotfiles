@@ -36,6 +36,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<C-f>', function()
       vim.lsp.buf.format { async = true }
     end, opts)
+
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "🤬",
+          [vim.diagnostic.severity.WARN] = "🧐",
+          [vim.diagnostic.severity.HINT] = "🎯",
+          [vim.diagnostic.severity.INFO] = "🤓",
+        }
+      }
+    })
   end,
 })
 
