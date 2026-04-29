@@ -17,6 +17,7 @@ M.setup = function ()
   require("plugins.render-markdown")
   require("plugins.telescope")
   require("plugins.vimtex")
+  require("plugins.lualine")
 end
 
 return M
