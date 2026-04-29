@@ -10,6 +10,7 @@ M.setup = function ()
   require("plugins.bufferline")
   require("plugins.diffview")
   require("plugins.gitsigns")
+  require("plugins.harpoon")
 end
 
 return M
