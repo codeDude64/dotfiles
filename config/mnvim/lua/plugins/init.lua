@@ -12,6 +12,7 @@ M.setup = function ()
   require("plugins.gitsigns")
   require("plugins.harpoon")
   require("plugins.image")
+  require("plugins.neogit")
 end
 
 return M
