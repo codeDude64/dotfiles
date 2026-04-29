@@ -13,6 +13,7 @@ M.setup = function ()
   require("plugins.harpoon")
   require("plugins.image")
   require("plugins.neogit")
+  require("plugins.nvim-surround")
 end
 
 return M
