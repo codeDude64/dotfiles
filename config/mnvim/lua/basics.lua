@@ -23,3 +23,13 @@ vim.o.expandtab = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.numberwidth = 1
+
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+vim.keymap.set('n', '<A-l>', function() vim.cmd.resize({ args = { '+5' }, mods = { vertical = true } }) end)
+vim.keymap.set('n', '<A-h>', function() vim.cmd.resize({ args = { '-5' }, mods = { vertical = true } }) end)
+vim.keymap.set('n', '<A-k>', function() vim.cmd.resize({ args = { '-5' } }) end)
+vim.keymap.set('n', '<A-j>', function() vim.cmd.resize({ args = { '+5' } }) end)
