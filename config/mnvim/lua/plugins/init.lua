@@ -11,6 +11,7 @@ M.setup = function ()
   require("plugins.diffview")
   require("plugins.gitsigns")
   require("plugins.harpoon")
+  require("plugins.image")
 end
 
 return M
