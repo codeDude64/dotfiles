@@ -9,6 +9,7 @@ M.setup = function ()
   require("plugins.nvim-tree")
   require("plugins.bufferline")
   require("plugins.diffview")
+  require("plugins.gitsigns")
 end
 
 return M
