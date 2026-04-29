@@ -16,6 +16,7 @@ M.setup = function ()
   require("plugins.nvim-surround")
   require("plugins.render-markdown")
   require("plugins.telescope")
+  require("plugins.vimtex")
 end
 
 return M
