@@ -50,27 +50,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local lsp = require('plugins.nvim-lspconfig.lsp')
 
----@type vim.lsp.Config
-local config = {
-  capabilities = capabilities,
-  ---@type lspconfig.settings.lua_ls
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      },
-      workspace = {
-        preloadFileSize = 10000,
-        library = {
-          vim.env.VIMRUNTIME,
-        }
-      },
-    },
-  },
-}
+for lsp_name, config in pairs(lsp) do
+  vim.lsp.enable(lsp_name)
+  vim.lsp.config(lsp_name, config)
+end
 
-vim.lsp.config('lua_ls', config)
-vim.lsp.enable('lua_ls')
