@@ -15,6 +15,7 @@ M.setup = function ()
   require("plugins.neogit")
   require("plugins.nvim-surround")
   require("plugins.render-markdown")
+  require("plugins.telescope")
 end
 
 return M

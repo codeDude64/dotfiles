@@ -88,6 +88,22 @@
     "render-markdown.nvim": {
       "rev": "3f3eea97b80839f629c951ca660ffd125bfa5b34",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "telescope-fzy-native.nvim": {
+      "rev": "282f069504515eec762ab6d6c89903377252bf5b",
+      "src": "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
+    },
+    "telescope-node-modules.nvim": {
+      "rev": "b846d33ff5763176dc14fc74c30941a2067c82fd",
+      "src": "https://github.com/nvim-telescope/telescope-node-modules.nvim"
+    },
+    "telescope-repo.nvim": {
+      "rev": "a5395a4bf0fd742cc46b4e8c50e657062f548ba9",
+      "src": "https://github.com/cljoly/telescope-repo.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "506338434fec5ad19cb1f8d45bf92d66c4917393",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
     }
   }
 }
