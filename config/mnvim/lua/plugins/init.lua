@@ -14,6 +14,7 @@ M.setup = function ()
   require("plugins.image")
   require("plugins.neogit")
   require("plugins.nvim-surround")
+  require("plugins.render-markdown")
 end
 
 return M
