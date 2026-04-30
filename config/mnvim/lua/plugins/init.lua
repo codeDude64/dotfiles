@@ -20,6 +20,7 @@ M.setup = function ()
   require("plugins.telescope")
   require("plugins.vimtex")
   require("plugins.lualine")
+  require("plugins.dap")
 end
 
 return M
