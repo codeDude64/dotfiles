@@ -4,7 +4,11 @@ vim.pack.add({
 
 local harpoon = require('harpoon')
 
-harpoon:setup()
+harpoon:setup({
+  settings = {
+    save_on_toggle = true
+  }
+})
 
 vim.keymap.set('n','<leader>hM', function() harpoon:list():add()  end)
 vim.keymap.set('n','<leader>hi', function() harpoon:list():next() end)
