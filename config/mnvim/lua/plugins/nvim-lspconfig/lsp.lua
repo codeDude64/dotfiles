@@ -1,3 +1,12 @@
+vim.filetype.add({
+  filename = {
+    ['buf.yaml'] = 'buf-config',
+    ['buf.gen.yaml'] = 'buf-config',
+    ['buf.policy.yaml'] = 'buf-config',
+    ['buf.lock'] = 'buf-config',
+  }
+})
+
 local general = require("plugins.nvim-lspconfig.general")
 local lua_ls = require("plugins.nvim-lspconfig.lua_ls")
 local solargraph = require("plugins.nvim-lspconfig.solargraph")
@@ -19,5 +28,7 @@ return {
   cmake = general,
   lemminx = general,
   jsonls = jsonls,
-  clangd = clangd
+  clangd = clangd,
+  buf_ls = general,
+  metals = general
 }
