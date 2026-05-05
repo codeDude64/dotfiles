@@ -1,3 +1,3 @@
 require("basics")
 
-require("plugins").setup()
+require("plugins")
