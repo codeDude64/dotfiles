@@ -1,9 +1,9 @@
-local general_config = require("plugins.nvim-lspconfig.general")
+local general = require("plugins.nvim-lspconfig.general")
 
 
 ---@type vim.lsp.Config
 return {
-  capabilities = general_config.capabilities,
+  capabilities = general.capabilities,
   ---@type lspconfig.settings.lua_ls
   settings = {
     Lua = {
