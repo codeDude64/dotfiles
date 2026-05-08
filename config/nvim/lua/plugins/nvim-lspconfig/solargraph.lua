@@ -1,7 +1,7 @@
-local default_config = require("plugins.nvim-lspconfig.default_config")
+local general = require("plugins.nvim-lspconfig.general")
 
 return {
-  capabilities = default_config.capabilities,
+  capabilities = general.capabilities,
   solargraph = {
     useBundler = true,
     completion = true,

@@ -1,3 +1,0 @@
-require("basics")
-
-require("plugins")

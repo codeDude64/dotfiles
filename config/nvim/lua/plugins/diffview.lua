@@ -1,9 +1,8 @@
-return {
-  'sindrets/diffview.nvim',
-  dependencies = {
-    'nvim-lua/plenary.nvim'
-  },
-  keys = function()
-    return require('keymaps.diffview')
-  end,
-}
+vim.pack.add({
+  {src = 'https://github.com/sindrets/diffview.nvim'}
+})
+
+require('diffview').setup()
+
+vim.keymap.set('n', '<leader>hf', ':DiffviewFileHistory %<cr>')
+
