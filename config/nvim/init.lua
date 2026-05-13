@@ -1,1 +1,3 @@
-require 'core'
+require("basics")
+
+require("plugins")
