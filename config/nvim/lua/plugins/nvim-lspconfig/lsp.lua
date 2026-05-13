@@ -30,5 +30,6 @@ return {
   jsonls = jsonls,
   clangd = clangd,
   buf_ls = general,
-  metals = general
+  metals = general,
+  gopls = general
 }
