@@ -50,6 +50,7 @@ https://www.fsf.org/static/fsforg/rss/news.xml News
 https://rubyonrails.org/feed.xml News
 https://www.ruby-lang.org/en/feeds/news.rss News
 https://neovim.io/news.xml News
+https://lineageos.org/feed.xml News
 
 "query:---Nitter---:tags # \"Nitter\""
 https://xcancel.com/ElSrSanto/rss Nitter
@@ -85,6 +86,7 @@ https://video.hardlimit.com/feeds/videos.xml?videoChannelId=8840 "~Houman" Peert
 https://tilvids.com/feeds/videos.xml?videoChannelId=47 "~The Linux Experiment" Peertube
 https://tube.archworks.co/feeds/videos.xml?videoChannelId=16414 "~Mental Outlaw" Peertube
 https://videos.lukesmith.xyz/feeds/videos.xml?videoChannelId=2 "~Lukesmith" Peertube
+https://video.hardlimit.com/feeds/videos.xml?videoChannelId=9520 "~Code Space" Peertube
 
 "query:---Youtube---:tags # \"Youtube\""
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "~Migala" Youtube

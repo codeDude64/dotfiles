@@ -32,6 +32,8 @@ local languages = {
   'yaml',
   'latex',
   'markdown',
+  'go',
+  'gomod'
 }
 
 tresitter.install(languages)
