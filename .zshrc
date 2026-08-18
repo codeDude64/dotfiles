@@ -136,7 +136,9 @@ alias lcpp="lynx www.learncpp.com"
 # yt-dlp aliases
 alias yt="yt-x"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
-
+# Limit batery power
+alias bat-limit='echo 80 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold'
+alias bat-full='echo 100 | sudo tee /sys/class/power_supply/BAT0/charge_control_end_threshold'
 # starship
 
 eval "$(starship init zsh)"
