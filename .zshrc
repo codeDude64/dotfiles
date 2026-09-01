@@ -2,6 +2,7 @@
 eval "$(starship init zsh)"
 
 export MANPAGER='nvim +Man!'
+export EDITOR='nvim'
 
 
 # Plugins vía Pacman
@@ -44,10 +45,12 @@ alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; 
 # ps aliases
 alias cpustatus='ps -eo pid,comm,%cpu,%mem --sort=-%cpu --width=100 | head -n 11'
 alias memstatus='ps -eo pid,comm,%cpu,%mem --sort=-%mem --width=100 | head -n 11'
+alias ports='ss -tulpn'
 # lynx aliases
 alias lynx='lynx --accept-all-cookies --display_charset=utf-8 -vikeys'
 alias ddg="lynx www.duckduckgo.com"
 alias lcpp="lynx www.learncpp.com"
+alias tut='tut-mastodon'
 # yt-dlp aliases
 alias yt="yt-x"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
