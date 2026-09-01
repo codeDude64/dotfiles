@@ -61,6 +61,10 @@
       "rev": "da2be65c153ba15a14a342b05591652a6df70d58",
       "src": "https://github.com/3rd/image.nvim"
     },
+    "kanban.nvim": {
+      "rev": "bf042fcf9a7d922af8385d15e2e37b509c531f91",
+      "src": "https://github.com/arakkkkk/kanban.nvim"
+    },
     "lualine.nvim": {
       "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim"

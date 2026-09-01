@@ -8,7 +8,7 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-OPTION=$( printf '%s\n' "${password_files[@]}" | fuzzel --dmenu --prompt "Pass" )
+OPTION=$( printf '%s\n' "${password_files[@]}" | fuzzel --dmenu )
 
 if [ -z "$OPTION" ]; then
   echo "No option selected"
