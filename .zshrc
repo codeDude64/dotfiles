@@ -66,6 +66,7 @@ alias profanity='torsocks profanity'
 # yt-dlp aliases
 alias yt="yt-x"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
+alias yt-download-video="yt-dlp -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
 
 
 
