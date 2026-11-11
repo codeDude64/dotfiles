@@ -42,8 +42,10 @@ echo "$HOME/.zshrc removed"
 
 
 for config in config/*; do
-  ln -sf "$PWD/$config" "$HOME/.config"
-  echo "link from $PWD/$config to $HOME/.config"
+  config_name=$(cut -d"/" -f2 <<< "$config")
+  mkdir "$HOME/.config/$config_name/"
+  cp -rs "$PWD/$config/." "$HOME/.config/$config_name/"
+  echo "link from $PWD/$config to $HOME/.config/$config_name/"
 done
 
 ln -sf "$PWD/.zshrc" "$HOME"

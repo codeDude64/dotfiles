@@ -7,9 +7,8 @@
   "fixed-center": true,
   "reload_style_on_change": true,
   "modules-left": [
-    "sway/workspaces",
-    "sway/mode",
-    "sway/scratchpad",
+    "hyprland/workspaces",
+    "hyprland/submap",
     "mpd",
     "custom/media"
   ],
@@ -27,14 +26,14 @@
     "pulseaudio",
     "network",
     "tray",
+    "bluetooth",
     "battery",
     "custom/power"
   ],
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "enable-bar-scroll": true,
-    "warp-on-scroll": false,
-    "format": "{name} {icon}",
+  "hyprland/workspaces": {
+       "format": "{name} {icon}",
+       "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"e+1\"})' ",
+       "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"e-1\"})' ",
     "format-icons": {
       "urgent": "",
       "focused": "",

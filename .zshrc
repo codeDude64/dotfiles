@@ -4,10 +4,18 @@ eval "$(starship init zsh)"
 export MANPAGER='nvim +Man!'
 export EDITOR='nvim'
 
+fpath=(/usr/share/zsh/site-functions $fpath)
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Plugins vía Pacman
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # History settings
 HISTFILE=~/.zsh_history
@@ -27,6 +35,8 @@ alias dcu="docker-compose up"
 alias dcub="docker-compose up --build"
 # Alias Vim
 alias v="nvim"
+# Alias Emacs
+alias e="emacs -nw"
 # Git aliases
 alias push='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias pull='git pull --rebase --recurse-submodules origin $(git rev-parse --abbrev-ref HEAD)'
@@ -43,14 +53,16 @@ alias changes='git diff --'
 alias nomerge='git merge --abort'
 alias delrem="git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
 # ps aliases
-alias cpustatus='ps -eo pid,comm,%cpu,%mem --sort=-%cpu --width=100 | head -n 11'
-alias memstatus='ps -eo pid,comm,%cpu,%mem --sort=-%mem --width=100 | head -n 11'
-alias ports='ss -tulpn'
+alias cpustatus='watch ps -eo pid,comm,%cpu,%mem --sort=-%cpu --width=100 | head -n 11'
+alias memstatus='watch ps -eo pid,comm,%cpu,%mem --sort=-%mem --width=100 | head -n 11'
+alias ports='watch ss -tulpn'
 # lynx aliases
 alias lynx='lynx --accept-all-cookies --display_charset=utf-8 -vikeys'
 alias ddg="lynx www.duckduckgo.com"
 alias lcpp="lynx www.learncpp.com"
-alias tut='tut-mastodon'
+alias tut='torsocks tut-mastodon'
+alias iamb='torsocks iamb'
+alias profanity='torsocks profanity'
 # yt-dlp aliases
 alias yt="yt-x"
 alias yt-download-mp3="yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 0 -t sleep --embed-thumbnail --embed-metadata -o \"%(title)s.%(ext)s\" --file-access-retries 10"
@@ -79,3 +91,6 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

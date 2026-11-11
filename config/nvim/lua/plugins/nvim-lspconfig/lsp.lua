@@ -17,7 +17,7 @@ local clangd = require("plugins.nvim-lspconfig.clangd")
 return {
   lua_ls = lua_ls,
   solargraph = solargraph,
-  ts_ls = general,
+  tsc = general,
   cssls = general,
   html = general,
   pyright = general,

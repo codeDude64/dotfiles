@@ -1,0 +1,4 @@
+sudo modprobe zram
+sudo zramctl /dev/zram0 --algorithm zstd --size "$(($(grep -Po 'MemTotal:\s*\K\d+' /proc/meminfo)/2))KiB"
+sudo mkswap -U clear /dev/zram0
+sudo swapon --discard --priority 100 /dev/zram0
