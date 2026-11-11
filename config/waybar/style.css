@@ -59,8 +59,8 @@ button {
   color: #d79921;
 }
 
-#workspaces button.focused {
-  background-color: #665c54;
+#workspaces button.active {
+  background-color: #665c12;
 }
 
 #workspaces button.urgent {
@@ -78,6 +78,7 @@ button {
 #scratchpad,
 #mode,
 #window,
+#bluetooth,
 #clock,
 #battery,
 #backlight,

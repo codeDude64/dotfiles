@@ -1,8 +1,0 @@
-mode=drun
-width=90%
-prompt=Run
-allow_images=true
-term=kitty
-hide_scroll=true
-matching=multi-contains
-insensitive=true

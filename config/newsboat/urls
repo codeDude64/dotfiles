@@ -30,6 +30,7 @@ https://rubyflow.com/rss Blogs
 https://rubyland.news/feed.rss Blogs
 https://rubyonrails.org/feed.xml Blogs
 https://www.driftingruby.com/episodes/feed.atom Blogs
+https://xmpp.org/blog/index.xml Blogs
 https://codedude.xyz/feed.xml Blogs
 
 "query:---News---:tags # \"News\""
@@ -87,6 +88,7 @@ https://tilvids.com/feeds/videos.xml?videoChannelId=47 "~The Linux Experiment" P
 https://tube.archworks.co/feeds/videos.xml?videoChannelId=16414 "~Mental Outlaw" Peertube
 https://videos.lukesmith.xyz/feeds/videos.xml?videoChannelId=2 "~Lukesmith" Peertube
 https://video.hardlimit.com/feeds/videos.xml?videoChannelId=9520 "~Code Space" Peertube
+https://tilvids.com/feeds/videos.xml?videoChannelId=4776 "~Linux User Space" Peertube
 
 "query:---Youtube---:tags # \"Youtube\""
 https://www.youtube.com/feeds/videos.xml?channel_id=UCcqcWFtrp3tpUlfqj0phH3A "~Migala" Youtube

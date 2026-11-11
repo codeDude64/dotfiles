@@ -25,7 +25,7 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | wmenu | xargs swaymsg exec --
-set $menu wofi --show 
+set $menu fuzzel --show 
 # set $menu wmenu | xargs swaymsg exec --
 
 ## Style
@@ -84,13 +84,13 @@ workspace 3 output eDP-1        # Laptop (right)
 
 ## Clipboard
 
-    set $clipboard cliphist list | wofi --dmenu --prompt "clipboard" | cliphist decode | wl-copy
-    set $clipboard-del cliphist list | wofi --dmenu --prompt "delete" | cliphist delete; pkill -RTMIN+9 waybar
+    set $clipboard cliphist list | fuzzel --dmenu --prompt "clipboard" | cliphist decode | wl-copy
+    set $clipboard-del cliphist list | fuzzel --dmenu --prompt "delete" | cliphist delete; pkill -RTMIN+9 waybar
     set $clipboard-del-all rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar
 
 ## Pass
 
-    bindsym $mod+p exec passwofi
+    bindsym $mod+p exec passfuzzel
 
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
