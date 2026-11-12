@@ -16,6 +16,9 @@
 
 (global-display-line-numbers-mode +1)
 
+(setq custom-file (expand-file-name "custom-settings.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 (defconst my/package-archives
   '(("gnu"    . "https://elpa.gnu.org/packages/")
@@ -71,3 +74,40 @@
 
 (use-package magit
   :ensure t)
+
+
+(use-package password-store
+  :ensure t)
+
+(use-package auth-source-pass
+  :ensure t
+  :config
+  (auth-source-pass-enable))
+
+
+;; fun
+
+(use-package mastodon
+  :ensure t
+  :bind ("C-c t m" . mastodon)
+  :config
+  (setq mastodon-instance-url "https://floss.social"
+	mastodon-active-user "codeDude"
+	auth-source '(password-store)))
+
+(use-package erc
+  :ensure t
+  :config
+  (setq erc-nick "codeDude"
+	erc-autojoin-channels-alist '(("Libera.Chat" "#libera" "#neovim" "#archlinux" "#archlinux-mx" "#gnu" "#gnu-mx" "#gnu-es" "#emacs" "#human-emacs" "#emacs-beginners" "#bash" "#javascript" "#typescript" "#reactjs" "#nextjs" "#nodejs" "#ruby" "#rubyonrails" "#python" "#c" "#docker" "#podman" "#kubernetes" "#lobsters")))
+  (add-to-list 'erc-modules 'sasl)
+  (erc-update-modules)
+  (setq erc-sasl-mechanism 'external)
+
+  (defun erc/libera-connect ()
+    (interactive)
+    (let ((cert (expand-file-name "~/.weechat/certs/libera.pem")))
+      (erc-tls :server "irc.libera.chat"
+	       :port 6697
+	       :nick "codeDude"
+	       :client-certificate (list cert cert)))))
